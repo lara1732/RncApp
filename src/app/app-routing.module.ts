@@ -10,7 +10,11 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },  {
+    path: 'busqueda',
+    loadChildren: () => import('./busqueda/busqueda.module').then( m => m.BusquedaPageModule)
   },
+
   
 
 ];
