@@ -15,6 +15,7 @@ export class LoginPage implements OnInit {
   BaseUrl = this.Link.BaseLink();
 
   constructor(private Link:AppComponent, private router:Router, private storage:Storage) { }
+  
   Login(){
 
     $('#Preloader').show();
@@ -22,13 +23,14 @@ export class LoginPage implements OnInit {
 
    var UserName = $("#UserName").val();
    var Password = $("#Password").val();
+
       if(UserName!="" && Password!=""){
 
      $.ajax({
-        url: this.BaseUrl+'index.php/Session/validatelogin',
+        url: this.BaseUrl+'login/singin',
         type:'POST',
         dataType: "text",
-        data:{usuario:UserName, pass:Password},
+        data:{login:UserName, pass:Password, type:"m"},
         crossDomain: true,
         async: true,
         success:(data) =>{
@@ -46,7 +48,7 @@ export class LoginPage implements OnInit {
           $('#Preloader').hide();
           $('#ButtonLogin').removeAttr('disabled');
 
-          this.storage.set('user', UserName);
+          this.storage.set('login', UserName);
           this.storage.set('pass', Password);
           this.router.navigate(['/home']);
           $("UserName").val("");

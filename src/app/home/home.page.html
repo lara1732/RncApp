@@ -11,23 +11,33 @@
 
 <ion-content [fullscreen]="true">
 
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  
+  <ion-list>
 
-  <div id="container">
-    <strong>Welcome</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer"
-       href="https://ionicframework.com/docs/components">
-       UI
-        Components</a></p>
+    <ion-searchbar [debounce]="1000" placeholder = "Region" auto-hide = "true"></ion-searchbar>
+    <ion-searchbar [debounce]="1000" placeholder = "Canal"></ion-searchbar>
+    <ion-searchbar [debounce]="1000" placeholder = "Spot"></ion-searchbar>
 
-        <ion-item>
-          <ion-input type="text" color="primary" aria-placeholder="Name" id="HomeFirstName">
+  </ion-list>
 
-          </ion-input>
+  <ion-grid>
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col></ion-col>
+    <ion-col>
+      <ion-button expand="block" id="ButtonSaveHome" >Buscar</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+  
 
+ 
 
-        </ion-item>
-    
-  </div>
 </ion-content>
 
 

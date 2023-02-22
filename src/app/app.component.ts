@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class AppComponent {
 
-  URL_Link ="http://localhost/BACKEND_ISW20/";
+  URL_Link ="https://backup.tregional.mx/AbetCloud/";
 
   constructor(){}
 
