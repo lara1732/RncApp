@@ -13,10 +13,11 @@ import Swal from 'sweetalert2';
 export class LoginPage implements OnInit {
 
   BaseUrl = this.Link.BaseLink();
+  
 
   constructor(private Link:AppComponent, private router:Router, private storage:Storage) { }
   
-  Login(){
+   Login(){
 
     $('#Preloader').show();
     $('#SaveButtonHome').attr('disabled', 'disabled');
@@ -43,46 +44,58 @@ export class LoginPage implements OnInit {
           
           switch(Object){
 
-        case "OK-":
+            case "OK-":
 
-          $('#Preloader').hide();
-          $('#ButtonLogin').removeAttr('disabled');
+              $.ajax({
+                url: ('https://backup.tregional.mx/AbetCloud/models/queries/app/identify.php'),
+                type:'POST',
+                dataType: "text",
+                data:{login:UserName, pass:Password},
+                crossDomain: true,
+                async: true,
+                success:(dataId) =>{
+                
+                 /* var Ob = JSON.parse(dataId);
+                  var Id = Ob[0].Id; */
 
-          this.storage.set('login', UserName);
-          this.storage.set('pass', Password);
-          this.router.navigate(['/home']);
-          $("UserName").val("");
-          $("#Password").val("");
+                  this.storage.set("id",dataId);
+                  //console.log(this.storage);
+                  //console.log(dataId);
+                  
+                }
+              })
+                
 
+                $('#Preloader').hide();
+                $('#ButtonLogin').removeAttr('disabled');         
+              
+                this.storage.set('login', UserName);
+                this.storage.set('pass', Password); 
+                this.storage.get('login');       
+                this.router.navigate(['/home']);
 
-          break;
+                $("UserName").val("");
+                $("#Password").val("");
+              break;
 
-        case "IUOP":
-              $('#Preloader').hide();
-              $('#ButtonLogin').removeAttr('disabled');
-              Swal.fire({title:'Error', icon:'error', text:'Incorrect user or password', heightAuto:false});
-          break;
+            case "IUOP":
+                  $('#Preloader').hide();
+                  $('#ButtonLogin').removeAttr('disabled');
+                  Swal.fire({title:'Error', icon:'error', text:'Incorrect user or password', heightAuto:false});
+              break;
 
-        case "UWOA":
-              $('#Preloader').hide();
-              $('#ButtonLogin').removeAttr('disabled');
-              Swal.fire({title:'Error', icon:'error', text:'User without acess', heightAuto:false});
-          break;
+            case "UWOA":
+                  $('#Preloader').hide();
+                  $('#ButtonLogin').removeAttr('disabled');
+                  Swal.fire({title:'Error', icon:'error', text:'User without acess', heightAuto:false});
+              break;
 
-        case "UWAS":
-              $('#Preloader').hide();
-              $('#ButtonLogin').removeAttr('disabled');
-              Swal.fire({title:'Error', icon:'error', text:'User with active session', heightAuto:false});
-          break;
-
-        }
-
-
-
-
-
-
-
+            case "UWAS":
+                  $('#Preloader').hide();
+                  $('#ButtonLogin').removeAttr('disabled');
+                  Swal.fire({title:'Error', icon:'error', text:'User with active session', heightAuto:false});
+              break;
+          }
 
         },error:function(/*status, textStatus, jqXHR,errorThrown*/){
 
@@ -123,7 +136,6 @@ export class LoginPage implements OnInit {
   }
 
   async ngOnInit() {
-
     await this.storage.create();
   }
 

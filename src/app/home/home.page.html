@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -10,10 +10,17 @@
 </ion-header>
 
 <ion-content>
-  <br><br><br>
-  <ion-item (click)="select.open()" > 
-    <ion-label>Select User</ion-label>
-    <app-searchable-select #select></app-searchable-select>
+
+  <ion-item (click)="select.open()" color="primary" > 
+    <ion-label>Select Plaza</ion-label>
+    <app-searchable-select
+    title="Select Plaza"
+    [data]="locations" 
+    itemTextField = "Plaza"  
+    [multiple] = "true"  
+    #select
+    (selectChanged)="selectChanged($event)"
+     ></app-searchable-select>
   </ion-item>
 </ion-content>
 
