@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Video
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+<ion-slides [options]="config">
+
+
+  <ion-list *ngFor="let video of items">
+ <ion-card (click)="videomodal()" >
+  <ion-img src="assets/playV.jpg" alt="" srcset="" width=""></ion-img>
+</ion-card>
+  </ion-list>
+
+
+
+
+
+
+
+
+
+
+
+
+</ion-slides>
+
+</ion-content>
