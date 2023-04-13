@@ -1,9 +1,20 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>inicio</ion-title>
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Calendar
+    </ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-
+      <full-calendar *ngIf='calendarVisible' [options]='calendarOptions'>
+        <ng-template #eventContent let-arg>
+          <b>{{ arg.timeText }}</b>
+          <i>{{ arg.event.title }}</i>
+        </ng-template>
+      </full-calendar>
+  
 </ion-content>
+
