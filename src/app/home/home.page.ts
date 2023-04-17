@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component,OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import * as $ from "jquery";
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class HomePage implements OnInit {
   spots: any = [];
   library: any = [];
   
-  constructor(private http: HttpClient, private storage:Storage) {
+  constructor(private http: HttpClient, private storage:Storage, private router:Router) {
 
 
   }
@@ -174,8 +175,9 @@ async  botonbuscar(){
     }
     spots = spots.slice(1);
 
-    let link = 'https://backup.tregional.mx/Abet6/models/queries/C_getDetections.php?id='+canales+'&s='+spots+'&p='+permisos+'&u='+Id+'&l='+library[0].value;
+    let link = 'https://backup.tregional.mx/AbetCloud/models/queries/App/C_getDetections.php?id='+canales+'&s='+spots+'&p='+permisos+'&u='+Id+'&l='+library[0].value;
     this.storage.set('link',link);
+    this.router.navigate(['/inicio']);
 
 }
 

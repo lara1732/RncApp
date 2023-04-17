@@ -3,6 +3,7 @@ import { ModalController } from '@ionic/angular';
 import { VideolabService } from '../videolab.service';
 import { VideopopupPage } from '../videopopup/videopopup.page';
 import {Router} from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
 import { __values } from 'tslib';
 @Component({
   selector: 'app-video',
@@ -11,7 +12,7 @@ import { __values } from 'tslib';
 })
 export class VideoPage implements OnInit {
   //videoList = "https://backup.tregional.mx/AbetCloud/";
-  constructor(private modalController: ModalController, private videolabService: VideolabService, private router: Router) { }
+  constructor(private modalController: ModalController, private videolabService: VideolabService, private router: Router, private storage:Storage) { }
     items: any [""];
 
 
@@ -44,6 +45,8 @@ return(await modal).present();
 ngOnInit() {
  this.items = this.videolabService.getvideos();
  console.log(this.items);
+ console.log(this.storage.get("video"));
+ 
 }
  
 }

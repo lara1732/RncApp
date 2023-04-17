@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import { Router } from '@angular/router';
 import * as $ from "jquery";
@@ -9,12 +9,16 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import { INITIAL_EVENTS, createEventId } from './event-utils';
+import { async } from '@angular/core/testing';
+
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
   styleUrls: ['./inicio.page.scss'],
 })
-export class InicioPage{
+export class InicioPage implements OnInit {
+
+  link="";
 
   calendarVisible = true;
   calendarOptions: CalendarOptions = {
@@ -30,7 +34,7 @@ export class InicioPage{
       right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
     },
     initialView: 'dayGridMonth',
-    initialEvents: INITIAL_EVENTS, // alternatively, use the `events` setting to fetch from a feed
+    //initialEvents: INITIAL_EVENTS, // alternatively, use the `events` setting to fetch from a feed
     weekends: true,
     editable: true,
     selectable: true,
@@ -47,7 +51,7 @@ export class InicioPage{
   };
   currentEvents: EventApi[] = [];
 
-  constructor(private changeDetector: ChangeDetectorRef){
+  constructor(private changeDetector: ChangeDetectorRef, private storage:Storage, private router:Router){
 
   }
   handleCalendarToggle() {
@@ -77,13 +81,46 @@ export class InicioPage{
   }
 
   handleEventClick(clickInfo: EventClickArg) {
-    if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
-      clickInfo.event.remove();
-    }
+
+    alert(clickInfo.event.id);
+    
+    var  adata = {id:clickInfo.event.id}
+    
+      $.ajax({
+        url: ('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getVideo.php'),
+        type:'POST',
+        dataType: "Json",
+        data: adata,
+        crossDomain: true,
+        async: true,
+        success:(dataId) =>{ 
+          console.log(dataId)    
+          this.storage.set('video',dataId);   
+          this.router.navigate(['/video']);
+          
+        }
+      })
+
   }
 
   handleEvents(events: EventApi[]) {
     this.currentEvents = events;
     this.changeDetector.detectChanges();
   }
+
+
+
+
+
+  async ngOnInit() {
+
+    this.link = await this.storage.get('link');  
+    console.log(this.link);
+    this.calendarOptions.events=this.link
+
+  }
+  
+  
 }
+
+
