@@ -12,7 +12,7 @@ import { __values } from 'tslib';
 export class VideoPage implements OnInit {
   //videoList = "https://backup.tregional.mx/AbetCloud/";
   constructor(private modalController: ModalController, private videolabService: VideolabService, private router: Router) { }
-    items: any [] = [];
+    items: any [""];
 
 
   config ={
@@ -20,7 +20,8 @@ spaceBetween: 0,
 centeredSlides: true,
 slidesPerView: 1.4,
 loop: true,
-autoplay: true
+autoplay: true,
+fullscreen: true
 };
 
 /* goVideo(){
@@ -29,9 +30,9 @@ autoplay: true
 async videomodal(){ 
 const modal = this.modalController.create({
 component: VideopopupPage,
-cssClass: 'my-modal-my-modal-css',
+cssClass: 'my-modal-css',
 componentProps: {
-  
+ 
 }
 });
 

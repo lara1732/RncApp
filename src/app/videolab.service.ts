@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class VideolabService {
 private videoData = [
-  {url:'https://www.youtube.com/embed/BEhd2S5GbUg', images:'/assets/playV.jpg'},
-  //{url:'https://www.youtube.com/embed/BEhd2S5GbUg', images:'/assets/fondo.jpg'}
+ 
+  {url:'https://backup.tregional.mx/proxys/Queretaro/Bajas/atsc/Record3/8.1-XHQCZ_20230224_1400.mp4', images:'/assets/fondo.jpg'}
 ];
   constructor() { }
 

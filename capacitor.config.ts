@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'RncApp',
+  appId: 'com.abet.movil',
+  appName: 'Abet',
   webDir: 'www',
   bundledWebRuntime: false
 };
