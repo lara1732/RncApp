@@ -1,0 +1,32 @@
+<div *ngIf="selected2.length; else placeholder">
+  <span *ngFor="let item of selected2; let last = last">
+    {{ item.Name }}{{ last ? "" : ", "}}
+  </span>  
+</div>
+
+<ng-template #placeholder>Select</ng-template>
+
+<ion-modal [isOpen]="isOpen2" disabled="true">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+          <ion-button (click)="cancel2()">Cancel</ion-button>
+        </ion-buttons>
+        <ion-title>Canales</ion-title>
+        <ion-buttons slot="end" *ngIf="multiple">
+          <ion-button (click)="select2()">Select</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+      <ion-toolbar>
+        <ion-searchbar (ionChange)="filter2($any($event))"></ion-searchbar>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-item *ngFor = "let item of filtered2">
+        <ion-checkbox  slot="start" [(ngModel)]="item.selected"   (ionChange)="itemSelected2()" ></ion-checkbox>
+        <ion-label>{{ item.Name }}</ion-label>
+      </ion-item>
+    </ion-content>
+  </ng-template>
+</ion-modal>

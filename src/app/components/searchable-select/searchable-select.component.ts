@@ -2,6 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, SearchbarCustomEvent } from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
+import * as $ from "jquery";
+
 //import { EventEmitter } from 'stream';
 
 @Component({
@@ -13,10 +16,9 @@ import { IonicModule, SearchbarCustomEvent } from '@ionic/angular';
 })
 export class SearchableSelectComponent implements OnChanges {
 
-  @Input() title = 'Plazas';
   @Input() data: any[] = [];
   @Input() multiple = false;
-  @Input() itemTextField = 'Plaza:';
+  @Input() itemTextField = '';
   @Output() selectedChanged: EventEmitter<any> = new EventEmitter();
 
   isOpen = false;
@@ -24,7 +26,7 @@ export class SearchableSelectComponent implements OnChanges {
   filtered: any[] = [];
 
 
-  constructor() { }
+  constructor(private storage:Storage) { }
 
   ngOnChanges() {
 
@@ -44,6 +46,19 @@ export class SearchableSelectComponent implements OnChanges {
     this.selected = selected;
     this.selectedChanged.emit(selected);
     this.isOpen = false;
+    this.storage.set("plaza",selected);
+    
+
+    if(selected.length == 0){
+      $("#canal").attr('disabled','true');
+      $("#spot").attr('disabled','true');
+      
+    }else{
+      $("#canal").removeAttr('disabled');
+      
+    }
+   
+    
   }
 
   itemSelected(){
@@ -54,6 +69,7 @@ export class SearchableSelectComponent implements OnChanges {
       this.selectedChanged.emit(this.selected)
       this.isOpen = false;
       //this.data.map((item) => (item.selected = false));
+      
     }
   }
 
@@ -61,10 +77,13 @@ export class SearchableSelectComponent implements OnChanges {
     const filter = event.detail.value?.toLowerCase();
     this.filtered = this.data.filter(item => this.leaf(item).toLowerCase().indexOf(filter) >=0);
   }
-
-
   
   leaf = (obj: any) => 
     this.itemTextField.split('.').reduce((value, el) => value[el], obj);
+
+
+    async ngOnInit() {
+      await this.storage.create();  
+    }
   
 }

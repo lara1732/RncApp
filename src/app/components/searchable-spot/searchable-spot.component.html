@@ -1,0 +1,32 @@
+<div *ngIf="selected3.length; else placeholder">
+  <span *ngFor="let item of selected3; let last = last">
+    {{item.MediaRef}}{{ last ? "" : ", "}}
+  </span>
+</div>
+
+<ng-template #placeholder>Select</ng-template>
+
+<ion-modal [isOpen]="isOpen3"> 
+  <ng-template>
+    <ion-header>
+      <ion-toolbar color="primary" >
+        <ion-buttons slot="start">
+          <ion-button (click)="cancel3()">Cancel</ion-button>
+        </ion-buttons>
+        <ion-title>Plazas</ion-title>
+        <ion-buttons slot="end" *ngIf="multiple">
+          <ion-button (click)="select3()">Select</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+      <ion-toolbar>
+        <ion-searchbar (ionChange)="filter3($any($event))"></ion-searchbar>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-item *ngFor="let item of filtered3">
+        <ion-checkbox slot="start" [(ngModel)]="item.selected" (ionChange)="itemSelected3()"></ion-checkbox>
+        <ion-label> {{item.MediaRef}}</ion-label>
+      </ion-item>
+    </ion-content>
+  </ng-template>  
+</ion-modal> 

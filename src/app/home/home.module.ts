@@ -6,6 +6,9 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { SearchableSelectComponent } from '../components/searchable-select/searchable-select.component';
+import { SearchableCanalComponent } from '../components/searchable-canal/searchable-canal.component';
+import { SearchableSpotComponent } from '../components/searchable-spot/searchable-spot.component';
+import { SearchableLibraryComponent } from '../components/searchable-library/searchable-library.component';
 
 
 @NgModule({
@@ -14,7 +17,10 @@ import { SearchableSelectComponent } from '../components/searchable-select/searc
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    SearchableSelectComponent
+    SearchableCanalComponent,
+    SearchableSelectComponent,
+    SearchableSpotComponent,
+    SearchableLibraryComponent        
   ],
   declarations: [HomePage]
 })

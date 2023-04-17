@@ -4,6 +4,7 @@ import { Storage } from '@ionic/storage-angular';
 import { Router } from '@angular/router';
 import * as $ from "jquery";
 import Swal from 'sweetalert2';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -14,10 +15,13 @@ export class LoginPage implements OnInit {
 
   BaseUrl = this.Link.BaseLink();
   
-
-  constructor(private Link:AppComponent, private router:Router, private storage:Storage) { }
   
-   Login(){
+  constructor(private Link:AppComponent, private router:Router, private storage:Storage,private http: HttpClient) { }
+
+  permiso: any;
+  
+
+   Login(){    
 
     $('#Preloader').show();
     $('#SaveButtonHome').attr('disabled', 'disabled');
@@ -55,12 +59,9 @@ export class LoginPage implements OnInit {
                 async: true,
                 success:(dataId) =>{
                 
-                 /* var Ob = JSON.parse(dataId);
-                  var Id = Ob[0].Id; */
-
                   this.storage.set("id",dataId);
-                  //console.log(this.storage);
-                  //console.log(dataId);
+                  this.permisos();
+                 
                   
                 }
               })
@@ -95,6 +96,8 @@ export class LoginPage implements OnInit {
                   $('#ButtonLogin').removeAttr('disabled');
                   Swal.fire({title:'Error', icon:'error', text:'User with active session', heightAuto:false});
               break;
+
+              
           }
 
         },error:function(/*status, textStatus, jqXHR,errorThrown*/){
@@ -135,8 +138,23 @@ export class LoginPage implements OnInit {
     }
   }
 
+  async permisos(){
+
+    let Id =  await this.storage.get('id');
+  
+
+    this.http
+      .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getPrivilege.php?id='+Id)
+      .subscribe((res: any) => {
+        
+        this.storage.set('p',res[0].p);
+        
+      });
+  }
+
   async ngOnInit() {
     await this.storage.create();
+    console.log(this.storage.get('id'));
   }
 
 }
