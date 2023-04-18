@@ -9,12 +9,14 @@
   </ion-toolbar>
 </ion-header>
 <ion-content >
-      <full-calendar *ngIf='calendarVisible' [options]='calendarOptions'>
+      <full-calendar class="demo-app"  *ngIf='calendarVisible' [options]='calendarOptions'>
         <ng-template #eventContent let-arg>
           <b>{{ arg.timeText }}</b>
           <i>{{ arg.event.title }}</i>
         </ng-template>
       </full-calendar>
+
+      
   
 </ion-content>
 
