@@ -27,6 +27,8 @@ const routes: Routes = [
     loadChildren: () => import('./video/video.module').then( m => m.VideoPageModule)
   },
 
+  
+ 
 
 
 ];
