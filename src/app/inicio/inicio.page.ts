@@ -101,7 +101,7 @@ export class InicioPage implements OnInit {
 
   handleEventClick(clickInfo: EventClickArg) {
 
-    alert(clickInfo.event.id);
+    
     
     var  adata = {id:clickInfo.event.id}
     
