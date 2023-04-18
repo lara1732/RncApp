@@ -47,7 +47,7 @@ export class SearchableLibraryComponent implements OnInit {
     this.selectedChanged.emit(selected);
     this.isOpen4 = false;
     this.storage.set("library",selected);
-    console.log(this.data4)
+    
 
     if(selected.length == 0){
       $("#canal").attr('disabled','true');

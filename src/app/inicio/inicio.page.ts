@@ -8,7 +8,7 @@ import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
-import { INITIAL_EVENTS, createEventId } from './event-utils';
+import esLocale from '@fullcalendar/core/locales/es';
 import { async } from '@angular/core/testing';
 
 @Component({
@@ -16,23 +16,49 @@ import { async } from '@angular/core/testing';
   templateUrl: './inicio.page.html',
   styleUrls: ['./inicio.page.scss'],
 })
+
 export class InicioPage implements OnInit {
 
   link="";
-
   calendarVisible = true;
   calendarOptions: CalendarOptions = {
+    
+
+    locale:'es',
     plugins: [
       interactionPlugin,
       dayGridPlugin,
       timeGridPlugin,
       listPlugin,
     ],
+    
+    views: {
+      dayGridMonth: { buttonText: 'Mes' },
+      timeGridWeek: { buttonText: 'Semana' },
+      listWeek: { buttonText: 'Lista' },
+    },
+    
     headerToolbar: {
       left: 'prev,next today',
-      center: 'title',
-      right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+      //center: 'title',
+      right: 'dayGridMonth,timeGridWeek,listWeek'
     },
+    eventTimeFormat: { // like '14:30:00'
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      //meridiem: true,
+      hour12: false,
+      omitZeroMinute : false
+    },
+    slotLabelFormat: {
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false
+    },
+    
+    
     initialView: 'dayGridMonth',
     //initialEvents: INITIAL_EVENTS, // alternatively, use the `events` setting to fetch from a feed
     weekends: true,
@@ -40,7 +66,11 @@ export class InicioPage implements OnInit {
     selectable: true,
     selectMirror: true,
     dayMaxEvents: true,
-    select: this.handleDateSelect.bind(this),
+    
+    
+    
+    
+
     eventClick: this.handleEventClick.bind(this),
     eventsSet: this.handleEvents.bind(this)
     /* you can update a remote database when these fire:
@@ -50,8 +80,13 @@ export class InicioPage implements OnInit {
     */
   };
   currentEvents: EventApi[] = [];
+  
+  
 
   constructor(private changeDetector: ChangeDetectorRef, private storage:Storage, private router:Router){
+
+    
+    
 
   }
   handleCalendarToggle() {
@@ -63,22 +98,6 @@ export class InicioPage implements OnInit {
     calendarOptions.weekends = !calendarOptions.weekends;
   }
 
-  handleDateSelect(selectInfo: DateSelectArg) {
-    const title = prompt('Please enter a new title for your event');
-    const calendarApi = selectInfo.view.calendar;
-
-    calendarApi.unselect(); // clear date selection
-
-    if (title) {
-      calendarApi.addEvent({
-        id: createEventId(),
-        title,
-        start: selectInfo.startStr,
-        end: selectInfo.endStr,
-        allDay: selectInfo.allDay
-      });
-    }
-  }
 
   handleEventClick(clickInfo: EventClickArg) {
 
@@ -108,6 +127,10 @@ export class InicioPage implements OnInit {
     this.changeDetector.detectChanges();
   }
 
+  
+
+  
+
 
 
 
@@ -119,6 +142,7 @@ export class InicioPage implements OnInit {
     this.calendarOptions.events=this.link
 
   }
+  
   
   
 }
