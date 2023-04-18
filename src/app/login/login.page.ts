@@ -60,8 +60,7 @@ export class LoginPage implements OnInit {
                 success:(dataId) =>{
                 
                   this.storage.set("id",dataId);
-                  this.permisos();
-                 
+                  this.permisos();                 
                   
                 }
               })
@@ -100,9 +99,9 @@ export class LoginPage implements OnInit {
               
           }
 
-        },error:function(/*status, textStatus, jqXHR,errorThrown*/){
+        },error:function(status, textStatus, jqXHR){
 
-         /* if (status.statusText=="timeout") {
+         if (status.statusText=="timeout") {
 
             Swal.fire({   
               title: 'Error',
@@ -123,7 +122,7 @@ export class LoginPage implements OnInit {
           }else{
         
             Swal.fire({title:'Error', icon:'error', text: 'An internal server error has occurred please contact the site admin',heightAuto:false});
-          }*/
+          }
             $('#Preloader').hide();
           $('#ButtonLogin').removeAttr('disabled');
 
@@ -154,7 +153,7 @@ export class LoginPage implements OnInit {
 
   async ngOnInit() {
     await this.storage.create();
-    console.log(this.storage.get('id'));
+    
   }
 
 }

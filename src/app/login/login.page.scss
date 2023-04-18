@@ -1,0 +1,22 @@
+ion-item{
+    padding-right: 5%;
+    padding-top: 30px;
+    color: #0098d8;
+    --border-color: #0098d8;
+    font-size: 18px;
+
+    ion-input{       
+        color: #000000;
+    }
+}    
+
+ion-button{        
+    margin-top: 20px;
+    --background: #0098d8;
+    --background-activated: #ffffff;
+    color:#ffffff ;
+}
+
+.wrapform{
+    margin-top: 10px;
+}
