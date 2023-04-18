@@ -7,7 +7,7 @@ import {RouterModule} from '@angular/router';
 import { VideoPageRoutingModule } from './video-routing.module';
 
 import { VideoPage } from './video.page';
-import { VideopopupPage } from '../videopopup/videopopup.page';
+
 
 @NgModule({
   imports: [
@@ -25,8 +25,8 @@ import { VideopopupPage } from '../videopopup/videopopup.page';
     
     
   ],
-  declarations: [VideoPage, /*VideopopupPage*/],
-entryComponents: [VideopopupPage]
+  declarations: [VideoPage],
+
 })
 export class VideoPageModule {
  
