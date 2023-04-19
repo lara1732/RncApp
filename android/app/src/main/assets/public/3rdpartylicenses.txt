@@ -13,12 +13,6 @@ MIT
 @angular/router
 MIT
 
-@awesome-cordova-plugins/core
-MIT
-
-@awesome-cordova-plugins/toast
-MIT
-
 @babel/runtime
 MIT
 MIT License
