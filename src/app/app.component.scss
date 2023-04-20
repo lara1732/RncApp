@@ -1,0 +1,35 @@
+ion-menu::part(backdrop) {
+    background-color: #0098d8;
+  }
+  
+  ion-menu::part(container) {
+    border-radius: 0 20px 20px 0;
+  
+    box-shadow: 4px 0px 16px #0097d881;
+  }
+
+ion-toolbar{
+    background-color: transparent;
+    --opacity: 5%;  
+}
+
+  ion-item{
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 10%;
+   
+    color: #0098d8;
+    --border-color: #0098d8;
+    --border-style: solid;
+    --border-width: 2px;
+  
+    --border-radius: 20px;
+  
+    
+    font-size: 18px;
+  
+    ion-label{       
+        color: #000000;
+    }
+  
+  }

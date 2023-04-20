@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header >
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -9,10 +9,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
-
-
-
+<ion-content [fullscreen]="true">
+  <br>
   <ion-item (click)="touch(0)">
     <video id='video' width=490 height=295 (timeupdate)="recorte()"  src="" type="video/mp4"></video>   
   </ion-item>

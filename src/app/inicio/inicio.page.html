@@ -1,5 +1,5 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="primary">
+<ion-header>
+  <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -8,7 +8,8 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content >
+<ion-content   [fullscreen]="true" >
+      <br>
       <full-calendar class="demo-app"  *ngIf='calendarVisible' [options]='calendarOptions'>
         <ng-template #eventContent let-arg>
           <b>{{ arg.timeText }}</b>

@@ -110,8 +110,7 @@ export class HomePage implements OnInit {
         async: true,
         success:(dataId) =>{        
           this.spots = dataId;
-          console.log(dataId); 
-          
+            
           let rest = dataId;
             
     

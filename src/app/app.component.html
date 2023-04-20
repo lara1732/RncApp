@@ -1,78 +1,28 @@
 <ion-app>
   <ion-menu side="start" menuId="first" contentId="content1">
-        <ion-header>
-          <ion-toolbar>
-            <ion-buttons slot="start">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
-          </ion-buttons>
-            <ion-title align="center" color="primary">Menu</ion-title>
+        </ion-buttons>
+        <ion-title align="center" >Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
 
-              <!--<ion-item [routerLink]="'/profile'" [routerDirection]="'forward'" id="'profile'" slot="end" (click)="CloseMenu()">
-                <ion-icon [name]="'person-circle-outline'"></ion-icon>
-              </ion-item>-->
-
-          </ion-toolbar>
-
-        </ion-header>
-        <ion-content color="">
-          <ion-list >
-          <ion-menu-toggle auto-hide="true">
-
-
-            <ion-item [routerLink]="'/home'" [routerDirection]="'forward'" id="home" lines="full" color="">
-              <ion-icon slot="start" [name]="'home'"></ion-icon>
-              <ion-label color="dark">Home</ion-label>
-            </ion-item>
-
-            <ion-item [routerLink]="'/video'" [routerDirection]="'forward'" id="home" lines="full" color="">
-              <ion-icon slot="start" [name]="'home'"></ion-icon>
-              <ion-label color="dark">Video</ion-label>
-            </ion-item>
-
-            <ion-item [routerLink]="'/inicio'" [routerDirection]="'forward'" id="home" lines="full" color="">
-              <ion-icon slot="start" [name]="'home'"></ion-icon>
-              <ion-label color="dark">Calendario</ion-label>
-            </ion-item>
-
-<p>Selecciona tu spot</p>
-
-<ion-item>
-  <ion-select placeholder="Selecciona tu spot" [multiple]="true">
-    <ion-select-option value="apples">Apples</ion-select-option>
-    <ion-select-option value="oranges">Oranges</ion-select-option>
-    <ion-select-option value="bananas">Bananas</ion-select-option>
-  </ion-select>
-</ion-item>
-
-<p>Canales</p>
-
-<ion-item>
-  <ion-select placeholder="Canales" [multiple]="true">
-    <ion-select-option value="apples">Apples</ion-select-option>
-    <ion-select-option value="oranges">Oranges</ion-select-option>
-    <ion-select-option value="bananas">Bananas</ion-select-option>
-  </ion-select>
-</ion-item>
-
-<p>Region</p>
-<ion-item>
-  <ion-select placeholder="Region" [multiple]="true">
-    <ion-select-option value="apples">Apples</ion-select-option>
-    <ion-select-option value="oranges">Oranges</ion-select-option>
-    <ion-select-option value="bananas">Bananas</ion-select-option>
-  </ion-select>
-</ion-item>
-
-
-
-          </ion-menu-toggle>
-          </ion-list>
-        </ion-content>
-      </ion-menu>
+    <ion-content [fullscreen]="true" color="">      
+      <ion-list >
+        <ion-menu-toggle auto-hide="true">
+          <ion-item [routerLink]="'/home'" [routerDirection]="'forward'" id="home" lines="full" color="">
+            <ion-icon slot="start" [name]="'home-outline'"></ion-icon>
+            <ion-label color="dark">Filtro</ion-label>
+          </ion-item> 
+          <ion-item [routerLink]="'/home'" [routerDirection]="'forward'" id="logout" lines="full" color="danger">
+            <ion-icon slot="start" [name]="'log-out-outline'"></ion-icon>
+            <ion-label color="dark">Cerrar sesion</ion-label>
+          </ion-item>                
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
   <ion-router-outlet id="content1"></ion-router-outlet>
 </ion-app>
-
-<br>
-<br>
-<br>
-<br>

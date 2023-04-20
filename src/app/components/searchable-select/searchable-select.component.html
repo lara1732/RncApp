@@ -25,7 +25,7 @@
     <ion-content>
       <ion-item *ngFor="let item of filtered">
         <ion-checkbox slot="start" [(ngModel)]="item.selected" (ionChange)="itemSelected()"></ion-checkbox>
-        <ion-label color = "medium"> {{item.Plaza}}</ion-label>
+        <ion-label> {{item.Plaza}}</ion-label>
       </ion-item>
     </ion-content>
   </ng-template>  

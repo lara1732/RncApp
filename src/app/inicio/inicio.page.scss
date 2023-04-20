@@ -6,5 +6,12 @@
     
   }
 
-  
+  ion-toolbar{
+    background-color: transparent;
+    --opacity: 5%;  
+    }
+    
+    ion-content{
+      --ion-background-color: white;
+    }  
   

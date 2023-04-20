@@ -1,4 +1,44 @@
 ion-searchbar {
-
     padding-top: 12px;
+    --background: #ffffff;
+    --color: #000000;
+    --placeholder-color: #000000;
+    --icon-color: #000000;
+    --clear-button-color: #000000; 
+    
+}
+
+ion-toolbar{      
+    background-color: #0098d8;
+    --opacity: 5%;
+    }
+
+ion-item{
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 5%;
+    
+    color: #0098d8;
+    --border-color: #0098d8;
+    --border-style: solid;
+    --border-width: 2px;
+    
+    --border-radius: 20px;
+    
+    
+    font-size: 18px;
+    
+    ion-label{       
+        color: #000000;
+    }
+    
+}
+
+ion-title{
+    color: #000000;
+}
+
+ion-button{
+    --opacity: 100%;
+    color: #000000;
 }
