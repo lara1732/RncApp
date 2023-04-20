@@ -20,6 +20,8 @@ export class AppComponent {
 
   URL_Link ="https://backup.tregional.mx/AbetCloud/";
 
+  constructor(/*private toast: Toast,*/ private storage: Storage, private router:Router) {}
+
 
 
   BaseLink(){
@@ -27,8 +29,9 @@ export class AppComponent {
   }
 
   LogOut(){
-    alert("Hola");
+     this.storage.clear();
 
   }
 
+ 
 }
