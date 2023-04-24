@@ -85,7 +85,7 @@ async ngOnInit() {
   //console.log(this.storage.get("video"));
   
   this.video=await this.storage.get("video");
-  console.log((this.video));
+  
   var sourceTag = <HTMLVideoElement>document.getElementById('video')!;
   sourceTag.setAttribute('src', this.video.source);
   sourceTag.setAttribute('type', 'video/mp4');
