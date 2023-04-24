@@ -6,6 +6,7 @@ import { Storage } from '@ionic/storage-angular';
 import { __values } from 'tslib';
 import * as $ from "jquery";
 
+
 @Component({
   selector: 'app-video',
   templateUrl: './video.page.html',
@@ -18,6 +19,16 @@ export class VideoPage implements OnInit {
     video: any [""];
      
     flag=0;
+
+full(){
+  var elem = <HTMLVideoElement>document.getElementById('video')!;
+
+  if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    }
+}
+
+    
 sendURL(){
   var sourceTag = document.createElement('video');
   sourceTag.setAttribute('src', this.video.source);
@@ -64,9 +75,9 @@ sendURL(){
   }
   //console.log(player.currentTime)
 }
-
-async expand(){
-  alert('hola')
+doubleClick(): void{
+  console.log('hola')
+  
 }
 
 async ngOnInit() {

@@ -11,11 +11,11 @@
 
 <ion-content [fullscreen]="true">
   <br>
-  <ion-item (click)="touch(0)" (pinch)="expand()">
-    <video id='video' width=490 height=295 (timeupdate)="recorte()"  src="" type="video/mp4"></video>   
+  <ion-item (click)="touch(0)" (onseeking)="doubleClick()">
+    <video id='video' width=490 height=295 (timeupdate)="recorte()"  src="" type="video/mp4" (onseeking)="doubleClick()" ></video>   
   </ion-item>
 
-  <ion-list [inset]="true">
+  <ion-list lines="full">
    
     <ion-item>
       <ion-label id="ref">Referencia</ion-label>
@@ -31,4 +31,6 @@
     </ion-item>
  
   </ion-list>
+
+  <ion-button (click)="full()" expand="block" shape="round" fill="solid">Full</ion-button>
 </ion-content>
