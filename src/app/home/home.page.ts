@@ -24,7 +24,7 @@ export class HomePage implements OnInit {
 
   async loadLocations() {
 
-    let Id = await this.storage.get('id');  
+    let Id =   await this.storage.get('id');  
    
 
     this.http
@@ -81,6 +81,7 @@ export class HomePage implements OnInit {
     let canal = await this.storage.get('canal')
     let Id = await this.storage.get('id');  
     let permisos = await this.storage.get('p');
+    permisos = permisos[0].p;
     const plaza = [];
     const ids = [];
     let spot = await this.storage.get('spot');
@@ -183,7 +184,8 @@ async  botonbuscar(){
    async ngOnInit() {
 
     await this.storage.create();
-    this.loadLocations();
+    console.log(this.storage.get('id'));
+    await this.loadLocations();
 
     this.storage.remove('plaza')
     this.storage.remove('canal')

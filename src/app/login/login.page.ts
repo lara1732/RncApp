@@ -16,15 +16,15 @@ export class LoginPage implements OnInit {
   BaseUrl = this.Link.BaseLink();
   
   
-  constructor(private Link:AppComponent, private router:Router, private storage:Storage,private http: HttpClient) { }
+  constructor(private Link:AppComponent, private router:Router, private storage:Storage,private http: HttpClient) { 
+    $('#menuId').attr('disabled', 'disabled');
+  }
 
-  permiso: any;
-  
-
-   Login(){    
+ Login(){    
 
     $('#Preloader').show();
     $('#SaveButtonHome').attr('disabled', 'disabled');
+    $('#menuId').removeAttr('disabled');
 
    var UserName = $("#UserName").val();
    var Password = $("#Password").val();
@@ -56,11 +56,12 @@ export class LoginPage implements OnInit {
                 dataType: "text",
                 data:{login:UserName, pass:Password},
                 crossDomain: true,
-                async: true,
+                async: false,
                 success:(dataId) =>{
                 
                   this.storage.set("id",dataId);
-                  this.permisos();                 
+                  this.permisos(dataId);    
+                               
                   
                 }
               })
@@ -137,22 +138,22 @@ export class LoginPage implements OnInit {
     }
   }
 
-  async permisos(){
-
-    let Id =  await this.storage.get('id');
-  
+   permisos(Id: any){
 
     this.http
       .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getPrivilege.php?id='+Id)
-      .subscribe((res: any) => {
+      .subscribe((res) => {
+        console.log(res)
         
-        this.storage.set('p',res[0].p);
+        this.storage.set('p',res);
         
       });
   }
 
   async ngOnInit() {
     await this.storage.create();
+       
+
     
   }
 
