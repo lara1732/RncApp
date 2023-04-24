@@ -22,6 +22,8 @@ export class InicioPage implements OnInit {
   link="";
   calendarVisible = true;
   calendarOptions: CalendarOptions = {
+
+    
     
 
     locale:'es',
@@ -36,13 +38,16 @@ export class InicioPage implements OnInit {
       dayGridMonth: { buttonText: 'Mes' },
       timeGridWeek: { buttonText: 'Semana' },
       listWeek: { buttonText: 'Lista' },
+      title: {month: 'short'}
     },
+    
     
     headerToolbar: {
       left: 'prev,next today',
-      //center: 'title',
+      center: 'title',
       right: 'dayGridMonth,timeGridWeek,listWeek'
     },
+    
     eventTimeFormat: { // like '14:30:00'
       hour: '2-digit',
       minute: '2-digit',
@@ -70,6 +75,7 @@ export class InicioPage implements OnInit {
     
     
     
+    
 
     eventClick: this.handleEventClick.bind(this),
     eventsSet: this.handleEvents.bind(this)
@@ -89,6 +95,7 @@ export class InicioPage implements OnInit {
     
 
   }
+  
   handleCalendarToggle() {
     this.calendarVisible = !this.calendarVisible;
   }
@@ -97,6 +104,8 @@ export class InicioPage implements OnInit {
     const { calendarOptions } = this;
     calendarOptions.weekends = !calendarOptions.weekends;
   }
+
+  
 
 
   handleEventClick(clickInfo: EventClickArg) {
