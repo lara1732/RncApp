@@ -5,6 +5,7 @@ import {Router} from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
 import { __values } from 'tslib';
 import * as $ from "jquery";
+
 @Component({
   selector: 'app-video',
   templateUrl: './video.page.html',
@@ -64,7 +65,9 @@ sendURL(){
   //console.log(player.currentTime)
 }
 
-
+async expand(){
+  alert('hola')
+}
 
 async ngOnInit() {
     await this.storage.create();

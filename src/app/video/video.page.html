@@ -11,11 +11,11 @@
 
 <ion-content [fullscreen]="true">
   <br>
-  <ion-item (click)="touch(0)">
+  <ion-item (click)="touch(0)" (pinch)="expand()">
     <video id='video' width=490 height=295 (timeupdate)="recorte()"  src="" type="video/mp4"></video>   
   </ion-item>
 
-  <ion-list >
+  <ion-list [inset]="true">
    
     <ion-item>
       <ion-label id="ref">Referencia</ion-label>
