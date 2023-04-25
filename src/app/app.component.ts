@@ -147,7 +147,13 @@ export class AppComponent {
 
         
       });// Fin Pause
+      this.platform.resume.subscribe(async () => {
 
+        alert("resume");
+
+
+        
+      });// Fin Pause
     });
 
   }
