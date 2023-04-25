@@ -203,8 +203,6 @@ export class AppComponent {
                 $("#ButtonLogin").removeAttr('disabled');
                 $("#ButtonResetLogin").removeAttr('disabled');
 
-
-                this.router.navigate(['/home']);
          
               }else if(obj == "IUOP"){
                 $("#Preloader").hide();
@@ -217,8 +215,6 @@ export class AppComponent {
                 $("#ButtonResetLogin").removeAttr('disabled');
                 Swal.fire({title:'Error', icon:'error', text: 'User without access to this app',heightAuto:false});
               }else if (obj == "UWAS") {
-
-                this.router.navigate(['/home']);
     
               }
             }
