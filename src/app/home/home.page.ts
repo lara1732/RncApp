@@ -86,6 +86,7 @@ export class HomePage implements OnInit {
     const ids = [];
     let spot = await this.storage.get('spot');
     let library = await this.storage.get('library');
+    library = library[0].val
 
     if(spot == null){
       spot = [];
