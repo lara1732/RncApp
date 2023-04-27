@@ -82,10 +82,11 @@ export class HomePage implements OnInit {
     let Id = await this.storage.get('id');  
     let permisos = await this.storage.get('p');
     permisos = permisos[0].p;
-    const plaza = [];
-    const ids = [];
+    let plaza = [];
+    let ids = [];
     let spot = await this.storage.get('spot');
     let library = await this.storage.get('library');
+    library = library[0].val
 
     if(spot == null){
       spot = [];
@@ -97,8 +98,9 @@ export class HomePage implements OnInit {
     }
 
     for(var i=0; i<plazas.length; i++){
-      plaza.push(plazas[i].Plaza)
+      plaza.push("'"+plazas[i].Plaza+"'")
     } 
+     
     
     var  adata = {id:ids, p:permisos, uss:Id, library:library,plaza:plaza}
     
@@ -158,8 +160,10 @@ async  botonbuscar(){
     let canal = await this.storage.get('canal')
     let Id = await this.storage.get('id');  
     let permisos = await this.storage.get('p');
+    permisos = permisos[0].p;
     let spot = await this.storage.get('spot');
     let library = await this.storage.get('library');
+
 
     let canales= "";
 
@@ -168,12 +172,12 @@ async  botonbuscar(){
     }
     canales = canales.slice(1);
 
-    let spots= "";
+    let spots= "'";
 
     for(let i=0; i<spot.length;i++){
-      spots = spots + "," + spot[i].MediaRef;
+      spots = spots + "','" + spot[i].MediaRef;
     }
-    spots = spots.slice(1);
+    spots = spots.slice(3)+"'";
 
     let link = 'https://backup.tregional.mx/AbetCloud/models/queries/App/C_getDetections.php?id='+canales+'&s='+spots+'&p='+permisos+'&u='+Id+'&l='+library[0].value;
     this.storage.set('link',link);

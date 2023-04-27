@@ -13,6 +13,12 @@ INJECTED from C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-p
 		ADDED from C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:3:1-59
 application
 ADDED from C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:5:1-7:15
+meta-data#android.max_aspect
+ADDED from C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:1-68
+	android:value
+		ADDED from C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:46-66
+	android:name
+		ADDED from C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:12-45
 uses-sdk
 INJECTED from C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml

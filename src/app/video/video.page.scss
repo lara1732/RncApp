@@ -25,5 +25,64 @@ ion-toolbar{
         ion-label{       
             color: #000000;
         }
+        
       
       }
+
+      video::-webkit-media-controls-timeline {
+        display: none;
+     }
+   video::-webkit-media-controls-current-time-display{
+        display: none;
+     }
+     video::-webkit-media-controls-time-remaining-display {
+       display:none;
+     }
+     video::-webkit-media-controls-toggle-closed-captions-button{
+      display: none;
+     }#video {
+      pointer-events: none;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+    
+      height: 170px;
+      width: 400px;
+    
+      margin: 0 auto;
+    }
+    
+    b {
+      width: 100%;
+    }
+    
+    .ripple-parent {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    
+      position: relative;
+      overflow: hidden;
+    
+      border: 1px solid #254fa9;
+    
+      user-select: none;
+    
+      width: 100%;
+      height: 50px;
+      border-radius: 8px;
+    }
+    
+    .custom-parent {
+      color: #254fa9;
+    }
+    
+    .custom-ripple {
+      color:  #254fa9;
+    }

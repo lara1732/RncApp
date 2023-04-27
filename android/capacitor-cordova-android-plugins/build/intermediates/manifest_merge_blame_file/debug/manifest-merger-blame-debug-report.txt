@@ -11,6 +11,12 @@
 9
 10    <application>
 10-->C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:5:1-7:15
-11    </application>
-12
-13</manifest>
+11        <meta-data
+11-->C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:1-68
+12            android:name="android.max_aspect"
+12-->C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:12-45
+13            android:value="2.16" />
+13-->C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:46-66
+14    </application>
+15
+16</manifest>

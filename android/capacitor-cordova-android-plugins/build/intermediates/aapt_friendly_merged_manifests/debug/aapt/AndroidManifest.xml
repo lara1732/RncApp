@@ -8,6 +8,9 @@
         android:targetSdkVersion="32" />
 
     <application>
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.16" />
     </application>
 
 </manifest>
