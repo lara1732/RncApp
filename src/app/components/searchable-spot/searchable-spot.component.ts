@@ -85,7 +85,5 @@ export class SearchableSpotComponent implements OnChanges {
     async ngOnInit() {
       await this.storage.create();  
     }
-
-  
   
 }

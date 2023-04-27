@@ -22,7 +22,7 @@
         <ion-searchbar (ionChange)="filter3($any($event))"></ion-searchbar>
       </ion-toolbar>
     </ion-header>
-    <ion-content> 
+    <ion-content>
       <ion-item *ngFor="let item of filtered3">
         <ion-checkbox slot="start" [(ngModel)]="item.selected" (ionChange)="itemSelected3()"></ion-checkbox>
         <ion-label> {{item.MediaRef}}</ion-label>
