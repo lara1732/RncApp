@@ -5,7 +5,7 @@ import {Router} from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
 import { __values } from 'tslib';
 import * as $ from "jquery";
-
+import { Share } from '@capacitor/share';
 
 @Component({
   selector: 'app-video',
@@ -96,5 +96,18 @@ async ngOnInit() {
   $("#start").html('Inicio de detección: <b>'+this.video.dateStart+"</b>")
   $("#end").html('Fin de detección: <b>'+this.video.dateEnd+"</b>")
 }
- 
+
+
+ async compartir(){
+  this.video=await this.storage.get("video");
+  Share.share({
+
+    text: 'Aquí tienes el testigo de tu detección '+this.video.mediaRef,
+    url: 'https://backup.tregional.mx/AbetCloud/',
+  
+  });
+
+
+ }
+
 }

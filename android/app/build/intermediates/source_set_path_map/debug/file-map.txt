@@ -26,4 +26,5 @@ com.abet.movil.app-packaged_res-24 C:\xampp\htdocs\abetrnc\RncApp\node_modules\@
 com.abet.movil.app-packaged_res-25 C:\xampp\htdocs\abetrnc\RncApp\node_modules\@capacitor\app\android\build\intermediates\packaged_res\debug
 com.abet.movil.app-packaged_res-26 C:\xampp\htdocs\abetrnc\RncApp\node_modules\@capacitor\haptics\android\build\intermediates\packaged_res\debug
 com.abet.movil.app-packaged_res-27 C:\xampp\htdocs\abetrnc\RncApp\node_modules\@capacitor\keyboard\android\build\intermediates\packaged_res\debug
-com.abet.movil.app-packaged_res-28 C:\xampp\htdocs\abetrnc\RncApp\node_modules\@capacitor\status-bar\android\build\intermediates\packaged_res\debug
+com.abet.movil.app-packaged_res-28 C:\xampp\htdocs\abetrnc\RncApp\node_modules\@capacitor\share\android\build\intermediates\packaged_res\debug
+com.abet.movil.app-packaged_res-29 C:\xampp\htdocs\abetrnc\RncApp\node_modules\@capacitor\status-bar\android\build\intermediates\packaged_res\debug

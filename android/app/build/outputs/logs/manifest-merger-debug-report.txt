@@ -18,6 +18,7 @@ INJECTED from C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifes
 MERGED from [:capacitor-app] C:\xampp\htdocs\abetrnc\RncApp\node_modules\@capacitor\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:capacitor-haptics] C:\xampp\htdocs\abetrnc\RncApp\node_modules\@capacitor\haptics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:capacitor-keyboard] C:\xampp\htdocs\abetrnc\RncApp\node_modules\@capacitor\keyboard\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:capacitor-share] C:\xampp\htdocs\abetrnc\RncApp\node_modules\@capacitor\share\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:capacitor-status-bar] C:\xampp\htdocs\abetrnc\RncApp\node_modules\@capacitor\status-bar\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:capacitor-android] C:\xampp\htdocs\abetrnc\RncApp\node_modules\@capacitor\android\capacitor\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-16:12
@@ -138,6 +139,8 @@ MERGED from [:capacitor-haptics] C:\xampp\htdocs\abetrnc\RncApp\node_modules\@ca
 MERGED from [:capacitor-haptics] C:\xampp\htdocs\abetrnc\RncApp\node_modules\@capacitor\haptics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:capacitor-keyboard] C:\xampp\htdocs\abetrnc\RncApp\node_modules\@capacitor\keyboard\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:capacitor-keyboard] C:\xampp\htdocs\abetrnc\RncApp\node_modules\@capacitor\keyboard\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:capacitor-share] C:\xampp\htdocs\abetrnc\RncApp\node_modules\@capacitor\share\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:capacitor-share] C:\xampp\htdocs\abetrnc\RncApp\node_modules\@capacitor\share\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:capacitor-status-bar] C:\xampp\htdocs\abetrnc\RncApp\node_modules\@capacitor\status-bar\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:capacitor-status-bar] C:\xampp\htdocs\abetrnc\RncApp\node_modules\@capacitor\status-bar\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:capacitor-android] C:\xampp\htdocs\abetrnc\RncApp\node_modules\@capacitor\android\capacitor\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
