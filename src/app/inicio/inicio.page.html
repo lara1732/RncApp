@@ -10,7 +10,7 @@
 </ion-header>
 <ion-content   [fullscreen]="true" >
       <br>
-      <full-calendar class="demo-app"  *ngIf='calendarVisible' [options]='calendarOptions'>
+      <full-calendar class="demo-app"  *ngIf='calendarVisible' [options]='calendarOptions' #Calendar>
         <ng-template #eventContent let-arg>
           <i>{{ arg.event.title }}</i>
         </ng-template>
