@@ -22,7 +22,15 @@ export class AppComponent {
 
   URL_Link ="https://backup.tregional.mx/AbetCloud/";
 
-  constructor(/*private toast: Toast,*/private platform: Platform, private storage: Storage, private router:Router, private http: HttpClient) {}
+  constructor(/*private toast: Toast,*/private platform: Platform, private storage: Storage, private router:Router, private http: HttpClient) {
+
+    if (this.storage.get('login') != null && this.storage.get('pass') != null){
+      this.router.navigate(['/home']);
+    }else {
+      this.router.navigate(['/login']);
+    }
+
+  }
 
 
 
@@ -274,7 +282,7 @@ export class AppComponent {
   LogOut(){
     $('#menuId').attr('disabled', 'disabled');
     this.storage.clear();
-    console.log("hola")
+   
 
   }
 
