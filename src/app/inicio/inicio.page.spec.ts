@@ -6,7 +6,6 @@ import { InicioPage } from './inicio.page';
 describe('InicioPage', () => {
   let component: InicioPage;
   let fixture: ComponentFixture<InicioPage>;
-  
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({

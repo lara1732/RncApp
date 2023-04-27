@@ -72,6 +72,7 @@ export class LoginPage implements OnInit {
               
                 this.storage.set('login', UserName);
                 this.storage.set('pass', Password); 
+        
                 this.storage.get('login');       
                 this.router.navigate(['/home']);
 

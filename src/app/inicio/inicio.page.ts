@@ -1,37 +1,31 @@
-import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import { Router } from '@angular/router';
 import * as $ from "jquery";
 import Swal from 'sweetalert2';
-import { CalendarOptions, DateSelectArg, EventClickArg, EventApi, Calendar } from '@fullcalendar/core';
+import { CalendarOptions, DateSelectArg, EventClickArg, EventApi } from '@fullcalendar/core';
 import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
-import { FullCalendarComponent } from '@fullcalendar/angular';
 import esLocale from '@fullcalendar/core/locales/es';
 import { async } from '@angular/core/testing';
-import * as moment from 'moment';
-import { Platform } from '@ionic/angular';
 
 @Component({
-  
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
   styleUrls: ['./inicio.page.scss'],
 })
 
-
-
 export class InicioPage implements OnInit {
 
-  @ViewChild('Calendar') calendarComponent: FullCalendarComponent;
   link="";
   calendarVisible = true;
   calendarOptions: CalendarOptions = {
 
     
-        
+    
+
     locale:'es',
     plugins: [
       interactionPlugin,
@@ -50,7 +44,7 @@ export class InicioPage implements OnInit {
     
     headerToolbar: {
       left: 'prev,next today',
-      center: '',
+      center: 'title',
       right: 'dayGridMonth,timeGridWeek,listWeek'
     },
     
@@ -92,19 +86,15 @@ export class InicioPage implements OnInit {
     */
   };
   currentEvents: EventApi[] = [];
-
-
-  
   
   
 
-  constructor(private changeDetector: ChangeDetectorRef, private storage:Storage, private router:Router,){
+  constructor(private changeDetector: ChangeDetectorRef, private storage:Storage, private router:Router){
 
+    
     
 
   }
-
-  
   
   handleCalendarToggle() {
     this.calendarVisible = !this.calendarVisible;
@@ -146,18 +136,21 @@ export class InicioPage implements OnInit {
     this.changeDetector.detectChanges();
   }
 
+  
+
+  
+
+
+
+
+
   async ngOnInit() {
     await this.storage.create();
     this.link = await this.storage.get('link');  
     console.log(this.link);
     this.calendarOptions.events=this.link
-    let calendarApi = this.calendarComponent.getApi();
-    var date = calendarApi.getDate();
-    console.log(moment(date).format('YYYY-MM-DD'));
-
 
   }
-
   
   
   
