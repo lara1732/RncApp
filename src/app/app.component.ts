@@ -23,26 +23,25 @@ export class AppComponent {
   URL_Link ="https://backup.tregional.mx/AbetCloud/";
 
   constructor(/*private toast: Toast,*/private platform: Platform, private storage: Storage, private router:Router, private http: HttpClient) {
-    this.autologin();
-   }
+  }
 
   BaseLink(){
     return this.URL_Link;
   }
 
-  async autologin(){
+  // async autologin(){
     
-    await this.storage.create();
+  //   await this.storage.create();
     
-    let user =  await this.storage.get('login');
-    let pass =  await this.storage.get('pass');
+  //   let user =  await this.storage.get('login');
+  //   let pass =  await this.storage.get('pass');
 
-    if(user != null && pass != null){
-      this.router.navigate(['/home']);
-    }else{
-      this.router.navigate(['/login']);
-    }
-  } 
+  //   if(user != null && pass != null){
+  //     this.router.navigate(['/home']);
+  //   }else{
+  //     this.router.navigate(['/login']);
+  //   }
+  // } 
 
 
   initializeApp() {
