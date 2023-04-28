@@ -13,6 +13,7 @@ import esLocale from '@fullcalendar/core/locales/es';
 import { async } from '@angular/core/testing';
 import * as moment from 'moment';
 import { Platform } from '@ionic/angular';
+import { platform } from 'os';
 
 @Component({
   selector: 'app-inicio',
@@ -43,7 +44,11 @@ export class InicioPage implements OnInit {
       dayGridMonth: { buttonText: 'Mes' },
       timeGridWeek: { buttonText: 'Semana' },
       listWeek: { buttonText: 'Lista' },
-      title: {month: 'short'}
+      
+    },
+
+    buttonText: {
+      today: 'Hoy'
     },
     
     
@@ -81,7 +86,8 @@ export class InicioPage implements OnInit {
     
     
     
-
+    datesSet: this.handleDateChanged.bind(this),
+    
     eventClick: this.handleEventClick.bind(this),
     eventsSet: this.handleEvents.bind(this)
     /* you can update a remote database when these fire:
@@ -141,11 +147,22 @@ export class InicioPage implements OnInit {
     this.changeDetector.detectChanges();
   }
 
+
+  handleDateChanged() {
+    let calendarApi = this.calendarComponent.getApi();
+    var date = calendarApi.getDate();
+    moment.locale('es');
+    //console.log(moment(date).format('YYYY-MM-DD'));
+    let mes = (moment(date).format('MMMM')). charAt(0).toUpperCase() + (moment(date).format('MMMM')).slice(1) ;
+    let title = mes + ' del ' + moment(date).format('YYYY');
+    $("#title").html(title);
+}
+
+
+ 
   
 
   
-
-
 
 
 
@@ -156,7 +173,12 @@ export class InicioPage implements OnInit {
     this.calendarOptions.events=this.link
     let calendarApi = this.calendarComponent.getApi();
     var date = calendarApi.getDate();
-    console.log(moment(date).format('YYYY-MM-DD'));
+    moment.locale('es');
+    //console.log(moment(date).format('YYYY-MM-DD'));
+    let mes = (moment(date).format('MMMM')). charAt(0).toUpperCase() + (moment(date).format('MMMM')).slice(1) ;
+    let title = mes + ' del ' + moment(date).format('YYYY');
+    $("#title").html(title);
+
 
   }
   
