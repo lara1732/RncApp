@@ -1,10 +1,10 @@
-<div *ngIf="selected.length; else placeholder">
+<div *ngIf="selected.length; else placeholderP">
   <span *ngFor="let item of selected; let last = last">
     {{ item.Plaza }}{{ last ? "" : ", "}}
   </span>
 </div>
 
-<ng-template #placeholder>Select</ng-template>
+<ng-template id="placeholderP" #placeholderP>Select</ng-template>
 
 <ion-modal [isOpen]="isOpen"> 
   <ng-template>

@@ -5,6 +5,7 @@ import { IonicModule, SearchbarCustomEvent } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
 import * as $ from "jquery";
 
+
 //import { EventEmitter } from 'stream';
 
 @Component({
@@ -84,6 +85,11 @@ export class SearchableSelectComponent implements OnChanges {
 
     async ngOnInit() {
       await this.storage.create();  
+    }
+
+     Clean(){
+
+      this.selected = [];
     }
   
 }

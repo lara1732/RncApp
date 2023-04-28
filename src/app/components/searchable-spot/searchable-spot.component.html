@@ -1,10 +1,10 @@
-<div *ngIf="selected3.length; else placeholder">
+<div *ngIf="selected3.length; else placeholderS">
   <span *ngFor="let item of selected3; let last = last">
     {{item.MediaRef}}{{ last ? "" : ", "}}
   </span>
 </div>
 
-<ng-template #placeholder>Select</ng-template>
+<ng-template #placeholderS>Select</ng-template>
 
 <ion-modal [isOpen]="isOpen3"> 
   <ng-template>

@@ -14,7 +14,7 @@
   <br><br>
 
   <ion-item  (click)="select4.open4()"  (click)="loadLibrary()" > 
-    <ion-label>Selecciona Libreria </ion-label>
+    <ion-label>Selecciona Source </ion-label>
     <app-searchable-library   class="searchable" 
       [data4]="library"
       itemTextField="value"
@@ -48,7 +48,7 @@
   </ion-item>
 
   <ion-item id="spot" (click)="select3.open3()" (click)="loadSpots()" disabled="true">
-    <ion-label>Selecciona Spot</ion-label>
+    <ion-label>Selecciona Libreria</ion-label>
     <app-searchable-spot  class="searchable"  
       [data3]="spots"
       itemTextField="MediaRef"

@@ -8,7 +8,7 @@ import * as $ from "jquery";
 
 @Component({
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule],
+imports: [IonicModule, CommonModule, FormsModule],
   selector: 'app-searchable-library',
   templateUrl: './searchable-library.component.html',
   styleUrls: ['./searchable-library.component.scss'],
@@ -43,8 +43,8 @@ export class SearchableLibraryComponent implements OnInit {
 
   select4(){
     const selected = this.data4.filter((item) => item.selected);
-    this.selected4 = selected;
-    this.selectedChanged.emit(selected);
+    //this.selected4 = selected;
+   // this.selectedChanged.emit(selected);
     this.isOpen4 = false;
     this.storage.set("library",selected);
     
@@ -54,22 +54,26 @@ export class SearchableLibraryComponent implements OnInit {
       $("#spot").attr('disabled','true');
       $("#plaza").attr('disabled','true');
       
+      
     }else{
       $("#plaza").removeAttr('disabled');
-      
+      $("#placeholderP").val("");
     }
+    
+   
+
      
   }
 
   itemSelected4(){    
-    this.selected4 = this.data4.filter((item) => item.selected);
+       this.selected4 = this.data4.filter((item) => item.selected);
 
-      if(!this.multiple && this.selected4.length) {
+       if(!this.multiple && this.selected4.length) {
 
         this.selectedChanged.emit(this.selected4)
         this.select4();
-        this.isOpen4 = false;     
-      }
+                   
+       }
   }
 
   filter4(event: SearchbarCustomEvent){
