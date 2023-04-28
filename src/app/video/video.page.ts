@@ -6,7 +6,7 @@ import { Storage } from '@ionic/storage-angular';
 import { __values } from 'tslib';
 import * as $ from "jquery";
 import { Share } from '@capacitor/share';
-
+import { ActionSheetController } from '@ionic/angular';
 @Component({
   selector: 'app-video',
   templateUrl: './video.page.html',
@@ -15,10 +15,13 @@ import { Share } from '@capacitor/share';
 export class VideoPage implements OnInit {
   //videoList = "https://backup.tregional.mx/AbetCloud/";
 
-  constructor(private modalController: ModalController, private videolabService: VideolabService, private router: Router, private storage:Storage) { }
+  constructor(private modalController: ModalController, private videolabService: VideolabService, private router: Router, private storage:Storage
+    ,private actionSheetCtrl: ActionSheetController) { }
     video: any [""];
      
     flag=0;
+
+
 
 full(){
   var elem = <HTMLVideoElement>document.getElementById('video')!;
@@ -34,9 +37,10 @@ sendURL(){
   sourceTag.setAttribute('src', this.video.source);
     sourceTag.setAttribute('type', 'video/mp4');
 }
+
+
  async touch(int: any){
 
-   
   var player = <HTMLVideoElement>document.getElementById('video')!;
     this.flag = this.flag + int;
     if (this.flag == 1){
@@ -75,10 +79,14 @@ sendURL(){
   }
   //console.log(player.currentTime)
 }
+
+
 doubleClick(): void{
   console.log('hola')
   
 }
+
+
 
 async ngOnInit() {
     await this.storage.create();
@@ -109,5 +117,37 @@ async ngOnInit() {
 
 
  }
+
+
+
+ async presentActionSheet() { //submenu
+  const actionSheet = await this.actionSheetCtrl.create({
+   
+    buttons: [
+      {
+        text: 'Full',
+        handler: () => {
+          this.full();
+        }
+      },
+      {
+        text: 'Compartir',
+        handler: () => {
+          this.compartir();
+        }
+      },
+      {
+        text: 'Cancel',
+        role: 'cancel',
+        data: {
+          action: 'cancel',
+        },
+      },
+    ],
+  });
+
+  await actionSheet.present();
+}
+
 
 }

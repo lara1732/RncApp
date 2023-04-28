@@ -7,6 +7,7 @@
       Video
     </ion-title>
   </ion-toolbar>
+  
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -31,7 +32,8 @@
     </ion-item>
  
   </ion-list>
-<ion-button (click)="full()"  shape="round"  expand="block">Full</ion-button>
-<ion-button (click)="compartir()"  shape="round"  expand="block">Compartir</ion-button>
+
+
+  <ion-button (click)="presentActionSheet()"  shape="round"  expand="block">Opciones</ion-button>
 
 </ion-content>
