@@ -126,12 +126,14 @@ async ngOnInit() {
     buttons: [
       {
         text: 'Full',
+        icon:'expand-sharp',
         handler: () => {
           this.full();
         }
       },
       {
         text: 'Compartir',
+        icon:'share-social-sharp',
         handler: () => {
           this.compartir();
         }
@@ -139,6 +141,7 @@ async ngOnInit() {
       {
         text: 'Cancel',
         role: 'cancel',
+        icon:'close-circle-sharp',
         data: {
           action: 'cancel',
         },
