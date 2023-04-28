@@ -29,19 +29,19 @@ export class AppComponent {
     return this.URL_Link;
   }
 
-  // async autologin(){
+  async autologin(){
     
-  //   await this.storage.create();
+    await this.storage.create();
     
-  //   let user =  await this.storage.get('login');
-  //   let pass =  await this.storage.get('pass');
+    let user =  await this.storage.get('login');
+    let pass =  await this.storage.get('pass');
 
-  //   if(user != null && pass != null){
-  //     this.router.navigate(['/home']);
-  //   }else{
-  //     this.router.navigate(['/login']);
-  //   }
-  // } 
+    if(user != null && pass != null){
+      this.router.navigate(['/home']);
+    }else{
+      this.router.navigate(['/login']);
+    }
+  } 
 
 
   initializeApp() {
@@ -55,8 +55,15 @@ export class AppComponent {
         }
       );*/
 
+      
+
       let user =  await this.storage.get('login');
       let pass =  await this.storage.get('pass');
+
+      if(user != null && pass != null){
+        this.router.navigate(['/home']);
+      }else{
+        
 
       if(user != null && pass != null){
 
@@ -153,7 +160,7 @@ export class AppComponent {
         });  
 
       }
-
+    }
       this.platform.pause.subscribe(async () => {
 
         alert("pausa");
