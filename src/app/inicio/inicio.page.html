@@ -8,7 +8,7 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content   [fullscreen]="true" >
+<ion-content   [fullscreen]="true" (onPressStart) = 'SWIPE()'>
       <br>
       <full-calendar class="demo-app"  *ngIf='calendarVisible' [options]='calendarOptions' #Calendar>
         <ng-template #eventContent let-arg>

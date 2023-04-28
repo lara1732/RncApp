@@ -158,14 +158,6 @@ export class InicioPage implements OnInit {
     $("#title").html(title);
 }
 
-
- 
-  
-
-  
-
-
-
   async ngOnInit() {
     await this.storage.create();
     this.link = await this.storage.get('link');  
@@ -180,6 +172,10 @@ export class InicioPage implements OnInit {
     $("#title").html(title);
 
 
+  }
+  
+  SWIPE (){
+    alert('hola');
   }
   
   
