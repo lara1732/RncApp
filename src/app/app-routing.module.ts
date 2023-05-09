@@ -26,6 +26,14 @@ const routes: Routes = [
     path: 'video',
     loadChildren: () => import('./video/video.module').then( m => m.VideoPageModule)
   },
+  {
+    path: 'stream',
+    loadChildren: () => import('./stream/stream.module').then( m => m.StreamPageModule)
+  },  {
+    path: 'stream',
+    loadChildren: () => import('./stream/stream.module').then( m => m.StreamPageModule)
+  },
+
 
 ];
 

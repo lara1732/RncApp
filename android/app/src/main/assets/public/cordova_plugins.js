@@ -10,6 +10,14 @@
         ]
         },
       {
+          "id": "cordova-plugin-streaming-media.StreamingMedia",
+          "file": "plugins/cordova-plugin-streaming-media/www/StreamingMedia.js",
+          "pluginId": "cordova-plugin-streaming-media",
+        "clobbers": [
+          "streamingMedia"
+        ]
+        },
+      {
           "id": "cordova-plugin-x-toast.Toast",
           "file": "plugins/cordova-plugin-x-toast/www/Toast.js",
           "pluginId": "cordova-plugin-x-toast",
@@ -22,6 +30,7 @@
     // TOP OF METADATA
     {
       "cordova-plugin-fullscreen": "1.3.0",
+      "cordova-plugin-streaming-media": "2.3.0",
       "cordova-plugin-x-toast": "2.7.3"
     };
     // BOTTOM OF METADATA

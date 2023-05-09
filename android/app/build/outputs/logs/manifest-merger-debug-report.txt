@@ -21,7 +21,7 @@ MERGED from [:capacitor-keyboard] C:\xampp\htdocs\abetrnc\RncApp\node_modules\@c
 MERGED from [:capacitor-share] C:\xampp\htdocs\abetrnc\RncApp\node_modules\@capacitor\share\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:capacitor-status-bar] C:\xampp\htdocs\abetrnc\RncApp\node_modules\@capacitor\status-bar\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:capacitor-android] C:\xampp\htdocs\abetrnc\RncApp\node_modules\@capacitor\android\capacitor\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-16:12
+MERGED from [:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-27:12
 MERGED from [androidx.appcompat:appcompat:1.4.2] C:\Users\dr605\.gradle\caches\transforms-3\a8e52a507448d4b845688b4ff42bab35\transformed\appcompat-1.4.2\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] C:\Users\dr605\.gradle\caches\transforms-3\96bfe7ff07b49e78a3a68f6b88db966e\transformed\coordinatorlayout-1.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core-splashscreen:1.0.0-rc01] C:\Users\dr605\.gradle\caches\transforms-3\86f2c94e123f7d631ee33b23bd175149\transformed\jetified-core-splashscreen-1.0.0-rc01\AndroidManifest.xml:17:1-24:12
@@ -73,8 +73,8 @@ INJECTED from C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifes
 		ADDED from C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:2:11-69
 application
 ADDED from C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:5:5-38:19
-MERGED from [:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-14:19
-MERGED from [:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-14:19
+MERGED from [:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-25:19
+MERGED from [:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-25:19
 MERGED from [androidx.emoji2:emoji2:1.0.0] C:\Users\dr605\.gradle\caches\transforms-3\8876b0ef355d9d3e8b47dae2b38cca4c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:25:5-35:19
 MERGED from [androidx.emoji2:emoji2:1.0.0] C:\Users\dr605\.gradle\caches\transforms-3\8876b0ef355d9d3e8b47dae2b38cca4c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:25:5-35:19
 MERGED from [androidx.core:core:1.8.0] C:\Users\dr605\.gradle\caches\transforms-3\fe0dba67bfac75aa58e7b93d33808165\transformed\core-1.8.0\AndroidManifest.xml:24:5-89
@@ -127,6 +127,8 @@ ADDED from C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.x
 		ADDED from C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:24:27-74
 uses-permission#android.permission.INTERNET
 ADDED from C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:42:5-67
+MERGED from [:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-67
+MERGED from [:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-67
 	android:name
 		ADDED from C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:42:22-64
 uses-sdk
@@ -232,11 +234,27 @@ ADDED from [:capacitor-haptics] C:\xampp\htdocs\abetrnc\RncApp\node_modules\@cap
 	android:name
 		ADDED from [:capacitor-haptics] C:\xampp\htdocs\abetrnc\RncApp\node_modules\@capacitor\haptics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-63
 meta-data#android.max_aspect
-ADDED from [:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:9-13:36
+ADDED from [:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:9-15:36
 	android:value
-		ADDED from [:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-33
+		ADDED from [:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-33
 	android:name
-		ADDED from [:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-46
+		ADDED from [:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-46
+activity#com.hutchind.cordova.plugins.streamingmedia.SimpleAudioStream
+ADDED from [:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:9-20:51
+	android:label
+		ADDED from [:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-48
+	android:configChanges
+		ADDED from [:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-59
+	android:name
+		ADDED from [:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-89
+activity#com.hutchind.cordova.plugins.streamingmedia.SimpleVideoStream
+ADDED from [:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:21:9-24:51
+	android:label
+		ADDED from [:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-48
+	android:configChanges
+		ADDED from [:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:23:13-59
+	android:name
+		ADDED from [:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:22:13-89
 provider#androidx.startup.InitializationProvider
 ADDED from [androidx.emoji2:emoji2:1.0.0] C:\Users\dr605\.gradle\caches\transforms-3\8876b0ef355d9d3e8b47dae2b38cca4c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\dr605\.gradle\caches\transforms-3\31fc96d9881c54f9b47ddec530ec8052\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:26:9-34:20
