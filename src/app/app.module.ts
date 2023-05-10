@@ -8,14 +8,14 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { HttpClientModule } from '@angular/common/http';
-import { StreamingMedia } from '@awesome-cordova-plugins/streaming-media/ngx';
+//import { StreamingMedia } from '@awesome-cordova-plugins/streaming-media/ngx';
 
 
 
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(),IonicStorageModule.forRoot(), AppRoutingModule, FullCalendarModule, HttpClientModule,],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy,},StreamingMedia],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy,},/*StreamingMedia*/],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

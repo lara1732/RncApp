@@ -7,6 +7,12 @@ import { __values } from 'tslib';
 import * as $ from "jquery";
 import { Share } from '@capacitor/share';
 import { ActionSheetController } from '@ionic/angular';
+import { HttpClient } from '@angular/common/http';
+import { AfterViewInit, ViewChild } from '@angular/core';
+import  ChartDataLabels  from 'chartjs-plugin-datalabels';
+import { ElementRef } from '@angular/core';
+import  {Chart} from 'chart.js/auto';
+
 @Component({
   selector: 'app-video',
   templateUrl: './video.page.html',
@@ -15,11 +21,20 @@ import { ActionSheetController } from '@ionic/angular';
 export class VideoPage implements OnInit {
   //videoList = "https://backup.tregional.mx/AbetCloud/";
 
-  constructor(private modalController: ModalController, private videolabService: VideolabService, private router: Router, private storage:Storage
-    ,private actionSheetCtrl: ActionSheetController) { }
-    video: any [""];
-     
+  constructor(private modalController: ModalController, private videolabService: VideolabService, private router: Router, private storage:Storage,
+    private actionSheetCtrl: ActionSheetController, private http: HttpClient, private ElementRef: ElementRef) { 
+      
+    }
+
+    
+    
+
+    video: any [""]; 
     flag=0;
+
+    @ViewChild('radar') private barCanvas: ElementRef;
+    radarChart: any;    
+    data: any = [];
 
 
 
@@ -89,7 +104,9 @@ doubleClick(): void{
 
 
 async ngOnInit() {
-    await this.storage.create();
+
+  
+  await this.storage.create();
   //console.log(this.storage.get("video"));
   
   this.video=await this.storage.get("video");
@@ -103,6 +120,11 @@ async ngOnInit() {
   $("#date").html('Fecha: <b>'+this.video.date+"</b>")
   $("#start").html('Inicio de detección: <b>'+this.video.dateStart+"</b>")
   $("#end").html('Fin de detección: <b>'+this.video.dateEnd+"</b>")
+
+  ////////////////////////// Chart ////////////////////////////////////////
+
+  this.getinformation();
+  
 }
 
 
@@ -152,5 +174,88 @@ async ngOnInit() {
   await actionSheet.present();
 }
 
+getinformation(){
+
+  // let spot = await this.storage.get('spot');
+  // let plazas = await this.storage.get('plaza')
+
+  this.http
+    .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getRadar.php?mf=83791&p=Guadalajara')
+    .subscribe((res: any) => {
+      this.data = JSON.stringify(res);
+      this.data = this.data.slice(2, -2);     
+      this.data = this.data.split(","); 
+      // this.data = res;
+      console.log(this.data)
+      this.chart();
+    }); 
+  
+}
+
+chart(){
+
+  Chart.register(ChartDataLabels);
+  console.log("radar")
+  this.radarChart = new Chart("radar", {
+
+    type: 'radar',
+    data: {
+    labels: [
+      'LasEstrellasXHGA',
+      'XEWO',
+      'CanalCincoXHGUE',
+      'XHG'
+    ],
+    datasets: [{
+      label: '83791',
+      data:this.data,
+      fill: true,
+      backgroundColor: 'rgba(255, 99, 132, 0.2)',
+      borderColor: 'rgb(255, 99, 132)',
+      pointBackgroundColor: 'rgb(255, 99, 132)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(255, 99, 132)'
+    }]
+  },
+  options: {
+    elements: {
+      line: {
+        borderWidth: 3
+      }
+    },
+    plugins: {
+      title: {
+          display: true,
+          text: 'Transmisión de 83791 del 01/01/2023 al 04/05/2023 '
+      },
+      datalabels: {
+       
+        // formatter: (value, ctx) => { 
+         
+        //   console.log(value);
+        //   return value;
+
+
+        // },
+        borderWidth: 2,
+        borderRadius: 100,
+        color: 'black',
+        font: {
+          weight: 'bold',
+          lineHeight: 1, 
+          size: 16
+        },
+        // formatter: Math.round,
+        //padding: 6
+        padding: {
+          top: 5
+        },
+      },
+    },
+    // maintainAspectRatio: false,
+  }    
+});
+}
 
 }
