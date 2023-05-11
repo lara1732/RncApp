@@ -161,7 +161,6 @@ export class InicioPage implements OnInit {
   async ngOnInit() {
     await this.storage.create();
     this.link = await this.storage.get('link');  
-    console.log(this.link);
     this.calendarOptions.events=this.link
     let calendarApi = this.calendarComponent.getApi();
     var date = calendarApi.getDate();

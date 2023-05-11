@@ -12,6 +12,7 @@ import { AfterViewInit, ViewChild } from '@angular/core';
 import  ChartDataLabels  from 'chartjs-plugin-datalabels';
 import { ElementRef } from '@angular/core';
 import  {Chart} from 'chart.js/auto';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-video',
@@ -21,14 +22,13 @@ import  {Chart} from 'chart.js/auto';
 export class VideoPage implements OnInit {
   //videoList = "https://backup.tregional.mx/AbetCloud/";
 
+  
+
   constructor(private modalController: ModalController, private videolabService: VideolabService, private router: Router, private storage:Storage,
     private actionSheetCtrl: ActionSheetController, private http: HttpClient, private ElementRef: ElementRef) { 
       
     }
-
     
-    
-
     video: any [""]; 
     flag=0;
 
@@ -124,8 +124,7 @@ async ngOnInit() {
   ////////////////////////// Chart ////////////////////////////////////////
 
   this.getinformation();
-  
-}
+ }
 
 
  async compartir(){
@@ -174,13 +173,19 @@ async ngOnInit() {
   await actionSheet.present();
 }
 
-getinformation(){
+async getinformation(){
 
-  // let spot = await this.storage.get('spot');
-  // let plazas = await this.storage.get('plaza')
+  let spot = await this.storage.get('video');
+  let plaza  = await this.storage.get('plaza');
+  let plazas = "";
+
+  for(let i=0; i<plaza.length;i++){
+    plazas = plazas + "," + plaza[i].Plaza;
+  }
+  plazas = plazas.slice(1);
 
   this.http
-    .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getRadar.php?mf=83791&p=Guadalajara')
+    .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getRadar.php?mf='+spot.mediaRef+'&p='+plazas)
     .subscribe((res: any) => {
       this.data = JSON.stringify(res);
       this.data = this.data.slice(2, -2);     
@@ -192,7 +197,13 @@ getinformation(){
   
 }
 
-chart(){
+async chart(){
+
+  const date = new Date();
+  const hoy = date.toLocaleDateString();
+
+
+  let spot = await this.storage.get('video');
 
   Chart.register(ChartDataLabels);
   console.log("radar")
@@ -207,7 +218,7 @@ chart(){
       'XHG'
     ],
     datasets: [{
-      label: '83791',
+      label: spot.mediaRef,
       data:this.data,
       fill: true,
       backgroundColor: 'rgba(255, 99, 132, 0.2)',
@@ -227,7 +238,7 @@ chart(){
     plugins: {
       title: {
           display: true,
-          text: 'Transmisión de 83791 del 01/01/2023 al 04/05/2023 '
+          text: 'Transmisión de '+spot.mediaRef+ ' del 01/01/2023 al '+hoy
       },
       datalabels: {
        
