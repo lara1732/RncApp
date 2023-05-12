@@ -34,99 +34,98 @@
 22-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:10:9-54
 23        android:supportsRtl="true"
 23-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:11:9-35
-24        android:testOnly="true"
-25        android:theme="@style/AppTheme"
-25-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:12:9-40
-26        android:usesCleartextTraffic="true" >
-26-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:6:9-44
-27        <activity
-27-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:14:9-27:20
-28            android:name="com.abet.movil.MainActivity"
-28-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:16:13-55
-29            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
-29-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:15:13-129
-30            android:exported="true"
-30-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:20:13-36
-31            android:label="@string/title_activity_main"
-31-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:17:13-56
-32            android:launchMode="singleTask"
-32-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:19:13-44
-33            android:theme="@style/AppTheme.NoActionBarLaunch" >
-33-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:18:13-62
-34            <intent-filter>
-34-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:22:13-25:29
-35                <action android:name="android.intent.action.MAIN" />
-35-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:23:17-69
-35-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:23:25-66
-36
-37                <category android:name="android.intent.category.LAUNCHER" />
-37-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:24:17-77
-37-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:24:27-74
-38            </intent-filter>
-39        </activity>
-40
-41        <provider
-42            android:name="androidx.core.content.FileProvider"
-42-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:30:13-62
-43            android:authorities="com.abet.movil.fileprovider"
-43-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:31:13-64
-44            android:exported="false"
-44-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:32:13-37
-45            android:grantUriPermissions="true" >
-45-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:33:13-47
-46            <meta-data
-46-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:34:13-36:64
-47                android:name="android.support.FILE_PROVIDER_PATHS"
-47-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:35:17-67
-48                android:resource="@xml/file_paths" />
-48-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:36:17-51
-49        </provider>
-50
-51        <meta-data
-51-->[:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:9-15:36
-52            android:name="android.max_aspect"
-52-->[:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-46
-53            android:value="2.16" />
-53-->[:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-33
-54
-55        <activity
-55-->[:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:9-20:51
-56            android:name="com.hutchind.cordova.plugins.streamingmedia.SimpleAudioStream"
-56-->[:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-89
-57            android:configChanges="orientation|screenSize"
-57-->[:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-59
-58            android:label="Simple Audio Stream" />
-58-->[:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-48
-59        <activity
-59-->[:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:21:9-24:51
-60            android:name="com.hutchind.cordova.plugins.streamingmedia.SimpleVideoStream"
-60-->[:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:22:13-89
-61            android:configChanges="orientation|screenSize"
-61-->[:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:23:13-59
-62            android:label="Simple Video Stream" />
-62-->[:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-48
-63
-64        <provider
-64-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dr605\.gradle\caches\transforms-3\8876b0ef355d9d3e8b47dae2b38cca4c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
-65            android:name="androidx.startup.InitializationProvider"
-65-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dr605\.gradle\caches\transforms-3\8876b0ef355d9d3e8b47dae2b38cca4c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
-66            android:authorities="com.abet.movil.androidx-startup"
-66-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dr605\.gradle\caches\transforms-3\8876b0ef355d9d3e8b47dae2b38cca4c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
-67            android:exported="false" >
-67-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dr605\.gradle\caches\transforms-3\8876b0ef355d9d3e8b47dae2b38cca4c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
-68            <meta-data
-68-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dr605\.gradle\caches\transforms-3\8876b0ef355d9d3e8b47dae2b38cca4c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
-69                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-69-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dr605\.gradle\caches\transforms-3\8876b0ef355d9d3e8b47dae2b38cca4c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
-70                android:value="androidx.startup" />
-70-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dr605\.gradle\caches\transforms-3\8876b0ef355d9d3e8b47dae2b38cca4c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
-71            <meta-data
-71-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\dr605\.gradle\caches\transforms-3\31fc96d9881c54f9b47ddec530ec8052\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
-72                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-72-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\dr605\.gradle\caches\transforms-3\31fc96d9881c54f9b47ddec530ec8052\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
-73                android:value="androidx.startup" />
-73-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\dr605\.gradle\caches\transforms-3\31fc96d9881c54f9b47ddec530ec8052\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
-74        </provider>
-75    </application>
-76
-77</manifest>
+24        android:theme="@style/AppTheme"
+24-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:12:9-40
+25        android:usesCleartextTraffic="true" >
+25-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:6:9-44
+26        <activity
+26-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:14:9-27:20
+27            android:name="com.abet.movil.MainActivity"
+27-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:16:13-55
+28            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
+28-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:15:13-129
+29            android:exported="true"
+29-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:20:13-36
+30            android:label="@string/title_activity_main"
+30-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:17:13-56
+31            android:launchMode="singleTask"
+31-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:19:13-44
+32            android:theme="@style/AppTheme.NoActionBarLaunch" >
+32-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:18:13-62
+33            <intent-filter>
+33-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:22:13-25:29
+34                <action android:name="android.intent.action.MAIN" />
+34-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:23:17-69
+34-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:23:25-66
+35
+36                <category android:name="android.intent.category.LAUNCHER" />
+36-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:24:17-77
+36-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:24:27-74
+37            </intent-filter>
+38        </activity>
+39
+40        <provider
+41            android:name="androidx.core.content.FileProvider"
+41-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:30:13-62
+42            android:authorities="com.abet.movil.fileprovider"
+42-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:31:13-64
+43            android:exported="false"
+43-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:32:13-37
+44            android:grantUriPermissions="true" >
+44-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:33:13-47
+45            <meta-data
+45-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:34:13-36:64
+46                android:name="android.support.FILE_PROVIDER_PATHS"
+46-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:35:17-67
+47                android:resource="@xml/file_paths" />
+47-->C:\xampp\htdocs\abetrnc\RncApp\android\app\src\main\AndroidManifest.xml:36:17-51
+48        </provider>
+49
+50        <meta-data
+50-->[:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:9-15:36
+51            android:name="android.max_aspect"
+51-->[:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-46
+52            android:value="2.16" />
+52-->[:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-33
+53
+54        <activity
+54-->[:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:9-20:51
+55            android:name="com.hutchind.cordova.plugins.streamingmedia.SimpleAudioStream"
+55-->[:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-89
+56            android:configChanges="orientation|screenSize"
+56-->[:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-59
+57            android:label="Simple Audio Stream" />
+57-->[:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-48
+58        <activity
+58-->[:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:21:9-24:51
+59            android:name="com.hutchind.cordova.plugins.streamingmedia.SimpleVideoStream"
+59-->[:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:22:13-89
+60            android:configChanges="orientation|screenSize"
+60-->[:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:23:13-59
+61            android:label="Simple Video Stream" />
+61-->[:capacitor-cordova-android-plugins] C:\xampp\htdocs\abetrnc\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-48
+62
+63        <provider
+63-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dr605\.gradle\caches\transforms-3\8876b0ef355d9d3e8b47dae2b38cca4c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+64            android:name="androidx.startup.InitializationProvider"
+64-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dr605\.gradle\caches\transforms-3\8876b0ef355d9d3e8b47dae2b38cca4c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+65            android:authorities="com.abet.movil.androidx-startup"
+65-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dr605\.gradle\caches\transforms-3\8876b0ef355d9d3e8b47dae2b38cca4c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+66            android:exported="false" >
+66-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dr605\.gradle\caches\transforms-3\8876b0ef355d9d3e8b47dae2b38cca4c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+67            <meta-data
+67-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dr605\.gradle\caches\transforms-3\8876b0ef355d9d3e8b47dae2b38cca4c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+68                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+68-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dr605\.gradle\caches\transforms-3\8876b0ef355d9d3e8b47dae2b38cca4c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+69                android:value="androidx.startup" />
+69-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dr605\.gradle\caches\transforms-3\8876b0ef355d9d3e8b47dae2b38cca4c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+70            <meta-data
+70-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\dr605\.gradle\caches\transforms-3\31fc96d9881c54f9b47ddec530ec8052\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+71                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+71-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\dr605\.gradle\caches\transforms-3\31fc96d9881c54f9b47ddec530ec8052\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+72                android:value="androidx.startup" />
+72-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\dr605\.gradle\caches\transforms-3\31fc96d9881c54f9b47ddec530ec8052\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+73        </provider>
+74    </application>
+75
+76</manifest>
