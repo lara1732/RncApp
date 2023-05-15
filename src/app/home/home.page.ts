@@ -3,7 +3,8 @@ import { Component,OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import * as $ from "jquery";
 import { Router } from '@angular/router';
-
+import { NavController } from '@ionic/angular';
+import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions } from '@awesome-cordova-plugins/streaming-media/ngx';
 
 @Component({
   selector: 'app-home',
@@ -17,19 +18,26 @@ selectTabs= 'Detecciones';
   spots: any = [];
   library: any = [];
  flag:any;
-  constructor(private http: HttpClient, private storage:Storage, private router:Router) {
+
+ streamplaza: any =[];
+ streamcanal: any =[];
+  constructor(private http: HttpClient, private storage:Storage, private router:Router,private streamingMedia: StreamingMedia,public navCtrl: NavController) {
 
 
   }
   filtroSpot(){
     $("#filtroSpot").removeAttr('hidden');
     $("#filtroStream").attr('hidden', 'true');
+    $("#btnbuscarStream").attr('hidden', 'true');
+    $("#btnbuscar").removeAttr('hidden');
     this.flag=1;
     
   }
   filtroStream(){
     $("#filtroStream").removeAttr('hidden');
     $("#filtroSpot").attr('hidden', 'true');
+    $("#btnbuscar").attr('hidden', 'true');
+    $("#btnbuscarStream").removeAttr('hidden');
     this.flag=2;
 
   }
@@ -41,8 +49,11 @@ selectTabs= 'Detecciones';
     this.http
       .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getPlazas.php?uss='+Id)
       .subscribe((res: any) => {
-        this.locations = res;        
+        this.locations = res;
+        this.streamplaza = res;
+        console.log(this.streamplaza)
       });
+  
       
 
   }
@@ -69,6 +80,7 @@ selectTabs= 'Detecciones';
       .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getChannels.php?id='+Id+'&plaza='+plazas)
       .subscribe((res: any) => {
        this.canales = res; 
+       this.streamcanal = res;
        
         let rest = res;
             
@@ -196,6 +208,17 @@ async  botonbuscar(){
 
 }
 
+botonbuscarStream(){
+
+  let options: StreamingVideoOptions = {
+    successCallback: ()=> {console.log()},
+    errorCallback: ()=> {console.log()},
+    orientation:'portrait'
+
+  }
+    this.streamingMedia.playVideo('http://189.204.160.227:1935/live/Channel04/playlist.m3u8', options);
+
+}
    async ngOnInit() {
 this.filtroSpot()
 

@@ -1,3 +1,33 @@
-<p>
-  stream-plaza works!
-</p>
+<div *ngIf="selected5.length; else placeholderP">
+  <span *ngFor="let item of selected5; let last = last">
+    {{ item.Plaza }}{{ last ? "" : ", "}}
+  </span>
+</div>
+
+<ng-template id="placeholderP" #placeholderP>Select</ng-template>
+
+<ion-modal [isOpen]="isOpen5"> 
+  <ng-template>
+    <ion-header>
+      <ion-toolbar color="primary" >
+        <ion-buttons slot="start">
+          <ion-button (click)="cancel5()">Cancel</ion-button>
+        </ion-buttons>
+        <ion-title>Plazas</ion-title>
+        <ion-buttons slot="end" *ngIf="multiple">
+          <ion-button (click)="select5()">Select</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+      <ion-toolbar>
+        <ion-searchbar  (ionChange)="filter5($any($event))"></ion-searchbar>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-item *ngFor="let item of filtered5">
+        <ion-checkbox slot="start" [(ngModel)]="item.selected" (ionChange)="itemSelected5()"></ion-checkbox>
+        <ion-label> {{item.Plaza}}</ion-label>
+      </ion-item>
+    </ion-content>
+  </ng-template>  
+</ion-modal> 
+

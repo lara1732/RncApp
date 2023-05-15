@@ -9,7 +9,8 @@ import { SearchableSelectComponent } from '../components/searchable-select/searc
 import { SearchableCanalComponent } from '../components/searchable-canal/searchable-canal.component';
 import { SearchableSpotComponent } from '../components/searchable-spot/searchable-spot.component';
 import { SearchableLibraryComponent } from '../components/searchable-library/searchable-library.component';
-
+import { StreamPlazaComponent } from '../components/stream-plaza/stream-plaza.component'; 
+import { StreamCanalComponent } from '../components/stream-canal/stream-canal.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,9 @@ import { SearchableLibraryComponent } from '../components/searchable-library/sea
     SearchableCanalComponent,
     SearchableSelectComponent,
     SearchableSpotComponent,
-    SearchableLibraryComponent        
+    SearchableLibraryComponent,
+    StreamPlazaComponent,
+    StreamCanalComponent
   ],
   declarations: [HomePage]
 })
