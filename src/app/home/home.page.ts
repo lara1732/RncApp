@@ -11,17 +11,28 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-
+selectTabs= 'Detecciones';
   locations: any = [];  
   canales: any = [];
   spots: any = [];
   library: any = [];
-  
+ flag:any;
   constructor(private http: HttpClient, private storage:Storage, private router:Router) {
 
 
   }
+  filtroSpot(){
+    $("#filtroSpot").removeAttr('hidden');
+    $("#filtroStream").attr('hidden', 'true');
+    this.flag=1;
+    
+  }
+  filtroStream(){
+    $("#filtroStream").removeAttr('hidden');
+    $("#filtroSpot").attr('hidden', 'true');
+    this.flag=2;
 
+  }
   async loadLocations() {
 
     let Id =   await this.storage.get('id');  
@@ -186,6 +197,7 @@ async  botonbuscar(){
 }
 
    async ngOnInit() {
+this.filtroSpot()
 
     await this.storage.create();
     console.log(this.storage.get('id'));
@@ -196,6 +208,60 @@ async  botonbuscar(){
     this.storage.remove('spot')
     
 
+  }
+  ////////////////////STREAM///////////////////////
+
+  async loadLocationsStream() {
+
+    let Id =   await this.storage.get('id');  
+   
+
+    this.http
+      .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getPlazas.php?uss='+Id)
+      .subscribe((res: any) => {
+        this.locations = res;        
+      });
+      
+
+  }
+  
+    
+  async loadCanalesStream() {
+    
+    let Id = await this.storage.get('id');  
+    let plaza  = await this.storage.get('plaza');
+    let permisos = await this.storage.get('p');
+    let plazas = "";
+    let canal = await this.storage.get('canal');
+
+    if(canal == null){
+      canal = [];
+    }
+
+    for(let i=0; i<plaza.length;i++){
+      plazas = plazas + "," + plaza[i].Plaza;
+    }
+    plazas = plazas.slice(1);
+
+    this.http
+      .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getChannels.php?id='+Id+'&plaza='+plazas)
+      .subscribe((res: any) => {
+       this.canales = res; 
+       
+        let rest = res;
+            
+    
+        for( var i=0; i < rest.length; i++){
+          for(var j=0; j < canal.length; j++){
+            if (canal[j].ChannelID == rest[i].ChannelID){
+                //coincidencias.push(canal[j]);
+                // rest.push("{selected: true}");
+                 rest[i].selected=true;
+            }
+          }
+        }        
+      });
+     
   }
 
 }
