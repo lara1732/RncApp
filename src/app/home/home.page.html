@@ -6,20 +6,26 @@
     <ion-title>
       Home
     </ion-title>
+    
   </ion-toolbar>
 </ion-header>
-<ion-segment>
-  <ion-segment-button value="Detecciones">
-    <ion-label>Detecciones</ion-label>
-  </ion-segment-button>
-  <ion-segment-button value="Stream">
-    <ion-label>Stream</ion-label>
-  </ion-segment-button>
-</ion-segment>
+
 
 <ion-content [fullscreen]="true">
   <br><br>
 
+  <ion-button shape="round" fill="outline" expand="block" id="btnbuscar" (click)="botonbuscar()"  disabled="true">Buscar</ion-button>
+
+  <ion-segment [(ngModel)]="selectTabs">
+    <ion-segment-button value="Detecciones" (click)="filtroSpot()">
+      <ion-label>Detecciones</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Stream" (click)="filtroStream()">
+      <ion-label>Stream</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+<div id="filtroSpot"  hidden="true">
   <ion-item  (click)="select4.open4()"  (click)="loadLibrary()" > 
     <ion-label>Selecciona Source </ion-label>
     <app-searchable-library   class="searchable" 
@@ -64,10 +70,45 @@
       (selectChanged)="selectChanged($event)"
     ></app-searchable-spot>
   </ion-item>
+</div>
+
+
+
+
+
+
+
+
+
+<div id="filtroStream"  hidden="true">
+  <ion-item id="plaza" (click)="select.open()" disabled="false" > 
+    <ion-label>Selecciona Plaza</ion-label>
+    <app-searchable-select  class="searchable" 
+      [data]="locations" 
+      itemTextField = "Plaza"  
+      [multiple] = "true"  
+      #select
+      (selectChanged)="selectChanged($event)"
+     ></app-searchable-select>
+  </ion-item>
+
+  <ion-item id="canal" (click)="select2.open2()" (click)="loadCanales()" disabled="true" >
+    <ion-label>Selecciona Canal</ion-label>
+    <app-searchable-canal   class="searchable" 
+      [data2]="canales"
+      itemTextField="Name"
+      [multiple] = "true"
+      #select2
+      (selectChanged)="selectChanged($event)"
+    ></app-searchable-canal>
+  </ion-item>
+
+</div>
+
+  
 
  
 
-  <ion-button shape="round" fill="outline" expand="block" id="btnbuscar" (click)="botonbuscar()"  disabled="true">Buscar</ion-button>
   
 
 </ion-content>
