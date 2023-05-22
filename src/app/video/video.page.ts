@@ -22,7 +22,8 @@ import { DatePipe } from '@angular/common';
 export class VideoPage implements OnInit {
   //videoList = "https://backup.tregional.mx/AbetCloud/";
 
-  
+  canales: any = [];
+  spots: any = [];
 
   constructor(private modalController: ModalController, private videolabService: VideolabService, private router: Router, private storage:Storage,
     private actionSheetCtrl: ActionSheetController, private http: HttpClient, private ElementRef: ElementRef) { 
@@ -101,7 +102,49 @@ doubleClick(): void{
   
 }
 
+async canal(){
+  let Id = await this.storage.get('id');  
+  let spot = await this.storage.get('spot');
+  let canal = await this.storage.get('canal');
+  let permisos = await this.storage.get('p');
+  let ids = [];
+  
+  if(spot == null){
+    spot = [];
+  }
+  var  adata = {p:permisos, uss:Id, }
+    
+  $.ajax({
+    url: ('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getSpots.php'),
+    type:'POST',
+    dataType: "Json",
+    data: adata,
+    crossDomain: true,
+    async: true,
+    success:(dataId) =>{        
+      this.spots = dataId;
+        
+      let rest = dataId;
+        
 
+    for( var i=0; i < rest.length; i++){
+      for(var j=0; j < spot.length; j++){
+        if (spot[j].MediaRef == rest[i].MediaRef){
+            //coincidencias.push(canal[j]);
+            // rest.push("{selected: true}");
+             rest[i].selected=true;
+        }
+      }
+    } 
+      
+      
+      
+    }
+  })
+
+
+   
+}
 
 async ngOnInit() {
 
@@ -128,11 +171,11 @@ async ngOnInit() {
 
 
  async compartir(){
-  this.video=await this.storage.get("video");
+  this.video=await this.storage.get("video")+this.spots;
   Share.share({
 
     text: 'Aquí tienes el testigo de tu detección '+this.video.mediaRef,
-    url: 'https://backup.tregional.mx/AbetCloud/',
+    url: 'https://backup.tregional.mx/Abet6/API3.php?id=53506&us=1&uss=root'+this.video.canal,
   
   });
 

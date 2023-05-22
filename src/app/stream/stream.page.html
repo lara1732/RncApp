@@ -5,5 +5,17 @@
 </ion-header>
 
 <ion-content>
-<ion-button (click)="startVideo()">Stream</ion-button>
+
+
+<ion-item>
+  <video style="width: 490px;"  autoplay controls >
+    <source src="http://192.168.100.150/Abet6/Stream_tmp/atsc/Record1/stream.m3u8" type="application/x-mpegURL">
+    </video>
+</ion-item>
+
+
+  <br>
+  <ion-button (click)="startVideo()">Stream</ion-button>
+
+
 </ion-content>
