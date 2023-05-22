@@ -124,7 +124,7 @@ export class InicioPage implements OnInit {
     
     
     var  adata = {id:clickInfo.event.id}
-    
+  
       $.ajax({
         url: ('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getVideo.php'),
         type:'POST',

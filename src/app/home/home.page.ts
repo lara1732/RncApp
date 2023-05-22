@@ -126,7 +126,7 @@ selectTabs= 'Detecciones';
      
     
     var  adata = {id:ids, p:permisos, uss:Id, library:library,plaza:plaza}
-    
+    console.log(adata);
       $.ajax({
         url: ('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getSpots.php'),
         type:'POST',
@@ -201,7 +201,7 @@ async  botonbuscar(){
       spots = spots + "','" + spot[i].MediaRef;
     }
     spots = spots.slice(3)+"'";
-
+ 
     let link = 'https://backup.tregional.mx/AbetCloud/models/queries/App/C_getDetections.php?id='+canales+'&s='+spots+'&p='+permisos+'&u='+Id+'&l='+library[0].value;
     this.storage.set('link',link);
     this.router.navigate(['/inicio']);

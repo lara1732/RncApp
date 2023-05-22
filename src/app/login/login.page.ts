@@ -61,7 +61,7 @@ export class LoginPage implements OnInit {
                 
                   this.storage.set("id",dataId);
                   this.permisos(dataId);    
-                               
+                     
                   
                 }
               })
