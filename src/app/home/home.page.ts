@@ -208,15 +208,22 @@ async  botonbuscar(){
 
 }
 
-botonbuscarStream(){
+async botonbuscarStream(){
 
+  let Vstream = await this.storage.get('Cstream');
+  console.log(Vstream[0].Stream);
   let options: StreamingVideoOptions = {
-    successCallback: ()=> {console.log()},
-    errorCallback: ()=> {console.log()},
-    orientation:'portrait'
+    successCallback: () => { console.log('Video played') },
+    errorCallback: () => { console.log('Error Stream') },
+    orientation: 'landscape',
+    shouldAutoClose: true,
+    controls: false
+  };
+  
+  this.streamingMedia.playVideo(Vstream[0].Stream, options);
 
-  }
-    this.streamingMedia.playVideo('http://189.204.160.227:1935/live/Channel04/playlist.m3u8', options);
+
+
 
 }
    async ngOnInit() {

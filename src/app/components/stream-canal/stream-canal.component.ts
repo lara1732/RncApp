@@ -44,8 +44,8 @@ export class StreamCanalComponent implements OnInit {
     this.selected6 = selected;
     this.selectedChanged.emit(selected);
     this.isOpen6 = false;
-    this.storage.set("plaza",selected);
-    
+    this.storage.set("Cstream",selected);
+    console.log(selected)
 
     if(selected.length == 0){
       $("#streamcanal").attr('disabled','true');
@@ -63,9 +63,15 @@ export class StreamCanalComponent implements OnInit {
     this.selected6 = this.data6.filter((item) => item.selected);
 
     if(!this.multiple && this.selected6.length) {
-
-      this.selectedChanged.emit(this.selected6)
+      const selected = this.data6.filter((item) => item.selected);
+      this.selected6 = selected;
+      this.selectedChanged.emit(selected);
       this.isOpen6 = false;
+      this.storage.set("Cstream",selected);
+      this.selectedChanged.emit(this.selected6)
+      $("#streamcanal").removeAttr('disabled');
+      $("#btnbuscarStream").removeAttr('disabled');
+    //  this.isOpen6 = false;
       //this.data.map((item) => (item.selected = false));
       
     }
