@@ -21,13 +21,9 @@ export class LoginPage implements OnInit {
     $('#menuId').attr('disabled', 'disabled');
   }
 
-  onKeyPress(event: Event) {
-    const keyboardEvent = event as KeyboardEvent; 
-    if (keyboardEvent.key === 'Enter') {
-      // Aquí puedes realizar la acción que deseas al presionar Enter
-      // Por ejemplo, llamar a una función de manejo de clic
-      this.Login();
-    }
+  onEnterKey(event: any) {
+    
+    this.Login();
   }
 
  Login(){    
