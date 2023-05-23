@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import * as $ from "jquery";
 import Swal from 'sweetalert2';
 import { HttpClient } from '@angular/common/http';
+import { Keyboard } from '@ionic-native/keyboard/ngx';
 
 @Component({
   selector: 'app-login',
@@ -16,8 +17,17 @@ export class LoginPage implements OnInit {
   BaseUrl = this.Link.BaseLink();
   
   
-  constructor(private Link:AppComponent, private router:Router, private storage:Storage,private http: HttpClient) { 
+  constructor(private Link:AppComponent, private router:Router, private storage:Storage,private http: HttpClient, private keyboard: Keyboard) { 
     $('#menuId').attr('disabled', 'disabled');
+  }
+
+  onKeyPress(event: Event) {
+    const keyboardEvent = event as KeyboardEvent; 
+    if (keyboardEvent.key === 'Enter') {
+      // Aquí puedes realizar la acción que deseas al presionar Enter
+      // Por ejemplo, llamar a una función de manejo de clic
+      this.Login();
+    }
   }
 
  Login(){    
