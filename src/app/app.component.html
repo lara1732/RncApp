@@ -1,6 +1,6 @@
 <ion-app>
   <ion-menu id="menuId" side="start" menuId="first" contentId="content1">
-    <ion-header>
+    <ion-header class="ion-no-border">
       <ion-toolbar>
         <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
@@ -9,7 +9,7 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-content [fullscreen]="true" color="">      
+    <ion-content [fullscreen]="true">      
       <ion-list >
         <ion-menu-toggle auto-hide="true">
           <ion-item [routerLink]="'/home'" [routerDirection]="'forward'" id="home" lines="full" color="">

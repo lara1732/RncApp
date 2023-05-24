@@ -4,9 +4,11 @@ ion-item{
     color: #d75928;
     --border-color: #d75928;
     font-size: 18px;
-
+    --highlight-color-focused: #274662;
+    
     ion-input{       
         color: #000000;
+        
     }
 }    
 
@@ -25,5 +27,9 @@ ion-text{
     font-size: 10px;
     text-align: center;
 
+}
+
+ion-footer{
+    position: relative;
 }
     

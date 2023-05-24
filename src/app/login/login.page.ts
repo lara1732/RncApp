@@ -82,7 +82,7 @@ export class LoginPage implements OnInit {
                 this.storage.get('login');       
                 this.router.navigate(['/home']);
 
-                $("UserName").val("");
+                $("#UserName").val("");
                 $("#Password").val("");
               break;
 
@@ -147,6 +147,7 @@ export class LoginPage implements OnInit {
 
    permisos(Id: any){
 
+    console.log(Id);
     this.http
       .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getPrivilege.php?id='+Id)
       .subscribe((res) => {
