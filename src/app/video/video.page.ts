@@ -107,7 +107,6 @@ async ngOnInit() {
 
   
   await this.storage.create();
-  console.log(this.storage.get("video"));
   
   this.video=await this.storage.get("video");
   
@@ -120,6 +119,7 @@ async ngOnInit() {
   $("#date").html('Fecha: <b>'+this.video.date+"</b>")
   $("#start").html('Inicio de detección: <b>'+this.video.dateStart+"</b>")
   $("#end").html('Fin de detección: <b>'+this.video.dateEnd+"</b>")
+  $("#cer").html('Certeza: <b>'+Math.round((this.video.confidence)*100)+"%</b>")
 
   ////////////////////////// Chart ////////////////////////////////////////
 
@@ -183,17 +183,20 @@ console.log(user);
 
 async getinformation(){
 
+  let ID = await this.storage.get('id');
   let spot = await this.storage.get('video');
   let plaza  = await this.storage.get('plaza');
   let plazas = "";
 
   for(let i=0; i<plaza.length;i++){
-    plazas = plazas + "," + plaza[i].Plaza;
+    plazas = plazas + "," + plaza[i].PlazaID;
   }
   plazas = plazas.slice(1);
 
+  console.log(spot)
+
   this.http
-    .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getRadar.php?mf='+spot.mediaRef+'&p='+plazas)
+    .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getRadar.php?mf='+spot.mediaRef+'&us='+ID+'&u='+spot.UUID)
     .subscribe((res: any) => {
       this.data = JSON.stringify(res);
       this.data = this.data.slice(2, -2);     
@@ -214,7 +217,6 @@ async chart(){
   let spot = await this.storage.get('video');
 
   Chart.register(ChartDataLabels);
-  console.log("radar")
   this.radarChart = new Chart("radar", {
 
     type: 'radar',

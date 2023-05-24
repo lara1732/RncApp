@@ -44,10 +44,11 @@ selectTabs= 'Detecciones';
   async loadLocations() {
 
     let Id =   await this.storage.get('id');  
-   
+    let library = await this.storage.get('library')
+    console.log(library)
 
     this.http
-      .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getPlazas.php?uss='+Id)
+      .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getPlazas_source.php?id='+Id+'&source='+library[0].val)
       .subscribe((res: any) => {
         this.locations = res;
         this.streamplaza = res;
@@ -66,18 +67,19 @@ selectTabs= 'Detecciones';
     let permisos = await this.storage.get('p');
     let plazas = "";
     let canal = await this.storage.get('canal');
+    let library = await this.storage.get('library');
 
     if(canal == null){
       canal = [];
     }
 
     for(let i=0; i<plaza.length;i++){
-      plazas = plazas + "," + plaza[i].Plaza;
+      plazas = plazas + "," + plaza[i].PlazaID;
     }
     plazas = plazas.slice(1);
 
     this.http
-      .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getChannels.php?id='+Id+'&plaza='+plazas)
+      .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getChannels.php?id='+Id+'&plaza='+plazas+'&source='+library[0].val)
       .subscribe((res: any) => {
        this.canales = res; 
        this.streamcanal = res;
@@ -161,11 +163,12 @@ selectTabs= 'Detecciones';
 
     const library = [
 
-      {val: "TvSpot", value: "Tvspot"},
+      {val: "Spots", value: "Spots"},
       {val: "INE", value: "INE"}
 
     ]
     this.library = library;
+
   
 
   }
