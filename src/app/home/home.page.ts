@@ -23,7 +23,11 @@ selectTabs= 'Detecciones';
 
  streamplaza: any =[];
  streamcanal: any =[];
-  constructor(private http: HttpClient, private storage:Storage, private router:Router,private streamingMedia: StreamingMedia,public navCtrl: NavController, private platform: Platform) {}
+  constructor(private http: HttpClient, private storage:Storage, private router:Router,private streamingMedia: StreamingMedia,public navCtrl: NavController, private platform: Platform) {
+
+    this.backbutton();
+    
+  }
   
   backbutton(){
 
