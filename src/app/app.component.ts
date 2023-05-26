@@ -24,6 +24,7 @@ export class AppComponent {
   URL_Link ="https://backup.tregional.mx/AbetCloud/";
 
   constructor(private toast: Toast, private platform: Platform, private storage: Storage, private router:Router, private http: HttpClient) {
+    this.initializeApp();
   }
 
   BaseLink(){
