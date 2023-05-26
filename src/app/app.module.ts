@@ -9,13 +9,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { StreamingMedia } from '@awesome-cordova-plugins/streaming-media/ngx';
-
+import { Toast } from '@awesome-cordova-plugins/toast/ngx';
 
 
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(),IonicStorageModule.forRoot(), AppRoutingModule, FullCalendarModule, HttpClientModule,],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy,},StreamingMedia],
+  providers: [ Toast, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy,},StreamingMedia],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

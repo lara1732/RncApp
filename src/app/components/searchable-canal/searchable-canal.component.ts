@@ -34,6 +34,7 @@ export class SearchableCanalComponent implements OnChanges {
 
   open2(){
     this.isOpen2 = true;
+    
     $("#canal1").attr('checked','true');
 
   }

@@ -10,6 +10,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import { HttpClient } from '@angular/common/http';
+import { Toast } from '@awesome-cordova-plugins/toast/ngx';
 
 
 
@@ -22,7 +23,7 @@ export class AppComponent {
 
   URL_Link ="https://backup.tregional.mx/AbetCloud/";
 
-  constructor(/*private toast: Toast,*/private platform: Platform, private storage: Storage, private router:Router, private http: HttpClient) {
+  constructor(private toast: Toast, private platform: Platform, private storage: Storage, private router:Router, private http: HttpClient) {
   }
 
   BaseLink(){
@@ -49,11 +50,11 @@ export class AppComponent {
 
       await this.storage.create();
 
-     /* this.toast.show('First Time', '10000', 'center').subscribe(
+     this.toast.show('First Time', '10000', 'center').subscribe(
         toast => {
           console.log(toast);
         }
-      );*/
+      );
 
       
 
@@ -172,11 +173,11 @@ export class AppComponent {
 
         await this.storage.create();
 
-     /* this.toast.show('First Time', '10000', 'center').subscribe(
+      this.toast.show('First Time', '10000', 'center').subscribe(
         toast => {
           console.log(toast);
         }
-      );*/
+      );
 
       let user =  await this.storage.get('login');
       let pass =  await this.storage.get('pass');

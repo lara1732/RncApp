@@ -214,7 +214,7 @@ async  botonbuscar(){
 async botonbuscarStream(){
 
   let Vstream = await this.storage.get('Cstream');
-  console.log(Vstream[0].Stream);
+  console.log(Vstream);
   let options: StreamingVideoOptions = {
     successCallback: () => { console.log('Video played') },
     errorCallback: () => { console.log('Error Stream') },
@@ -228,9 +228,11 @@ async botonbuscarStream(){
 
 
 
+
+
 }
    async ngOnInit() {
-this.filtroSpot()
+  this.filtroSpot()
 
     await this.storage.create();
     console.log(this.storage.get('id'));
