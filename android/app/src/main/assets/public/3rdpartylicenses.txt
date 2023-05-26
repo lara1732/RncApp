@@ -19,6 +19,9 @@ MIT
 @awesome-cordova-plugins/streaming-media
 MIT
 
+@awesome-cordova-plugins/toast
+MIT
+
 @babel/runtime
 MIT
 MIT License

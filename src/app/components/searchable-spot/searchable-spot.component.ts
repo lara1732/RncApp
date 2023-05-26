@@ -36,7 +36,7 @@ export class SearchableSpotComponent implements OnChanges {
   async open3(){
     this.isOpen3 = true;
     const loading = await this.loadingCtrl.create({
-      message: 'Dismissing after 3 seconds...',
+      message: 'Cargando...',
       duration: 3000,
     });
 
