@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions } from '@awesome-cordova-plugins/streaming-media/ngx';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -21,10 +22,13 @@ selectTabs= 'Detecciones';
 
  streamplaza: any =[];
  streamcanal: any =[];
-  constructor(private http: HttpClient, private storage:Storage, private router:Router,private streamingMedia: StreamingMedia,public navCtrl: NavController) {
+  constructor(private http: HttpClient, private storage:Storage, private router:Router,private streamingMedia: StreamingMedia,public navCtrl: NavController) {}
 
+  async showLoading() {
 
   }
+
+  
   filtroSpot(){
     $("#filtroSpot").removeAttr('hidden');
     $("#filtroStream").attr('hidden', 'true');

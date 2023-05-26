@@ -39,10 +39,7 @@ startVideo(){
 
    // this.streamingMedia.playVideo('http://189.204.160.227:1935/live/Channel04/playlist.m3u8', options);
 
-streamp()
-{
-  
-}
+
 
   ngOnInit() {
   }
