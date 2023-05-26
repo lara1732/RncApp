@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angu
 import { FormsModule } from '@angular/forms';
 import { IonicModule, SearchbarCustomEvent } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
+import { LoadingController } from '@ionic/angular';
 //import { EventEmitter } from 'stream';
 import * as $ from "jquery";
 
@@ -25,15 +26,21 @@ export class SearchableSpotComponent implements OnChanges {
   filtered3: any[] = [];
 
 
-  constructor(private storage:Storage) { }
-
+  constructor(private storage:Storage,private loadingCtrl: LoadingController) { }
+ 
   ngOnChanges() {
 
     this.filtered3 = this.data3;
   }
 
-  open3(){
+  async open3(){
     this.isOpen3 = true;
+    const loading = await this.loadingCtrl.create({
+      message: 'Dismissing after 3 seconds...',
+      duration: 3000,
+    });
+
+    loading.present();
   }
 
   cancel3(){

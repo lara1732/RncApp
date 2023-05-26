@@ -6,7 +6,7 @@
 
 <ng-template #placeholderS>Select</ng-template>
 
-<ion-modal [isOpen]="isOpen3"> 
+<ion-modal [isOpen]="isOpen3" > 
   <ng-template>
     <ion-header>
       <ion-toolbar color="primary" >
@@ -15,7 +15,7 @@
         </ion-buttons>
         <ion-title>Spots</ion-title>
         <ion-buttons slot="end" *ngIf="multiple">
-          <ion-button (click)="select3()">Select</ion-button>
+          <ion-button (click)="select3()" >Select</ion-button>
         </ion-buttons>
       </ion-toolbar>
       <ion-toolbar>
