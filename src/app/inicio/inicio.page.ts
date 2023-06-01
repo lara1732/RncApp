@@ -172,12 +172,7 @@ export class InicioPage implements OnInit {
 
 
   }
-  
-  SWIPE (){
-    alert('hola');
-  }
-  
-  
+
   
 }
 
