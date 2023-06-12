@@ -99,15 +99,15 @@ selectTabs= 'Detecciones';
        this.canales = res; 
        this.streamcanal = res;
        
-        let rest = res;
+        let restS = res;
             
     
-        for( var i=0; i < rest.length; i++){
+        for( var i=0; i < restS.length; i++){
           for(var j=0; j < canal.length; j++){
-            if (canal[j].ChannelID == rest[i].ChannelID){
+            if (canal[j].ChannelID == restS[i].ChannelID){
                 //coincidencias.push(canal[j]);
                 // rest.push("{selected: true}");
-                 rest[i].selected=true;
+                 restS[i].selected=true;
             }
           }
         }        
@@ -283,30 +283,32 @@ async botonbuscarStream(){
     let permisos = await this.storage.get('p');
     let plazas = "";
     let canal = await this.storage.get('canal');
+    let library = await this.storage.get('library');
 
     if(canal == null){
       canal = [];
     }
 
     for(let i=0; i<plaza.length;i++){
-      plazas = plazas + "," + plaza[i].Plaza;
+      plazas = plazas + "," + plaza[i].PlazaID;
     }
     plazas = plazas.slice(1);
 
     this.http
-      .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getChannels.php?id='+Id+'&plaza='+plazas)
+      .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getChannels.php?id='+Id+'&plaza='+plazas+'&source='+library[0].val)
       .subscribe((res: any) => {
        this.canales = res; 
+       this.streamcanal = res;
        
-        let rest = res;
+        let restS = res;
             
     
-        for( var i=0; i < rest.length; i++){
+        for( var i=0; i < restS.length; i++){
           for(var j=0; j < canal.length; j++){
-            if (canal[j].ChannelID == rest[i].ChannelID){
+            if (canal[j].ChannelID == restS[i].ChannelID){
                 //coincidencias.push(canal[j]);
                 // rest.push("{selected: true}");
-                 rest[i].selected=true;
+                 restS[i].selected=true;
             }
           }
         }        

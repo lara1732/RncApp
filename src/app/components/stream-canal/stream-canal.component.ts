@@ -53,6 +53,7 @@ export class StreamCanalComponent implements OnInit {
       
     }else{
       $("#streamcanal").removeAttr('disabled');
+      
       $("#btnbuscarStream").removeAttr('disabled');
     }
    

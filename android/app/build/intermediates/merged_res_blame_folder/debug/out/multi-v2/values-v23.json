@@ -4,7 +4,7 @@
             "outputFile": "com.abet.movil.app-mergeDebugResources-18:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ivanr\\.gradle\\caches\\transforms-3\\a8e52a507448d4b845688b4ff42bab35\\transformed\\appcompat-1.4.2\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\dr605\\.gradle\\caches\\transforms-3\\a8e52a507448d4b845688b4ff42bab35\\transformed\\appcompat-1.4.2\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",

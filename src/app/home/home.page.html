@@ -93,14 +93,17 @@
       #select5
       (selectChanged)="selectChanged($event)"
      ></app-stream-plaza>
+
+
   </ion-item>
 
-  <ion-item id="streamcanal" (click)="select6.open6()" (click)="loadCanales()" disabled="true" >
+  <ion-item id="streamcanal" (click)="select6.open6()" (click)="loadCanalesStream()" disabled="true"  >
     <ion-label>Selecciona Canal</ion-label>
     <app-stream-canal  class="searchable" 
       [data6]="canales"
       itemTextField="Name"
-      [multiple] = "false"
+      [multiple] = "true"
+  
       #select6
       (selectChanged)="selectChanged($event)"
     ></app-stream-canal>
