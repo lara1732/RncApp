@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component,OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import * as $ from "jquery";
 import { Router } from '@angular/router';
@@ -99,7 +99,7 @@ selectTabs= 'Detecciones';
        this.canales = res; 
        this.streamcanal = res;
        
-        let restS = res;
+       /* let restS = res;
             
     
         for( var i=0; i < restS.length; i++){
@@ -110,7 +110,7 @@ selectTabs= 'Detecciones';
                  restS[i].selected=true;
             }
           }
-        }        
+        }  */      
       });
      
   }
@@ -274,8 +274,47 @@ async botonbuscarStream(){
       
 
   }
-  
+
+
+  isOpen6 = false;
+  selected6: any[] = [];
+  filtered6: any[] = [];
+  @Input() data6: any[] = [];
+  @Input() multiple = false;
+  @Input() itemTextField = '';
+
+  @Output() selectedChanged: EventEmitter<any> = new EventEmitter();
+  select6(){
+    const selected = this.data6.filter((item) => item.selected);
+    this.selected6 = selected;
+    this.selectedChanged.emit(selected);
+    this.isOpen6 = false;
+    this.storage.set("Cstream",selected);
+    console.log(selected)
+
+
     
+   
+    
+  }
+
+  itemSelected6(){
+    this.selected6 = this.data6.filter((item) => item.selected);
+
+    if(!this.multiple && this.selected6.length) {
+      const selected = this.data6.filter((item) => item.selected);
+      this.selected6 = selected;
+      this.selectedChanged.emit(selected);
+      this.isOpen6 = false;
+      this.storage.set("Cstream",selected);
+      this.selectedChanged.emit(this.selected6)
+    
+    //  this.isOpen6 = false;
+      //this.data.map((item) => (item.selected = false));
+      
+    }
+  }
+ 
   async loadCanalesStream() {
     
     let Id = await this.storage.get('id');  
@@ -300,15 +339,15 @@ async botonbuscarStream(){
        this.canales = res; 
        this.streamcanal = res;
        
-        let restS = res;
+        let rest = res;
             
     
-        for( var i=0; i < restS.length; i++){
+        for( var i=0; i < rest.length; i++){
           for(var j=0; j < canal.length; j++){
-            if (canal[j].ChannelID == restS[i].ChannelID){
+            if (canal[j].ChannelID == rest[i].ChannelID){
                 //coincidencias.push(canal[j]);
                 // rest.push("{selected: true}");
-                 restS[i].selected=true;
+                 rest[i].selected=true;
             }
           }
         }        

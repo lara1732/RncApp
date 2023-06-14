@@ -25,7 +25,7 @@
 
   <br>
   
-  <ion-button shape="round" fill="outline" expand="block" id="btnbuscarStream" (click)="botonbuscarStream()"  disabled="true" hidden="true">Buscar Stream</ion-button>
+  <ion-button shape="round" fill="outline" expand="block" id="btnbuscarStream" (click)="botonbuscarStream()"  disabled="false" hidden="true">Buscar Stream</ion-button>
   <ion-button shape="round" fill="outline" expand="block" id="btnbuscar" (click)="botonbuscar()"  disabled="true">Buscar</ion-button>
 
 <div id="filtroSpot"  hidden="true">
@@ -97,18 +97,20 @@
 
   </ion-item>
 
-  <ion-item id="streamcanal" (click)="select6.open6()" (click)="loadCanalesStream()" disabled="true"  >
-    <ion-label>Selecciona Canal</ion-label>
-    <app-stream-canal  class="searchable" 
-      [data6]="canales"
-      itemTextField="Name"
-      [multiple] = "true"
-  
-      #select6
-      (selectChanged)="selectChanged($event)"
-    ></app-stream-canal>
+<ion-list>
+  <ion-item id="streamcanal"  (click)="loadCanalesStream()" disabled="true">
+    <ion-label>Canales</ion-label>
+    <ion-select>
+    <ion-select-option id="streamcanal" 
+    *ngFor="let item of streamcanal" 
+    #select6 class="searchable"
+    itemTextField="Name"     
+    (selectChanged)="selectChanged($event)">
+    {{ item.Name}}
+    </ion-select-option>
+    </ion-select>
   </ion-item>
-
+</ion-list>
 </div>
 
   
