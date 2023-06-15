@@ -275,6 +275,8 @@ async botonbuscarStream(){
 
   }
 
+  
+
 
   isOpen6 = false;
   selected6: any[] = [];
@@ -314,6 +316,8 @@ async botonbuscarStream(){
       
     }
   }
+  
+  
  
   async loadCanalesStream() {
     
