@@ -141,7 +141,7 @@ export class LoginPage implements OnInit {
         $('#Preloader').hide();
         $('#ButtonLogin').removeAttr('disabled');
 
-      Swal.fire({title:'Warning',icon:'warning',text:'Information incomplete',heightAuto: false});
+      Swal.fire({title:'Warning',icon:'error',text:'Information incomplete',heightAuto: false});
     }
   }
 
