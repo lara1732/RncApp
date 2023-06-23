@@ -97,20 +97,24 @@
 
   </ion-item>
 
-<ion-list>
-  <ion-item id="streamcanal"  (click)="loadCanalesStream()" disabled="true">
-    <ion-label>Canales</ion-label>
-    <ion-select>
-    <ion-select-option id="streamcanal" 
-    *ngFor="let item of streamcanal" 
-    #select6 class="searchable"
-    itemTextField="Name"     
-    (selectChanged)="selectChanged($event)">
-    {{ item.Name}}
-    </ion-select-option>
-    </ion-select>
-  </ion-item>
-</ion-list>
+  
+  
+
+  <ion-list>
+    <ion-item id="streamcanal"  (click)="loadCanalesStream()">
+      <ion-select aria-label="Fruit" interface="action-sheet" placeholder="Selecciona Canal">
+        <ion-select-option id="streamcanal" 
+        *ngFor="let item of streamcanal" 
+        #select6 class="searchable"
+        itemTextField="Name"     
+        (selectChanged)="selectChanged($event)">
+        {{ item.Name}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+
 </div>
 
   
