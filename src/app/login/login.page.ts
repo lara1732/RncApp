@@ -15,8 +15,8 @@ import { Keyboard } from '@ionic-native/keyboard/ngx';
 export class LoginPage implements OnInit {
 
   BaseUrl = this.Link.BaseLink();
-  
-  
+  visible:boolean = true;
+  changetype:boolean = true;
   constructor(private Link:AppComponent, private router:Router, private storage:Storage,private http: HttpClient, private keyboard: Keyboard) { 
     $('#menuId').attr('disabled', 'disabled');
   }
@@ -24,6 +24,11 @@ export class LoginPage implements OnInit {
   onEnterKey(event: any) {
     
     this.Login();
+  }
+
+  viewpass(){
+    this.visible = !this.visible
+    this.changetype= !this.changetype;
   }
 
  Login(){    
