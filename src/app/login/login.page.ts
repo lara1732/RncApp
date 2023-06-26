@@ -15,10 +15,26 @@ import { Keyboard } from '@ionic-native/keyboard/ngx';
 export class LoginPage implements OnInit {
 
   BaseUrl = this.Link.BaseLink();
+<<<<<<< Updated upstream
   visible:boolean = true;
   changetype:boolean = true;
+=======
+
+  passwordType: string = 'password';
+  passwordShown: boolean = false;
+  
+>>>>>>> Stashed changes
   constructor(private Link:AppComponent, private router:Router, private storage:Storage,private http: HttpClient, private keyboard: Keyboard) { 
     $('#menuId').attr('disabled', 'disabled');
+  }
+
+  public togglePassword(){
+    if(this.passwordShown){
+      this.passwordShown = false;
+    } else {
+      this.passwordShown = true;
+      this.passwordType = 'password';
+    }
   }
 
   onEnterKey(event: any) {
