@@ -97,13 +97,16 @@
 
   </ion-item>
 
+
+
   
   
 
   <ion-list>
-    <ion-item id="streamcanal"  (click)="loadCanalesStream()">
-      <ion-select aria-label="Fruit" interface="action-sheet" placeholder="Selecciona Canal">
+    <ion-item id="streamcanal"   (click)="loadCanalesStream()">
+      <ion-select  interface="action-sheet" placeholder="Selecciona Canal">
         <ion-select-option id="streamcanal" 
+        
         *ngFor="let item of streamcanal" 
         #select6 class="searchable"
         itemTextField="Name"     

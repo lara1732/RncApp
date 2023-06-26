@@ -14,6 +14,7 @@ import { Platform } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
+  
 selectTabs= 'Detecciones';
   locations: any = [];  
   canales: any = [];
@@ -358,5 +359,19 @@ async botonbuscarStream(){
       });
      
   }
+  canal(){
+    const selected = this.data6.filter((item) => item.selected);
+    this.selected6 = selected;
+    this.selectedChanged.emit(selected);
+    this.isOpen6 = false;
+    this.storage.set("Cstream",selected);
+    console.log(selected)
+
+ 
+   
+    
+  }
+
+  
 
 }
