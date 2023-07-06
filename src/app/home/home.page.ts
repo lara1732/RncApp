@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions } from '@awesome-cordova-plugins/streaming-media/ngx';
 import { Platform } from '@ionic/angular';
+//import data from 'src/assets/data/canal.json';
 
 
 @Component({
@@ -14,20 +15,26 @@ import { Platform } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  
+  @Input() data6: any[] = [];
 selectTabs= 'Detecciones';
   locations: any = [];  
   canales: any = [];
   spots: any = [];
   library: any = [];
  flag:any;
-
+ canalesS:any=[];
  streamplaza: any =[];
  streamcanal: any =[];
+
+ //public Scanal:any=data;
   constructor(private http: HttpClient, private storage:Storage, private router:Router,private streamingMedia: StreamingMedia,public navCtrl: NavController, private platform: Platform) {
 
     this.backbutton();
     
+  }
+
+  public getInputValue(inputValue:string){
+    console.log(inputValue);
   }
   
   backbutton(){
@@ -99,6 +106,7 @@ selectTabs= 'Detecciones';
       .subscribe((res: any) => {
        this.canales = res; 
        this.streamcanal = res;
+       console.log(res);
        
        /* let restS = res;
             
@@ -229,17 +237,24 @@ async  botonbuscar(){
 
 async botonbuscarStream(){
 
-  let Vstream = await this.storage.get('Cstream');
+  let Vstream = await this.storage.get('Scanal');
   console.log(Vstream);
-  let options: StreamingVideoOptions = {
-    successCallback: () => { console.log('Video played') },
-    errorCallback: () => { console.log('Error Stream') },
-    orientation: 'landscape',
-    shouldAutoClose: true,
-    controls: false
-  };
-  
-  this.streamingMedia.playVideo(Vstream[0].Stream, options);
+
+  for(let i=0; i<this.streamcanal.length; i++){
+      if(Vstream == this.streamcanal[i].Name){
+        let options: StreamingVideoOptions = {
+          successCallback: () => { console.log('Video played') },
+          errorCallback: () => { console.log('Error Stream') },
+          orientation: 'landscape',
+          shouldAutoClose: true,
+          controls: false
+        };
+        
+        this.streamingMedia.playVideo(this.streamcanal[0].Stream, options);
+      }
+  }
+ 
+ 
 
 
 
@@ -282,7 +297,7 @@ async botonbuscarStream(){
   isOpen6 = false;
   selected6: any[] = [];
   filtered6: any[] = [];
-  @Input() data6: any[] = [];
+  //@Input() data6: any[] = [];
   @Input() multiple = false;
   @Input() itemTextField = '';
 
@@ -343,7 +358,7 @@ async botonbuscarStream(){
       .subscribe((res: any) => {
        this.canales = res; 
        this.streamcanal = res;
-       
+       console.log(this.streamcanal);
         let rest = res;
             
     
@@ -359,18 +374,14 @@ async botonbuscarStream(){
       });
      
   }
-  canal(){
-    const selected = this.data6.filter((item) => item.selected);
-    this.selected6 = selected;
-    this.selectedChanged.emit(selected);
-    this.isOpen6 = false;
-    this.storage.set("Cstream",selected);
-    console.log(selected)
 
- 
-   
-    
+  SelectOption(event: any) {
+    const selectedOption = event.detail.value;
+    this.storage.set("Scanal", selectedOption);
+    console.log(selectedOption);
+    // Realizar acciones con el valor seleccionado
   }
+
 
   
 

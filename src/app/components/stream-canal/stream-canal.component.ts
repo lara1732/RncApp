@@ -41,11 +41,11 @@ export class StreamCanalComponent implements OnInit {
 
   select6(){
     const selected = this.data6.filter((item) => item.selected);
-    this.selected6 = selected;
-    this.selectedChanged.emit(selected);
+    //this.selected6 = selected;
+    //this.selectedChanged.emit(selected);
     this.isOpen6 = false;
     this.storage.set("Cstream",selected);
-    console.log(selected)
+   // console.log(selected)
 
  
    
@@ -57,11 +57,12 @@ export class StreamCanalComponent implements OnInit {
 
     if(!this.multiple && this.selected6.length) {
       const selected = this.data6.filter((item) => item.selected);
-      this.selected6 = selected;
-      this.selectedChanged.emit(selected);
-      this.isOpen6 = true;
+     this.selected6 = selected;
+     this.selectedChanged.emit(selected);
+      this.isOpen6 = false;
       this.storage.set("Cstream",selected);
       this.selectedChanged.emit(this.selected6)
+      this.select6();
 
     //  this.isOpen6 = false;
       //this.data.map((item) => (item.selected = false));
@@ -82,8 +83,5 @@ export class StreamCanalComponent implements OnInit {
       await this.storage.create();  
     }
 
-     Clean(){
-
-      this.selected6 = [];
-    }
+    
 }

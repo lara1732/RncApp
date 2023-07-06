@@ -1,7 +1,15 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
+
 {
+  
   "extends": "./tsconfig.json",
+  "compileOnSave": false,
   "compilerOptions": {
+    /*"files":[
+      "home.page.ts"
+    ],*/
+    "resolveJsonModule": true,
+   // "esModuleInterop":true,
     "outDir": "./out-tsc/app",
     "types": []
   },
