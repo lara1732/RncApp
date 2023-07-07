@@ -87,7 +87,7 @@ export class LoginPage implements OnInit {
                 this.storage.set('pass', Password); 
         
                 this.storage.get('login');       
-                this.router.navigate(['/home']);
+                this.router.navigate(['/seleccion']);
 
                 $("#UserName").val("");
                 $("#Password").val("");

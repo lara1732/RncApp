@@ -33,6 +33,14 @@ const routes: Routes = [
     path: 'stream',
     loadChildren: () => import('./stream/stream.module').then( m => m.StreamPageModule)
   },
+  {
+    path: 'seleccion',
+    loadChildren: () => import('./seleccion/seleccion.module').then( m => m.SeleccionPageModule)
+  },
+  {
+    path: 'streams',
+    loadChildren: () => import('./streams/streams.module').then( m => m.StreamsPageModule)
+  },
 
 
 ];
