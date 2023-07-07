@@ -75,6 +75,7 @@ selectTabs= 'Detecciones';
       .subscribe((res: any) => {
         this.locations = res;
         this.streamplaza = res;
+        console.log(this.locations)
         console.log(this.streamplaza)
       });
   
@@ -188,7 +189,8 @@ selectTabs= 'Detecciones';
     const library = [
 
       {val: "Spots", value: "Spots"},
-      {val: "INE", value: "INE"}
+      {val: "INE", value: "INE"},
+      {val: "Transmisiones", value: "Transmisiones"}
 
     ]
     this.library = library;
@@ -267,9 +269,10 @@ async botonbuscarStream(){
 
     await this.storage.create();
     console.log(this.storage.get('id'));
-    await this.loadLocations();
+  //  await this.loadLocations();
 
     this.storage.remove('plaza')
+    this.storage.remove('library')
     this.storage.remove('canal')
     this.storage.remove('spot')
     

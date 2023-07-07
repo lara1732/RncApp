@@ -101,7 +101,7 @@
 
   <ion-list>
     <ion-item id="streamcanal">
-      <ion-select aria-label="Favorite Fruit" value="Name" (click)="loadCanalesStream()" (ionChange)="SelectOption($event)">
+      <ion-select placeholder="canal" aria-label="Favorite Fruit" value="Name" (click)="loadCanalesStream()" (ionChange)="SelectOption($event)" disabled="false">
         <ion-select-option *ngFor="let item of streamcanal">
           
           <ion-checkbox slot="start" ></ion-checkbox>
@@ -120,18 +120,6 @@
 
 
   
-  <ion-item id="streamcanal" (click)="select6.open6()"  (click)="loadCanalesStream()" disabled="false"  >
-    <ion-label>Selecciona Canal</ion-label>
-    <app-stream-canal 
-      [data6]="canales"
-    
-      [multiple] = "false"
-  
-      #select6
-      (selectChanged)="selectChanged($event)"
-    ></app-stream-canal>
-  </ion-item>
-
 
 
 

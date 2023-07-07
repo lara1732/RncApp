@@ -71,7 +71,7 @@ export class LoginPage implements OnInit {
                 crossDomain: true,
                 async: false,
                 success:(dataId) =>{
-                
+                  console.log(dataId)
                   this.storage.set("id",dataId);
                   this.permisos(dataId);    
                      
