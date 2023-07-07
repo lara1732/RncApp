@@ -89,14 +89,30 @@
     <app-stream-plaza  class="searchable" 
       [data5]="streamplaza" 
       itemTextField = "Plaza"  
-      [multiple] = "true"  
+      [multiple] = "false"  
       #select5
       (selectChanged)="selectChanged($event)"
      ></app-stream-plaza>
 
 
+  </ion-item>  
+
+  
+  
+
+  <ion-item id="streamcanal" (click)="select6.open6()" (click)="loadCanalesStream()" disabled="false"  >
+    <ion-label>Selecciona Canal</ion-label>
+    <app-stream-canal  class="searchable" 
+      [data6]="canales"
+      
+      [multiple] = "false"
+  
+      #select6
+      (selectChanged)="selectChanged($event)"
+    ></app-stream-canal>
   </ion-item>
 
+<<<<<<< Updated upstream
   
 
   <ion-list>
@@ -114,6 +130,8 @@
     </ion-item>
   </ion-list>
 
+=======
+>>>>>>> Stashed changes
 
 
 

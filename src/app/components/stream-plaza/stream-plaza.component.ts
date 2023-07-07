@@ -65,7 +65,7 @@ export class StreamPlazaComponent implements OnChanges {
 
       this.selectedChanged.emit(this.selected5)
       this.isOpen5 = false;
-      //this.data.map((item) => (item.selected = false));
+      //  this.data.map((item) => (item.selected = false));
       
     }
   }
@@ -89,3 +89,4 @@ export class StreamPlazaComponent implements OnChanges {
     }
   
 }
+  
