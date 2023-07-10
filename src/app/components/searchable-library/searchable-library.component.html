@@ -1,6 +1,6 @@
 <div *ngIf="selected4.length; else placeholderL">
   <span *ngFor="let item of selected4; let last = last">
-    {{ item.value }}{{ last ? "" : ", "}}
+    {{ item.Privilege }}{{ last ? "" : ", "}}
   </span>
   
 </div>
@@ -15,7 +15,7 @@
           <ion-button (click)="cancel4()">Cancel</ion-button>
         </ion-buttons>
         <ion-title>Librerias</ion-title>
-        <ion-buttons slot="end" *ngIf="multiple">
+        <ion-buttons slot="end">
           <ion-button (click)="select4()" >Select</ion-button>
         </ion-buttons>
       </ion-toolbar>
@@ -26,7 +26,7 @@
     <ion-content>
       <ion-item *ngFor = "let item of filtered4">
         <ion-checkbox  slot="start" [(ngModel)]="item.selected"  (ionChange)="itemSelected4()" ></ion-checkbox>
-        <ion-label>{{ item.value }}</ion-label>
+        <ion-label>{{ item.Privilege }}</ion-label>
       </ion-item>
     </ion-content>
   </ng-template>

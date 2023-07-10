@@ -17,7 +17,7 @@ imports: [IonicModule, CommonModule, FormsModule],
 export class SearchableLibraryComponent implements OnInit {
 
   @Input() data4: any[] = [];
-  @Input() multiple = false;
+  @Input() multiple4 = false;
   @Input() itemTextField = '';
   @Output() selectedChanged: EventEmitter<any> = new EventEmitter();
 
@@ -44,9 +44,10 @@ export class SearchableLibraryComponent implements OnInit {
   select4(){
     const selected = this.data4.filter((item) => item.selected);
     //this.selected4 = selected;
-   // this.selectedChanged.emit(selected);
+    //this.selectedChanged.emit(selected);
     this.isOpen4 = false;
     this.storage.set("library",selected);
+    console.log(selected)
     
 
     if(selected.length == 0){
@@ -58,22 +59,18 @@ export class SearchableLibraryComponent implements OnInit {
     }else{
       $("#plaza").removeAttr('disabled');
       $("#placeholderP").val("");
-    }
-    
-   
-
-     
+    }    
   }
 
   itemSelected4(){    
        this.selected4 = this.data4.filter((item) => item.selected);
 
-       if(!this.multiple && this.selected4.length) {
+      //  if(!this.multiple && this.selected4.length) {
 
-        this.selectedChanged.emit(this.selected4)
-        this.select4();
+      //   this.selectedChanged.emit(this.selected4)
+      //   this.select4();
                    
-       }
+      //  }
   }
 
   filter4(event: SearchbarCustomEvent){

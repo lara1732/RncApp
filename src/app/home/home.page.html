@@ -34,14 +34,14 @@
     <app-searchable-library   class="searchable" 
       [data4]="library"
       itemTextField="value"
-      [multiple] = "false"
+      [multiple4] = "false"
       #select4
       (selectChanged)="selectChanged($event)"
     ></app-searchable-library>
     
   </ion-item>
 
-  <ion-item id="plaza" (click)="select.open()" disabled="true" > 
+  <ion-item id="plaza" (click)="select.open()" (click)="loadLocations()" disabled="true" > 
     <ion-label>Selecciona Plaza</ion-label>
     <app-searchable-select  class="searchable" 
       [data]="locations" 
