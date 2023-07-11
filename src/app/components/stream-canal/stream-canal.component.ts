@@ -24,6 +24,8 @@ export class StreamCanalComponent implements OnInit {
   selected6: any[] = [];
   filtered6: any[] = [];
 
+  SelectedItem: any; // Variable para almacenar el elemento seleccionado
+
   constructor(private storage:Storage) { }
 
   ngOnChanges() {
@@ -47,16 +49,24 @@ export class StreamCanalComponent implements OnInit {
     this.storage.set("Cstream",selected);
     console.log(selected)
 
- 
-   
+    if(selected.length == 0){
+      $("#btnbuscarStream").attr('disabled','true');
+      
+    }else{
+      $("#btnbuscarStream").removeAttr('disabled');
+      
+    }
     
   }
 
   itemSelected6(item:any){
+
     this.selectedChanged.emit(this.selected6)
-    if( item.selected6 = true){
+    
+    if( item.selected = true){
 
       this.select6();
+      
       this.filtered6.forEach((item) => {
         item.selected = false;
       });

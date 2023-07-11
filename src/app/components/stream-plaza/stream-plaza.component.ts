@@ -44,6 +44,7 @@ export class StreamPlazaComponent implements OnChanges {
     this.selectedChanged.emit(selected);
     this.isOpen5 = false;
     this.storage.set("plaza",selected);
+    console.log(selected);
     
 
     if(selected.length == 0){

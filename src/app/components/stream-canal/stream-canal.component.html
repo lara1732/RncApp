@@ -1,10 +1,10 @@
-<div *ngIf="selected6.length; else placeholderP">
+<div *ngIf="selected6.length; else placeholderSc">
     <span *ngFor="let item of selected6; let last = last">
       {{ item.Name_channel}}{{ last ? "" : ", "}}
     </span>
   </div>
   
-  <ng-template id="placeholderP" #placeholderP>Select</ng-template>
+  <ng-template id="placeholderP" #placeholderSc>Select</ng-template>
   
   <ion-modal [isOpen]="isOpen6"> 
     <ng-template>
@@ -14,7 +14,7 @@
             <ion-button (click)="cancel6()">Cancel</ion-button>
           </ion-buttons>
           <ion-title>Canales</ion-title>
-          <ion-buttons slot="end" *ngIf="multiple">
+          <ion-buttons slot="end">
             <ion-button (click)="select6()">Select</ion-button>
           </ion-buttons>
         </ion-toolbar>

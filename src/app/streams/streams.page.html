@@ -12,22 +12,17 @@
 
 
 <ion-content [fullscreen]="true" >
-  <ion-segment [(ngModel)]="selectTabs" >
- 
-    <ion-segment>
-      <ion-label>Streams</ion-label>
-    </ion-segment>
-  </ion-segment>
 
   <br>
 
-  <ion-button shape="round" fill="outline" expand="block" id="btnbuscarStream" (click)="botonbuscarStream()"  disabled="false">Buscar Stream</ion-button>
-  <div>
-    <ion-item id="streamplaza" (click)="select5.open5()" (click)="loadLocationsStream()" disabled="false" > 
+  <ion-button shape="round" fill="outline" expand="block" id="btnbuscarStream" (click)="botonbuscarStream()"  disabled="true">Buscar Stream</ion-button>
+  
+  <div id="filtroStream">
+    <ion-item  (click)="select5.open5()" (click)="loadLocationsStream()" > 
       <ion-label>Selecciona Plaza</ion-label>
       <app-stream-plaza  class="searchable" 
         [data5]="streamplaza" 
-        itemTextField = ""  
+        itemTextField = "Name"  
         [multiple] = "true"  
         #select5
         (selectChanged)="selectChanged($event)"
@@ -36,12 +31,12 @@
   
     </ion-item>
 
-    <ion-item id="streamcanal" (click)="select6.open6()" (click)="loadCanalesStream()" disabled="false"  >
+    <ion-item id="streamcanal" (click)="select6.open6()" (click)="loadCanalesStream()" disabled="true"  >
       <ion-label>Selecciona Canal</ion-label>
       <app-stream-canal  class="searchable" 
         [data6]="streamcanal"  
-        itemTextField = "" 
-        [multiple] = "true"
+        itemTextField = "Name_channel" 
+        [multiple] = "false"
         #select6
         (selectChanged)="selectChanged($event)"
       ></app-stream-canal>

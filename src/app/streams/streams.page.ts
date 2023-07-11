@@ -68,7 +68,7 @@ export class StreamsPage implements OnInit {
       controls: false
     };
     
-    this.streamingMedia.playVideo(Vstream[0].Stream, options);
+    this.streamingMedia.playVideo(Vstream[0].stream, options);
   
   
   
@@ -106,6 +106,7 @@ async loadCanalesStream() {
   let plaza  = await this.storage.get('plaza');
   let permisos = await this.storage.get('p');
   let plazas = "";
+  
   let canal = await this.storage.get('canal');
   let library = await this.storage.get('library');
 
@@ -114,12 +115,13 @@ async loadCanalesStream() {
   }
 
   for(let i=0; i<plaza.length;i++){
-    plazas = plazas + "," + plaza[i].Name;
+    plazas = plazas + ",'" + plaza[i].Name+ "'";
   }
   plazas = plazas.slice(1);
 
+  
   this.http
-    .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getPlazasstreams.php?uss='+Id)
+    .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getPlazasstreams.php?uss='+Id+'&p='+plazas)
     .subscribe((res: any) => {
      
      this.streamcanal = res;
