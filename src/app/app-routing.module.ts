@@ -29,7 +29,8 @@ const routes: Routes = [
   {
     path: 'stream',
     loadChildren: () => import('./stream/stream.module').then( m => m.StreamPageModule)
-  },  {
+  },
+  {
     path: 'stream',
     loadChildren: () => import('./stream/stream.module').then( m => m.StreamPageModule)
   },

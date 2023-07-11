@@ -1,9 +1,69 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Streams</ion-title>
+<ion-header class="ion-no-border" >
+  <ion-toolbar >
+    <ion-buttons id="btn-menu" slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <!-- <ion-title>
+      Home
+    </ion-title> -->
+    
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
 
+<ion-content [fullscreen]="true" >
+  <ion-segment [(ngModel)]="selectTabs" >
+ 
+    <ion-segment>
+      <ion-label>Streams</ion-label>
+    </ion-segment>
+  </ion-segment>
+
+  <br>
+
+  <ion-button shape="round" fill="outline" expand="block" id="btnbuscarStream" (click)="botonbuscarStream()"  disabled="false">Buscar Stream</ion-button>
+  <div>
+    <ion-item id="streamplaza" (click)="select5.open5()" (click)="loadLocationsStream()" disabled="false" > 
+      <ion-label>Selecciona Plaza</ion-label>
+      <app-stream-plaza  class="searchable" 
+        [data5]="streamplaza" 
+        itemTextField = "Plaza"  
+        [multiple] = "true"  
+        #select5
+        (selectChanged)="selectChanged($event)"
+       ></app-stream-plaza>
+  
+  
+    </ion-item>
+  
+    
+  
+    <ion-list>
+      <ion-item id="streamcanal">
+        <ion-select placeholder="Canal" aria-label="Favorite Fruit" value="Name" (click)="loadCanalesStream()" (ionChange)="SelectOption($event)" disabled="true">
+          <ion-select-option *ngFor="let item of streamcanal">
+            
+            <ion-checkbox slot="start" ></ion-checkbox>
+             {{item.Name}}
+          
+          </ion-select-option>
+          
+        </ion-select>
+  
+      </ion-item>
+    </ion-list>
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  
+  </div>
+  
+    
+  
 </ion-content>
