@@ -25,6 +25,9 @@ export class SearchableLibraryComponent implements OnInit {
   selected4: any[] = [];
   filtered4: any[] = [];
 
+  selectedItem: any; // Variable para almacenar el elemento seleccionado
+
+
 
   constructor(private storage:Storage) { }
 
@@ -42,12 +45,13 @@ export class SearchableLibraryComponent implements OnInit {
   }
 
   select4(){
+
     const selected = this.data4.filter((item) => item.selected);
-    //this.selected4 = selected;
-    //this.selectedChanged.emit(selected);
+    this.selected4 = selected;
+    this.selectedChanged.emit(selected);
     this.isOpen4 = false;
     this.storage.set("library",selected);
-    console.log(selected)
+    // console.log(selected)
     
 
     if(selected.length == 0){
@@ -62,12 +66,30 @@ export class SearchableLibraryComponent implements OnInit {
     }    
   }
 
-  itemSelected4(){    
-       this.selected4 = this.data4.filter((item) => item.selected);
+  itemSelected4(item: any){    
+
+    
+    this.selectedChanged.emit(this.selected4)
+
+   if( item.selected = true){
+
+    this.select4();
+    this.filtered4.forEach((item) => {
+      item.selected = false;
+    });
+
+   }
+    
+    
+  
+    // Almacenar el elemento seleccionado
+    this.selectedItem = item;
+    
+    
 
       //  if(!this.multiple && this.selected4.length) {
 
-      //   this.selectedChanged.emit(this.selected4)
+    
       //   this.select4();
                    
       //  }

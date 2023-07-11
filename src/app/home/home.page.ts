@@ -17,7 +17,6 @@ import { Platform } from '@ionic/angular';
 
 export class HomePage implements OnInit {
 
-  @Input() data6: any[] = [];
   selectTabs= 'Detecciones';
   locations: any = [];  
   canales: any = [];
@@ -25,8 +24,7 @@ export class HomePage implements OnInit {
   library: any = [];
   flag:any;
   canalesS:any=[];
-  streamplaza: any =[];
-  streamcanal: any =[];
+  
 
  //public Scanal:any=data;
   constructor(private http: HttpClient, private storage:Storage, private router:Router,private streamingMedia: StreamingMedia,public navCtrl: NavController, private platform: Platform){
@@ -50,21 +48,6 @@ export class HomePage implements OnInit {
 
   }
 
-  filtroSpot(){
-    $("#filtroSpot").removeAttr('hidden');
-    $("#filtroStream").attr('hidden', 'true');
-    $("#btnbuscarStream").attr('hidden', 'true');
-    $("#btnbuscar").removeAttr('hidden');
-    this.flag=1;    
-  }
-
-  filtroStream(){
-    $("#filtroStream").removeAttr('hidden');
-    $("#filtroSpot").attr('hidden', 'true');
-    $("#btnbuscar").attr('hidden', 'true');
-    $("#btnbuscarStream").removeAttr('hidden');
-    this.flag=2;
-  }
 
   //Obtención de las librerias
   
@@ -93,9 +76,8 @@ export class HomePage implements OnInit {
       .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getPlazas_source.php?id='+Id+'&source='+library[0].Privilege)
       .subscribe((res: any) => {
         this.locations = res;
-        this.streamplaza = res;
+        
         console.log(this.locations)
-        console.log(this.streamplaza)
 
         let restS = res;            
       
@@ -121,6 +103,7 @@ export class HomePage implements OnInit {
     let plazas = "";
     let canal = await this.storage.get('canal');
     let library = await this.storage.get('library');
+    
 
     if(canal == null){
       canal = [];
@@ -135,7 +118,7 @@ export class HomePage implements OnInit {
       .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getChannels.php?id='+Id+'&plaza='+plazas+'&source='+library[0].Privilege)
       .subscribe((res: any) => {
         this.canales = res; 
-        this.streamcanal = res;
+       
         console.log(res);
         
           let restS = res;            
@@ -165,6 +148,18 @@ export class HomePage implements OnInit {
     let spot = await this.storage.get('spot');
     let library = await this.storage.get('library');
     library = library[0].Privilege
+    console.log(permisos)
+    let acceso = await this.storage.get('a');
+    console.log(acceso[0].Spots)
+    let privilegio;
+
+    if(library[0].Privilege == 'Spots'){
+      privilegio = acceso[0].Spots;
+    }else if(library[0].Privilege == 'INE'){
+      privilegio = acceso[0].INE;
+    } else if(library[0].Privilege == 'Transmisiones'){
+      privilegio = acceso[0].Transmisiones;
+    }
 
     if(spot == null){
       spot = [];
@@ -177,10 +172,14 @@ export class HomePage implements OnInit {
 
     for(var i=0; i<plazas.length; i++){
       plaza.push("'"+plazas[i].Name+"'")
+
+      if(library == 'INE'){
+        plaza.push("'National|'")
+      }
     } 
      
     
-    var  adata = {id:ids, p:permisos, uss:Id, library:library,plaza:plaza}
+    var  adata = {id:ids, p:privilegio, uss:Id, library:library,plaza:plaza}
     console.log(adata);
       $.ajax({
         url: ('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getSpots.php'),
@@ -215,7 +214,7 @@ export class HomePage implements OnInit {
 
   }
 
-async  botonbuscar(){
+  async botonbuscar(){
 
     let plazas = await this.storage.get('plaza')    
     let canal = await this.storage.get('canal')
@@ -244,146 +243,10 @@ async  botonbuscar(){
     this.storage.set('link',link);
     this.router.navigate(['/inicio']);
 
-}
-   
-  ////////////////////STREAM///////////////////////
-
-  async loadLocationsStream() {
-
-    let Id =   await this.storage.get('id');  
-   
-
-    this.http
-      .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getPlazas.php?uss='+Id)
-      .subscribe((res: any) => {
-        this.locations = res;        
-      });
-      
-
-  }
-
-  
-
-
-  isOpen6 = false;
-  selected6: any[] = [];
-  filtered6: any[] = [];
-  //@Input() data6: any[] = [];
-  @Input() multiple = false;
-  @Input() itemTextField = '';
-
-  @Output() selectedChanged: EventEmitter<any> = new EventEmitter();
-  select6(){
-    const selected = this.data6.filter((item) => item.selected);
-    this.selected6 = selected;
-    this.selectedChanged.emit(selected);
-    this.isOpen6 = false;
-    this.storage.set("Cstream",selected);
-    console.log(selected)
-
-
-    
-   
-    
-  }
-
-  itemSelected6(){
-    this.selected6 = this.data6.filter((item) => item.selected);
-
-    if(!this.multiple && this.selected6.length) {
-      const selected = this.data6.filter((item) => item.selected);
-      this.selected6 = selected;
-      this.selectedChanged.emit(selected);
-      this.isOpen6 = false;
-      this.storage.set("Cstream",selected);
-      this.selectedChanged.emit(this.selected6)
-    
-    //  this.isOpen6 = false;
-      //this.data.map((item) => (item.selected = false));
-      
-    }
-  }
-  
-  
- 
-  async loadCanalesStream() {
-    
-    let Id = await this.storage.get('id');  
-    let plaza  = await this.storage.get('plaza');
-    let permisos = await this.storage.get('p');
-    let plazas = "";
-    let canal = await this.storage.get('canal');
-    let library = await this.storage.get('library');
-
-    if(canal == null){
-      canal = [];
-    }
-
-    for(let i=0; i<plaza.length;i++){
-      plazas = plazas + "," + plaza[i].PlazaID;
-    }
-    plazas = plazas.slice(1);
-
-    this.http
-      .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getChannels.php?id='+Id+'&plaza='+plazas+'&source='+library[0].val)
-      .subscribe((res: any) => {
-       this.canales = res; 
-       this.streamcanal = res;
-       console.log(this.streamcanal);
-        let rest = res;
-            
-    
-        for( var i=0; i < rest.length; i++){
-          for(var j=0; j < canal.length; j++){
-            if (canal[j].ChannelID == rest[i].ChannelID){
-                //coincidencias.push(canal[j]);
-                // rest.push("{selected: true}");
-                 rest[i].selected=true;
-            }
-          }
-        }        
-      });
-     
-  }
-
-  async botonbuscarStream(){
-
-    let Vstream = await this.storage.get('Scanal');
-    console.log(Vstream);
-  
-    for(let i=0; i<this.streamcanal.length; i++){
-        if(Vstream == this.streamcanal[i].Name){
-          let options: StreamingVideoOptions = {
-            successCallback: () => { console.log('Video played') },
-            errorCallback: () => { console.log('Error Stream') },
-            orientation: 'landscape',
-            shouldAutoClose: true,
-            controls: false
-          };
-          
-          this.streamingMedia.playVideo(this.streamcanal[0].Stream, options);
-        }
-    }
-   
-   
-  
-  
-  
-  
-  
-  
-  }
-
-  SelectOption(event: any) {
-    const selectedOption = event.detail.value;
-    this.storage.set("Scanal", selectedOption);
-    console.log(selectedOption);
-    // Realizar acciones con el valor seleccionado
   }
 
   async ngOnInit() {
-    this.filtroSpot()
-  
+      
       await this.storage.create();
       console.log(this.storage.get('id'));
     //  await this.loadLocations();

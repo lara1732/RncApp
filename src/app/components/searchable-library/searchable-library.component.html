@@ -25,7 +25,7 @@
     </ion-header>
     <ion-content>
       <ion-item *ngFor = "let item of filtered4">
-        <ion-checkbox  slot="start" [(ngModel)]="item.selected"  (ionChange)="itemSelected4()" ></ion-checkbox>
+        <ion-checkbox  slot="start" [(ngModel)]="item.selected"  (ionChange)="itemSelected4(item)" ></ion-checkbox>
         <ion-label>{{ item.Privilege }}</ion-label>
       </ion-item>
     </ion-content>

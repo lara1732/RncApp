@@ -73,7 +73,8 @@ export class LoginPage implements OnInit {
                 success:(dataId) =>{
                   console.log(dataId)
                   this.storage.set("id",dataId);
-                  this.permisos(dataId);    
+                  this.permisos(dataId); 
+                  this.acceso(dataId);    
                      
                   
                 }
@@ -163,6 +164,20 @@ export class LoginPage implements OnInit {
         this.storage.set('p',res);
         
       });
+  }
+
+  acceso(Id: any){
+
+    console.log(Id);
+    this.http
+      .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getAccess.php?id='+Id)
+      .subscribe((res) => {
+        console.log(res)
+        
+        this.storage.set('a',res);
+        
+      });
+
   }
 
   async ngOnInit() {
