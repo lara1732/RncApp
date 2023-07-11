@@ -1,6 +1,6 @@
 <div *ngIf="selected6.length; else placeholderP">
     <span *ngFor="let item of selected6; let last = last">
-      {{ item.Name}}{{ last ? "" : ", "}}
+      {{ item.Name_channel}}{{ last ? "" : ", "}}
     </span>
   </div>
   
@@ -24,8 +24,8 @@
       </ion-header>
       <ion-content>
         <ion-item *ngFor="let item of filtered6">
-          <ion-checkbox slot="start" [(ngModel)]="item.selected" (ionChange)="itemSelected6()"></ion-checkbox>
-          <ion-label> {{item.Name}}</ion-label>
+          <ion-checkbox slot="start" [(ngModel)]="item.selected" (ionChange)="itemSelected6(item)"></ion-checkbox>
+          <ion-label> {{item.Name_channel}}</ion-label>
         </ion-item>
       </ion-content>
     </ng-template>  

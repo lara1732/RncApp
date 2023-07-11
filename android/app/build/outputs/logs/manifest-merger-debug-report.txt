@@ -1,21 +1,25 @@
 -- Merging decision tree log ---
 provider#androidx.core.content.FileProvider
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 INJECTED from C:\RncApp\android\app\src\main\AndroidManifest.xml:10:9-12:20
+=======
+INJECTED from C:\RncApp\android\app\src\main\AndroidManifest.xml:29:9-37:20
+>>>>>>> Stashed changes
 	android:grantUriPermissions
-		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:10:96-130
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:33:13-47
 	android:authorities
 		INJECTED from C:\RncApp\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:10:19-70
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:31:13-64
 	android:exported
-		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:10:71-95
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:32:13-37
 	android:name
-		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:10:131-180
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:30:13-62
 manifest
-ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:2:1-16:12
-INJECTED from C:\RncApp\android\app\src\main\AndroidManifest.xml:2:1-16:12
-INJECTED from C:\RncApp\android\app\src\main\AndroidManifest.xml:2:1-16:12
-INJECTED from C:\RncApp\android\app\src\main\AndroidManifest.xml:2:1-16:12
+ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from C:\RncApp\android\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from C:\RncApp\android\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from C:\RncApp\android\app\src\main\AndroidManifest.xml:2:1-44:12
 MERGED from [:capacitor-app] C:\RncApp\node_modules\@capacitor\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:capacitor-haptics] C:\RncApp\node_modules\@capacitor\haptics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:capacitor-keyboard] C:\RncApp\node_modules\@capacitor\keyboard\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
@@ -55,6 +59,7 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\dr605\.g
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\dr605\.gradle\caches\transforms-3\50164032edb9f678c1f5e79c6c6889d6\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [org.apache.cordova:framework:10.1.1] C:\Users\dr605\.gradle\caches\transforms-3\b294c7b79e70a99f26ef48fae3bee632\transformed\jetified-framework-10.1.1\AndroidManifest.xml:20:1-27:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\dr605\.gradle\caches\transforms-3\b2ffb75c7ede1f78772b204cf32e7af2\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
+<<<<<<< Updated upstream
 INJECTED from C:\RncApp\android\app\src\main\AndroidManifest.xml:2:1-16:12
 INJECTED from C:\RncApp\android\app\src\main\AndroidManifest.xml:2:1-16:12
 INJECTED from C:\RncApp\android\app\src\main\AndroidManifest.xml:2:1-16:12
@@ -117,18 +122,23 @@ INJECTED from C:\xampp\htdocs\RncApp\android\app\src\main\AndroidManifest.xml:2:
 INJECTED from C:\xampp\htdocs\RncApp\android\app\src\main\AndroidManifest.xml:2:1-45:12
 INJECTED from C:\xampp\htdocs\RncApp\android\app\src\main\AndroidManifest.xml:2:1-45:12
 >>>>>>> Stashed changes
+=======
+INJECTED from C:\RncApp\android\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from C:\RncApp\android\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from C:\RncApp\android\app\src\main\AndroidManifest.xml:2:1-44:12
+>>>>>>> Stashed changes
 	package
-		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:2:11-35
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:3:5-29
 		INJECTED from C:\RncApp\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\RncApp\android\app\src\main\AndroidManifest.xml
 	android:versionName
 <<<<<<< Updated upstream
 		INJECTED from C:\RncApp\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:2:1-16:12
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:2:1-44:12
 		INJECTED from C:\RncApp\android\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\RncApp\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:2:1-16:12
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:2:1-44:12
 		INJECTED from C:\RncApp\android\app\src\main\AndroidManifest.xml
 =======
 		INJECTED from C:\xampp\htdocs\RncApp\android\app\src\main\AndroidManifest.xml
@@ -140,10 +150,14 @@ INJECTED from C:\xampp\htdocs\RncApp\android\app\src\main\AndroidManifest.xml:2:
 		INJECTED from C:\xampp\htdocs\RncApp\android\app\src\main\AndroidManifest.xml
 >>>>>>> Stashed changes
 	xmlns:android
-		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:2:36-94
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:2:11-69
 application
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:3:5-13:19
+=======
+ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:5:5-38:19
+>>>>>>> Stashed changes
 MERGED from [:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-25:19
 MERGED from [:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-25:19
 MERGED from [androidx.emoji2:emoji2:1.0.0] C:\Users\dr605\.gradle\caches\transforms-3\8876b0ef355d9d3e8b47dae2b38cca4c\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:25:5-35:19
@@ -174,36 +188,41 @@ MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\ivanr\.gradle\cach
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.8.0] C:\Users\dr605\.gradle\caches\transforms-3\fe0dba67bfac75aa58e7b93d33808165\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:3:159-185
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:11:9-35
 	android:label
-		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:3:80-112
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:9:9-41
 	android:roundIcon
-		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:3:113-158
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:10:9-54
 	android:icon
-		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:3:45-79
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:8:9-43
 	android:allowBackup
-		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:3:18-44
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:7:9-35
 	android:theme
-		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:3:186-217
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:12:9-40
 	android:usesCleartextTraffic
-		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:3:218-253
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:6:9-44
 activity#com.abet.movil.MainActivity
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:4:9-9:20
 =======
 ADDED from C:\xampp\htdocs\RncApp\android\app\src\main\AndroidManifest.xml:14:9-28:20
 >>>>>>> Stashed changes
+=======
+ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:14:9-27:20
+>>>>>>> Stashed changes
 	android:label
-		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:4:160-203
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:17:13-56
 	android:launchMode
-		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:4:204-235
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:19:13-44
 	android:exported
-		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:4:136-159
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:20:13-36
 	android:configChanges
-		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:4:19-135
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:15:13-129
 	android:theme
-		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:4:279-328
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:18:13-62
 	android:name
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:4:236-278
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
@@ -213,24 +232,34 @@ ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:5:13-8:29
 intent-filter#action:name:android.app.action.DEVICE_ADMIN_ENABLED+action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\xampp\htdocs\RncApp\android\app\src\main\AndroidManifest.xml:22:13-26:29
 >>>>>>> Stashed changes
+=======
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:16:13-55
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:22:13-25:29
+>>>>>>> Stashed changes
 action#android.intent.action.MAIN
-ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:6:17-69
+ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:23:17-69
 	android:name
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:6:25-66
+=======
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:23:25-66
+>>>>>>> Stashed changes
 category#android.intent.category.LAUNCHER
-ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:7:17-77
+ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:24:17-77
 	android:name
-		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:7:27-74
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:24:27-74
 uses-permission#android.permission.INTERNET
-ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:14:5-67
+ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:42:5-67
 MERGED from [:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-67
 MERGED from [:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-67
 	android:name
-		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:14:22-64
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:42:22-64
 uses-permission#android.permission.BIND_DEVICE_ADMIN
-ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:15:5-76
+ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:43:6-77
 	android:name
+<<<<<<< Updated upstream
 		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:15:22-73
 =======
 		ADDED from C:\xampp\htdocs\RncApp\android\app\src\main\AndroidManifest.xml:23:25-66
@@ -252,6 +281,9 @@ uses-permission#android.permission.BIND_DEVICE_ADMIN
 ADDED from C:\xampp\htdocs\RncApp\android\app\src\main\AndroidManifest.xml:44:6-77
 	android:name
 		ADDED from C:\xampp\htdocs\RncApp\android\app\src\main\AndroidManifest.xml:44:23-74
+>>>>>>> Stashed changes
+=======
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:43:23-74
 >>>>>>> Stashed changes
 uses-sdk
 INJECTED from C:\RncApp\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
@@ -347,10 +379,15 @@ INJECTED from C:\RncApp\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\RncApp\android\app\src\main\AndroidManifest.xml
 meta-data#android.support.FILE_PROVIDER_PATHS
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:11:13-112
+=======
+ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:34:13-36:64
+>>>>>>> Stashed changes
 	android:resource
-		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:11:75-109
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:36:17-51
 	android:name
+<<<<<<< Updated upstream
 		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:11:24-74
 =======
 ADDED from C:\xampp\htdocs\RncApp\android\app\src\main\AndroidManifest.xml:35:13-37:64
@@ -358,6 +395,9 @@ ADDED from C:\xampp\htdocs\RncApp\android\app\src\main\AndroidManifest.xml:35:13
 		ADDED from C:\xampp\htdocs\RncApp\android\app\src\main\AndroidManifest.xml:37:17-51
 	android:name
 		ADDED from C:\xampp\htdocs\RncApp\android\app\src\main\AndroidManifest.xml:36:17-67
+>>>>>>> Stashed changes
+=======
+		ADDED from C:\RncApp\android\app\src\main\AndroidManifest.xml:35:17-67
 >>>>>>> Stashed changes
 uses-permission#android.permission.VIBRATE
 ADDED from [:capacitor-haptics] C:\RncApp\node_modules\@capacitor\haptics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-66

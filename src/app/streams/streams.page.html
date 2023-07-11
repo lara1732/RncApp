@@ -27,7 +27,7 @@
       <ion-label>Selecciona Plaza</ion-label>
       <app-stream-plaza  class="searchable" 
         [data5]="streamplaza" 
-        itemTextField = "Plaza"  
+        itemTextField = ""  
         [multiple] = "true"  
         #select5
         (selectChanged)="selectChanged($event)"
@@ -35,23 +35,20 @@
   
   
     </ion-item>
-  
+
+    <ion-item id="streamcanal" (click)="select6.open6()" (click)="loadCanalesStream()" disabled="false"  >
+      <ion-label>Selecciona Canal</ion-label>
+      <app-stream-canal  class="searchable" 
+        [data6]="streamcanal"  
+        itemTextField = "" 
+        [multiple] = "true"
+        #select6
+        (selectChanged)="selectChanged($event)"
+      ></app-stream-canal>
+    </ion-item>
     
   
-    <ion-list>
-      <ion-item id="streamcanal">
-        <ion-select placeholder="Canal" aria-label="Favorite Fruit" value="Name" (click)="loadCanalesStream()" (ionChange)="SelectOption($event)" disabled="true">
-          <ion-select-option *ngFor="let item of streamcanal">
-            
-            <ion-checkbox slot="start" ></ion-checkbox>
-             {{item.Name}}
-          
-          </ion-select-option>
-          
-        </ion-select>
-  
-      </ion-item>
-    </ion-list>
+
   
   
   

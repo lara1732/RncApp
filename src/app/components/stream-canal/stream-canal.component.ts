@@ -41,33 +41,27 @@ export class StreamCanalComponent implements OnInit {
 
   select6(){
     const selected = this.data6.filter((item) => item.selected);
-    //this.selected6 = selected;
-    //this.selectedChanged.emit(selected);
+    this.selected6 = selected;
+    this.selectedChanged.emit(selected);
     this.isOpen6 = false;
     this.storage.set("Cstream",selected);
-   // console.log(selected)
+    console.log(selected)
 
  
    
     
   }
 
-  itemSelected6(){
-    this.selected6 = this.data6.filter((item) => item.selected);
+  itemSelected6(item:any){
+    this.selectedChanged.emit(this.selected6)
+    if( item.selected6 = true){
 
-    if(!this.multiple && this.selected6.length) {
-      const selected = this.data6.filter((item) => item.selected);
-     this.selected6 = selected;
-     this.selectedChanged.emit(selected);
-      this.isOpen6 = false;
-      this.storage.set("Cstream",selected);
-      this.selectedChanged.emit(this.selected6)
       this.select6();
-
-    //  this.isOpen6 = false;
-      //this.data.map((item) => (item.selected = false));
-      
-    }
+      this.filtered6.forEach((item) => {
+        item.selected = false;
+      });
+  
+     }
   }
 
   filter6(event: SearchbarCustomEvent){

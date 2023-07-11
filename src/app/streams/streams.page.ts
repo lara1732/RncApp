@@ -13,16 +13,13 @@ import { Platform } from '@ionic/angular';
 })
 export class StreamsPage implements OnInit {
 
-  @Input() data6: any[] = [];
-  @Input() data5: any[] = [];
-  @Input() multiple = false;
-  @Input() itemTextField = '';
- @Output() selectedChanged: EventEmitter<any> = new EventEmitter();
+
   
   selectTabs= 'Detecciones';
   isOpen6 = false;
   selected6: any[] = [];
   filtered6: any[] = [];
+  data6: any[] = [];
   canalesS:any=[];
   streamplaza: any =[];
   streamcanal: any =[];
@@ -43,14 +40,6 @@ export class StreamsPage implements OnInit {
 
   }
 
-  filtroStream(){
-    $("#filtroStream").removeAttr('hidden');
-    $("#filtroSpot").attr('hidden', 'true');
-    $("#btnbuscar").attr('hidden', 'true');
-    $("#btnbuscarStream").removeAttr('hidden');
-    this.flag=2;
-
-  }
 
   backbutton(){
 
@@ -64,51 +53,29 @@ export class StreamsPage implements OnInit {
 
   }
 
-  select6(){
-    const selected = this.data6.filter((item) => item.selected);
-    this.selected6 = selected;
-    this.selectedChanged.emit(selected);
-    this.isOpen6 = false;
-    this.storage.set("Cstream",selected);
-    console.log(selected)
-    }
 
-    itemSelected6(){
-      this.selected6 = this.data6.filter((item) => item.selected);
+
   
-      if(!this.multiple && this.selected6.length) {
-        const selected = this.data6.filter((item) => item.selected);
-        this.selected6 = selected;
-        this.selectedChanged.emit(selected);
-        this.isOpen6 = false;
-        this.storage.set("Cstream",selected);
-        this.selectedChanged.emit(this.selected6)
-      
-      //  this.isOpen6 = false;
-        //this.data.map((item) => (item.selected = false));
-        
-      }
-    }
+  async botonbuscarStream(){
 
-async botonbuscarStream(){
-  let Vstream = await this.storage.get('Scanal');
-  console.log(Vstream);
-
-  for(let i=0; i<this.streamcanal.length; i++){
-      if(Vstream == this.streamcanal[i].Name){
-        let options: StreamingVideoOptions = {
-          successCallback: () => { console.log('Video played') },
-          errorCallback: () => { console.log('Error Stream') },
-          orientation: 'landscape',
-          shouldAutoClose: true,
-          controls: false
-        };
-        
-        this.streamingMedia.playVideo(this.streamcanal[0].Stream, options);
-      }
+    let Vstream = await this.storage.get('Cstream');
+    console.log(Vstream);
+    let options: StreamingVideoOptions = {
+      successCallback: () => { console.log('Video played') },
+      errorCallback: () => { console.log('Error Stream') },
+      orientation: 'landscape',
+      shouldAutoClose: true,
+      controls: false
+    };
+    
+    this.streamingMedia.playVideo(Vstream[0].Stream, options);
+  
+  
+  
+  
+  
+  
   }
- 
-}
 
 SelectOption(event: any) {
   const selectedOption = event.detail.value;
@@ -126,7 +93,8 @@ async loadLocationsStream() {
   this.http
     .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getPlazas.php?uss='+Id)
     .subscribe((res: any) => {
-      this.locations = res;        
+      this.streamplaza = res;  
+      console.log(this.streamplaza);    
     });
     
 
@@ -146,14 +114,14 @@ async loadCanalesStream() {
   }
 
   for(let i=0; i<plaza.length;i++){
-    plazas = plazas + "," + plaza[i].PlazaID;
+    plazas = plazas + "," + plaza[i].Name;
   }
   plazas = plazas.slice(1);
 
   this.http
-    .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getChannels.php?id='+Id+'&plaza='+plazas+'&source='+library[0].val)
+    .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getPlazasstreams.php?uss='+Id)
     .subscribe((res: any) => {
-     this.canales = res; 
+     
      this.streamcanal = res;
      console.log(this.streamcanal);
       let rest = res;
