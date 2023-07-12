@@ -11,11 +11,7 @@
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-<<<<<<< Updated upstream
-      "versionCode": 4,
-=======
-      "versionCode": 6,
->>>>>>> Stashed changes
+      "versionCode": 7,
       "versionName": "1.1",
       "outputFile": "AndroidManifest.xml"
     }
