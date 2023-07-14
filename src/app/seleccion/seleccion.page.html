@@ -15,16 +15,34 @@
     <br>
     <br>
     <br>
-  
+   
     <br>
     <img src="../assets/icon/logo.png" width="250px" height="100px">
   </div>
   <br>
-  <br>
-  <br>
-<ion-button (click)="R_streams()" expand="block">Streams</ion-button>
-<br>
-<ion-button (click)="R_spots()" expand="block">Spots</ion-button>
-<br>
-<!-- <ion-button expand="block">Contratos</ion-button> -->
+
+  <ion-slides pager="true"> 
+
+
+    <ion-slide>
+      <img src="../assets/icon/spots.png">
+      <ion-button (click)="R_spots()" expand="block">Detecciones</ion-button>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="../assets/icon/transmisiones.png">
+      <ion-button expand="block">Transmisiones</ion-button>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="../assets/icon/streams.png">
+      <ion-button (click)="R_streams()" expand="block">Streams</ion-button>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="../assets/icon/contratos.png">
+      <ion-button expand="block">Contratos</ion-button>
+    </ion-slide>
+
+  </ion-slides>
 </ion-content>

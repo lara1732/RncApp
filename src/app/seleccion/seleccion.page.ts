@@ -23,4 +23,21 @@ R_spots(){
 R_streams(){
   this.router.navigate(['/streams']);
 }
+
+slides = [
+  {
+    img: '../assets/icon/spots.png'
+  },
+
+  {
+    img: '../assets/icon/streams.png'
+  },
+  {
+    img: '../assets/icon/transmisiones.png'
+  },
+  {
+    img: '../assets/icon/contratos.png'
+  },
+
+];
 }
