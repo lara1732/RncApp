@@ -148,17 +148,16 @@ export class HomePage implements OnInit {
     let spot = await this.storage.get('spot');
     let library = await this.storage.get('library');
     library = library[0].Privilege
-    console.log(library)
+    console.log(permisos)
     let acceso = await this.storage.get('a');
     console.log(acceso[0].Spots)
-  
     let privilegio;
-    
-    if(library == 'Spots'){
+
+    if(library[0].Privilege == 'Spots'){
       privilegio = acceso[0].Spots;
-    }else if(library == 'INE'){
+    }else if(library[0].Privilege == 'INE'){
       privilegio = acceso[0].INE;
-    } else if(library == 'Transmisiones'){
+    } else if(library[0].Privilege == 'Transmisiones'){
       privilegio = acceso[0].Transmisiones;
     }
 
