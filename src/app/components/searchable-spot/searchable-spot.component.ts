@@ -25,6 +25,7 @@ export class SearchableSpotComponent implements OnChanges {
   selected3: any[] = [];
   filtered3: any[] = [];
 
+  selectAll: boolean = false;
 
   constructor(private storage:Storage,private loadingCtrl: LoadingController) { }
  
@@ -61,20 +62,18 @@ export class SearchableSpotComponent implements OnChanges {
       $("#btnbuscar").removeAttr('disabled');
       
     }
-    
-    
+  }
+
+  toggleSelectAll() {
+    this.filtered3.forEach(item => {
+      item.selected = this.selectAll;
+    });
+    this.itemSelected3();
   }
 
   itemSelected3(){
-    this.selected3 = this.data3.filter((item) => item.selected);
-
-    if(!this.multiple && this.selected3.length) {
-
-      this.selectedChanged.emit(this.selected3)
-      this.isOpen3 = false;
-      //this.data.map((item) => (item.selected = false));
-      
-    }
+    const allSelected = this.filtered3.every(item => item.selected);
+    this.selectAll = allSelected;
   }
 
   filter3(event: SearchbarCustomEvent){

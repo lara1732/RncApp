@@ -23,6 +23,10 @@
       </ion-toolbar>
     </ion-header>
     <ion-content> 
+      <ion-item>
+        <ion-checkbox slot="start" [(ngModel)]="selectAll" (ionChange)="toggleSelectAll()"></ion-checkbox>
+        <ion-label>Seleccionar todos</ion-label>
+      </ion-item>
       <ion-item *ngFor="let item of filtered3">
         <ion-checkbox slot="start" [(ngModel)]="item.selected" (ionChange)="itemSelected3()"></ion-checkbox>
         <ion-label> {{item.MediaRef}}</ion-label>

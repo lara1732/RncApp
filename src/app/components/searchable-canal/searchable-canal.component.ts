@@ -25,6 +25,9 @@ export class SearchableCanalComponent implements OnChanges {
   isOpen2 = false;
   selected2: any[] = []; 
   filtered2: any[] = []; 
+
+  selectAll: boolean = false;
+
  
   constructor(private storage:Storage) { }
 
@@ -49,7 +52,7 @@ export class SearchableCanalComponent implements OnChanges {
     this.selectedChanged.emit(selected);
     this.isOpen2 = false;
     this.storage.set("canal",selected);
-    //console.log(selected)
+    console.log(selected)
 
     if(selected.length == 0){
       $("#spot").attr('disabled','true');
@@ -57,19 +60,20 @@ export class SearchableCanalComponent implements OnChanges {
     }else{
       $("#spot").removeAttr('disabled');
       
-    }
-    
+    }   
     
   }
 
-  itemSelected2(){
-    this.selected2 = this.data2.filter((item) => item.selected);
+  toggleSelectAll() {
+    this.filtered2.forEach(item => {
+      item.selected = this.selectAll;
+    });
+    this.itemSelected2();
+  }
 
-    if(!this.multiple && this.selected2.length){
-      this.selectedChanged.emit(this.selected2);
-      this.isOpen2 = false;
-      
-    }
+  itemSelected2(){
+    const allSelected = this.filtered2.every(item => item.selected);
+    this.selectAll = allSelected;
 
   }
 

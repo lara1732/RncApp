@@ -12,6 +12,7 @@ import listPlugin from '@fullcalendar/list';
 import { HttpClient } from '@angular/common/http';
 import { Toast } from '@awesome-cordova-plugins/toast/ngx';
 import { register } from 'swiper/element/bundle';
+
 register();
 
 @Component({
@@ -173,11 +174,20 @@ export class AppComponent {
       });
   }
 
-  LogOut(){
+ async LogOut(){
+    
     $('#menuId').attr('disabled', 'disabled');
-    this.storage.clear();
+    await this.storage.clear();
     console.log("hola")
+    
 
+  }
+
+  async ngOnInit() {
+    await this.storage.create();
+       
+
+    
   }
 
  

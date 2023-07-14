@@ -26,6 +26,8 @@ export class SearchableSelectComponent implements OnChanges {
   selected: any[] = [];
   filtered: any[] = [];
 
+  selectAll: boolean = false;
+
 
   constructor(private storage:Storage) { }
 
@@ -61,17 +63,16 @@ export class SearchableSelectComponent implements OnChanges {
    
     
   }
+  toggleSelectAll() {
+    this.filtered.forEach(item => {
+      item.selected = this.selectAll;
+    });
+    this.itemSelected();
+  }
 
   itemSelected(){
-    this.selected = this.data.filter((item) => item.selected);
-
-    if(!this.multiple && this.selected.length) {
-
-      this.selectedChanged.emit(this.selected)
-      this.isOpen = false;
-      //this.data.map((item) => (item.selected = false));
-      
-    }
+    const allSelected = this.filtered.every(item => item.selected);
+    this.selectAll = allSelected;
   }
 
   filter(event: SearchbarCustomEvent){
