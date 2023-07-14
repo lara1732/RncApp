@@ -248,15 +248,12 @@ export class HomePage implements OnInit {
   async ngOnInit() {
       
       await this.storage.create();
-      console.log(this.storage.get('id'));
-    //  await this.loadLocations();
-  
+
       this.storage.remove('plaza')
       this.storage.remove('library')
       this.storage.remove('canal')
-      this.storage.remove('spot')
-      
-  
+      this.storage.remove('spot')     
+
     }
 }
 
