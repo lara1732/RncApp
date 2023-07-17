@@ -5,6 +5,7 @@ import { IonicModule, SearchbarCustomEvent } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
 //import { EventEmitter } from 'stream';
 import * as $ from "jquery";
+import { SharedService } from "../../shared.service"
 
 @Component({
   standalone: true,
@@ -29,8 +30,19 @@ export class SearchableLibraryComponent implements OnInit {
 
 
 
-  constructor(private storage:Storage) { }
+  constructor(private storage:Storage, public sharedService: SharedService) { }
 
+  onFirstCodeChange() {
+    // Lógica para actualizar selected4 cuando cambie su valor
+
+    // Luego, actualiza selected2 en el servicio compartido
+    this.sharedService.updateSelected2([]);
+
+    $("#canal").attr('disabled','true');
+    $("#spot").attr('disabled','true');
+    $("#btnbuscar").attr('disabled','true');
+  }
+  
   ngOnChanges() {
 
     this.filtered4 = this.data4;
@@ -78,21 +90,11 @@ export class SearchableLibraryComponent implements OnInit {
       item.selected = false;
     });
 
+    this.onFirstCodeChange()
+
    }
     
     
-  
-    // Almacenar el elemento seleccionado
-    this.selectedItem = item;
-    
-    
-
-      //  if(!this.multiple && this.selected4.length) {
-
-    
-      //   this.select4();
-                   
-      //  }
   }
 
   filter4(event: SearchbarCustomEvent){

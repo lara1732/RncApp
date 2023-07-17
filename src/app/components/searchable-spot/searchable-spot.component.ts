@@ -6,6 +6,7 @@ import { Storage } from '@ionic/storage-angular';
 import { LoadingController } from '@ionic/angular';
 //import { EventEmitter } from 'stream';
 import * as $ from "jquery";
+import { SharedService } from "../../shared.service"
 
 @Component({
   standalone: true,
@@ -27,7 +28,7 @@ export class SearchableSpotComponent implements OnChanges {
 
   selectAll: boolean = false;
 
-  constructor(private storage:Storage,private loadingCtrl: LoadingController) { }
+  constructor(private storage:Storage, private loadingCtrl: LoadingController,  public sharedService: SharedService) { }
  
   ngOnChanges() {
 
@@ -50,7 +51,7 @@ export class SearchableSpotComponent implements OnChanges {
 
   select3(){
     const selected = this.data3.filter((item) => item.selected);
-    this.selected3 = selected;
+    this.sharedService.selectedS = selected;
     this.selectedChanged.emit(selected);
     this.isOpen3 = false;
     this.storage.set("spot",selected)
