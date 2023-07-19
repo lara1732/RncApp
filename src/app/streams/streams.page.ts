@@ -100,6 +100,6 @@ GetStreams(){
 
 handleInput(event:SearchbarCustomEvent) {
   const query = event.detail.value?.toLowerCase();
-  this.streams = this.results.filter(d => d.toLowerCase() .indexOf(query) > -1);
+  this.streams = this.results.filter(item => item.Name_plaza.toLowerCase().indexOf(query) > -1);
 }
 }
