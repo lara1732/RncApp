@@ -16,6 +16,7 @@ export class SeleccionPage implements OnInit {
 
   ngOnInit() {
   }
+  
 R_spots(){
   this.router.navigate(['/home']);
 }

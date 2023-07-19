@@ -76,8 +76,7 @@ export class StreamPlazaComponent implements OnChanges {
     this.filtered5 = this.data5.filter(item => this.leaf(item).toLowerCase().indexOf(filter5) >=0);
   }
   
-  leaf = (obj: any) => 
-    this.itemTextField.split('.').reduce((value, el) => value[el], obj);
+  leaf = (obj: any) => this.itemTextField.split('.').reduce((value, el) => value[el], obj);
 
 
     async ngOnInit() {

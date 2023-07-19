@@ -5,7 +5,9 @@ import * as $ from "jquery";
 import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions } from '@awesome-cordova-plugins/streaming-media/ngx';
-import { Platform } from '@ionic/angular';
+import { IonicModule, SearchbarCustomEvent } from '@ionic/angular';
+import { Platform  } from '@ionic/angular';
+import { log } from 'console';
 @Component({
   selector: 'app-streams',
   templateUrl: './streams.page.html',
@@ -13,13 +15,6 @@ import { Platform } from '@ionic/angular';
 })
 export class StreamsPage implements OnInit {
 
-
-  
-  selectTabs= 'Detecciones';
-  isOpen6 = false;
-  selected6: any[] = [];
-  filtered6: any[] = [];
-  data6: any[] = [];
   canalesS:any=[];
   streamplaza: any =[];
   streamcanal: any =[];
@@ -27,16 +22,18 @@ export class StreamsPage implements OnInit {
   canales: any = [];
   flag:any;
   library: any = [];
+  streams:any[]= [];
+  results: any[] = [];
 
   constructor(private http: HttpClient, private storage:Storage, private router:Router,private streamingMedia: StreamingMedia,public navCtrl: NavController, private platform: Platform) { }
 
   ngOnInit() {
+    this.GetStreams();
   }
 
   selectChanged(event: any) { 
 
     console.log('CHANGED: ', event);
-
 
   }
 
@@ -51,15 +48,12 @@ export class StreamsPage implements OnInit {
       }, false);
     });
 
-  }
+  }  
+  async botonbuscarStream(stream: string){
+    
+    let Vstream = stream
+    console.log(Vstream)
 
-
-
-  
-  async botonbuscarStream(){
-
-    let Vstream = await this.storage.get('Cstream');
-    console.log(Vstream);
     let options: StreamingVideoOptions = {
       successCallback: () => { console.log('Video played') },
       errorCallback: () => { console.log('Error Stream') },
@@ -68,12 +62,7 @@ export class StreamsPage implements OnInit {
       controls: false
     };
     
-    this.streamingMedia.playVideo(Vstream[0].stream, options);
-  
-  
-  
-  
-  
+    this.streamingMedia.playVideo(Vstream, options);
   
   }
 
@@ -84,61 +73,33 @@ SelectOption(event: any) {
   // Realizar acciones con el valor seleccionado
 }
 
-async loadLocationsStream() {
 
-  let Id =   await this.storage.get('id');  
- // let library = await this.storage.get('library')
- // console.log(library)
+GetStreams(){
 
   this.http
-    .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getPlazas.php?uss='+Id)
-    .subscribe((res: any) => {
-      this.streamplaza = res;  
-      console.log(this.streamplaza);    
-    });
-    
+  .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_Streams.php')
+  .subscribe((res: any) => {
+    console.log(res)
 
+    this.streams = res;
+    this.results = res;
+  })
+  // $.ajax({
+  //   url: ('https://backup.tregional.mx/AbetCloud/models/queries/app/C_Streams.php'),
+  //   type:'POST',
+  //   dataType:'Json',
+  //   crossDomain: true,
+  //   async: false,
+  //   success:(dataId) =>{
+  //     console.log(dataId)
+  //     this.streams = dataId;
+  //     this.results = dataId;
+  //   }
+  // })
 }
 
-async loadCanalesStream() {
-    
-  let Id = await this.storage.get('id');  
-  let plaza  = await this.storage.get('plaza');
-  let permisos = await this.storage.get('p');
-  let plazas = "";
-  
-  let canal = await this.storage.get('canal');
-  let library = await this.storage.get('library');
-
-  if(canal == null){
-    canal = [];
-  }
-
-  for(let i=0; i<plaza.length;i++){
-    plazas = plazas + ",'" + plaza[i].Name+ "'";
-  }
-  plazas = plazas.slice(1);
-
-  
-  this.http
-    .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getPlazasstreams.php?uss='+Id+'&p='+plazas)
-    .subscribe((res: any) => {
-     
-     this.streamcanal = res;
-     console.log(this.streamcanal);
-      let rest = res;
-          
-  
-      for( var i=0; i < rest.length; i++){
-        for(var j=0; j < canal.length; j++){
-          if (canal[j].ChannelID == rest[i].ChannelID){
-              //coincidencias.push(canal[j]);
-              // rest.push("{selected: true}");
-               rest[i].selected=true;
-          }
-        }
-      }        
-    });
-   
+handleInput(event:SearchbarCustomEvent) {
+  const query = event.detail.value?.toLowerCase();
+  this.streams = this.results.filter(d => d.toLowerCase() .indexOf(query) > -1);
 }
 }

@@ -9,20 +9,15 @@
     
   </ion-toolbar>
 </ion-header>
-<ion-content>
+
+<ion-content [fullscreen]="true">
+
   <div align="center">
-    <br>
-    <br>
-    <br>
-    <br>
-   
-    <br>
+    <br><br><br><br><br>
     <img src="../assets/icon/logo.png" width="250px" height="100px">
   </div>
  
   <ion-slides pager="true"> 
-
-
     <ion-slide>
       <img src="../assets/icon/spots.png">
       <ion-button (click)="R_spots()" expand="block">Detecciones</ion-button>
@@ -42,6 +37,7 @@
       <img src="../assets/icon/contratos.png">
       <ion-button expand="block">Contratos</ion-button>
     </ion-slide>
-
   </ion-slides>
+
 </ion-content>
+
