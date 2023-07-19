@@ -1,0 +1,44 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar >
+    <ion-buttons id="btn-menu" slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <!-- <ion-title>
+      Home
+    </ion-title> -->
+    
+  </ion-toolbar>
+</ion-header>
+<ion-content  [fullscreen]="true">
+
+  <br>
+  
+  <ion-button shape="round" fill="outline" expand="block" id="btnbuscar" (click)="botonbuscar()"  disabled="false">Buscar</ion-button>
+
+
+  
+    <ion-item  (click)="select8.open8()" (click)="loadLocationsT()" > 
+      <ion-label>Selecciona Plaza</ion-label>
+      <app-transmisiones-plaza  class="searchable" 
+        [data8]="locationsT" 
+        itemTextField = "Name"  
+        [multiple] = "true"  
+        #select8
+        (selectChanged)="selectChanged($event)"
+       ></app-transmisiones-plaza>
+  
+  
+    </ion-item>
+
+    <ion-item  (click)="select7.open7()" (click)="loadCanalesT()" disabled="false"  >
+      <ion-label>Selecciona Canal</ion-label>
+      <app-transmisiones-canal  class="searchable" 
+        [data7]="canalesT"  
+        itemTextField = "Name_channel" 
+        [multiple] = "false"
+        #select7
+        (selectChanged)="selectChanged($event)"
+      ></app-transmisiones-canal>
+    </ion-item>
+  
+</ion-content>

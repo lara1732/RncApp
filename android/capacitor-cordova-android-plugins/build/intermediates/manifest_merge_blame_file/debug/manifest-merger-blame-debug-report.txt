@@ -1,0 +1,40 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:amazon="http://schemas.amazon.com/apk/res/android"
+3    xmlns:android="http://schemas.android.com/apk/res/android"
+4    package="capacitor.cordova.android.plugins" >
+5
+6    <uses-sdk android:minSdkVersion="22" />
+6-->C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+7
+8    <uses-permission android:name="android.permission.INTERNET" />
+8-->C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:9:1-62
+8-->C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:9:18-60
+9
+10    <application>
+10-->C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:4:1-8:15
+11        <meta-data
+11-->C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:5:1-68
+12            android:name="android.max_aspect"
+12-->C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:5:12-45
+13            android:value="2.16" />
+13-->C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:5:46-66
+14
+15        <activity
+15-->C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:1-172
+16            android:name="com.hutchind.cordova.plugins.streamingmedia.SimpleAudioStream"
+16-->C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:58-134
+17            android:configChanges="orientation|screenSize"
+17-->C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:11-57
+18            android:label="Simple Audio Stream" />
+18-->C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:135-170
+19        <activity
+19-->C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:1-172
+20            android:name="com.hutchind.cordova.plugins.streamingmedia.SimpleVideoStream"
+20-->C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:58-134
+21            android:configChanges="orientation|screenSize"
+21-->C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:11-57
+22            android:label="Simple Video Stream" />
+22-->C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:135-170
+23    </application>
+24
+25</manifest>

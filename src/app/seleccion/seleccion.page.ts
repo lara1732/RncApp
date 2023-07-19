@@ -24,6 +24,16 @@ R_streams(){
   this.router.navigate(['/streams']);
 }
 
+R_transmisiones(){
+  this.router.navigate(['/transmisiones']);
+}
+
+R_contratos(){
+  Swal.fire({title:'Error', icon:'error', text:'No disponible', heightAuto:false});
+}
+
+
+
 slides = [
   {
     img: '../assets/icon/spots.png'

@@ -1,0 +1,55 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:1-10:12
+INJECTED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:1-10:12
+INJECTED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:1-10:12
+	package
+		INJECTED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+		ADDED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:1-10:12
+		INJECTED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+	xmlns:amazon
+		ADDED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:3:1-57
+	xmlns:android
+		ADDED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:4:1-8:15
+meta-data#android.max_aspect
+ADDED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:5:1-68
+	android:value
+		ADDED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:5:46-66
+	android:name
+		ADDED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:5:12-45
+activity#com.hutchind.cordova.plugins.streamingmedia.SimpleAudioStream
+ADDED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:1-172
+	android:label
+		ADDED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:135-170
+	android:configChanges
+		ADDED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:11-57
+	android:name
+		ADDED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:58-134
+activity#com.hutchind.cordova.plugins.streamingmedia.SimpleVideoStream
+ADDED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:1-172
+	android:label
+		ADDED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:135-170
+	android:configChanges
+		ADDED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:11-57
+	android:name
+		ADDED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:7:58-134
+uses-permission#android.permission.INTERNET
+ADDED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:9:1-62
+	android:name
+		ADDED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:9:18-60
+uses-sdk
+INJECTED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+INJECTED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+INJECTED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+INJECTED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+		ADDED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+		INJECTED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+		ADDED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+		INJECTED from C:\RncApp\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
