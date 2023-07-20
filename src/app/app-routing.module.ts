@@ -41,11 +41,15 @@ const routes: Routes = [
   {
     path: 'streams',
     loadChildren: () => import('./streams/streams.module').then( m => m.StreamsPageModule)
-  },  {
+  },
+  {
     path: 'transmisiones',
     loadChildren: () => import('./transmisiones/transmisiones.module').then( m => m.TransmisionesPageModule)
   },
-
+  {
+    path: 'calendar',
+    loadChildren: () => import('./calendar/calendar.module').then( m => m.CalendarPageModule)
+  },
 
 
 ];

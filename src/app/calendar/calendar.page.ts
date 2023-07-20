@@ -2,26 +2,20 @@ import { ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import { Router } from '@angular/router';
 import * as $ from "jquery";
-import Swal from 'sweetalert2';
 import { CalendarOptions, DateSelectArg, EventClickArg, EventApi, Calendar } from '@fullcalendar/core';
 import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import { FullCalendarComponent } from '@fullcalendar/angular';
-import esLocale from '@fullcalendar/core/locales/es';
-import { async } from '@angular/core/testing';
 import * as moment from 'moment';
-import { Platform } from '@ionic/angular';
-import { platform } from 'os';
 
 @Component({
-  selector: 'app-inicio',
-  templateUrl: './inicio.page.html',
-  styleUrls: ['./inicio.page.scss'],
+  selector: 'app-calendar',
+  templateUrl: './calendar.page.html',
+  styleUrls: ['./calendar.page.scss'],
 })
-
-export class InicioPage implements OnInit {
+export class CalendarPage implements OnInit {
 
   @ViewChild('Calendar') calendarComponent: FullCalendarComponent;
 
@@ -114,27 +108,24 @@ export class InicioPage implements OnInit {
     calendarOptions.weekends = !calendarOptions.weekends;
   }
 
-  
-
 
   handleEventClick(clickInfo: EventClickArg) {
 
     
     
     var  adata = {id:clickInfo.event.id}
-  console.log (adata)
+  
       $.ajax({
-        url: ('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getVideo.php'),
+        url: ('https://backup.tregional.mx/AbetCloud/models/queries/App/C_getDetections.php'),
         type:'POST',
         dataType: "Json",
         data: adata,
         crossDomain: true,
         async: true,
         success:(dataId) =>{ 
-          console.log(adata)
               
-          this.storage.set('video',dataId);   
-          this.router.navigate(['/video']);
+          this.storage.set('transmisiones',dataId);   
+          this.router.navigate(['/transmisiones']);
           
         }
       })
@@ -175,5 +166,6 @@ export class InicioPage implements OnInit {
 
   
 }
+
 
 
