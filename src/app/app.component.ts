@@ -12,6 +12,7 @@ import listPlugin from '@fullcalendar/list';
 import { HttpClient } from '@angular/common/http';
 import { Toast } from '@awesome-cordova-plugins/toast/ngx';
 import { register } from 'swiper/element/bundle';
+import { AppUpdate } from '@ionic-native/app-update/ngx';
 
 register();
 
@@ -25,7 +26,7 @@ export class AppComponent {
 
   URL_Link ="https://backup.tregional.mx/AbetCloud/";
 
-  constructor(private toast: Toast, private platform: Platform, private storage: Storage, private router:Router, private http: HttpClient) {
+  constructor(private toast: Toast, private platform: Platform, private storage: Storage, private router:Router, private http: HttpClient, private appUpdate: AppUpdate) {
    this.initializeApp();
   }
 
@@ -52,6 +53,13 @@ export class AppComponent {
     this.platform.ready().then(async() => {
 
       await this.storage.create();
+
+      const updateUrl = 'https://backup.tregional.mx/app/APK/my_app_update.xml';
+        this.appUpdate.checkAppUpdate(updateUrl).then(update => {
+          alert("Update Status:  "+update.msg);
+        }).catch(error=>{
+          alert("Error: "+error.msg);
+        });
 
  
       this.platform.resume.subscribe(async () => {

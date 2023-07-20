@@ -12,11 +12,12 @@ import { StreamingMedia } from '@awesome-cordova-plugins/streaming-media/ngx';
 import { Toast } from '@awesome-cordova-plugins/toast/ngx';
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { SharedService } from './shared.service';
+import { AppUpdate } from '@ionic-native/app-update/ngx'
 
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(),IonicStorageModule.forRoot(), AppRoutingModule, FullCalendarModule, HttpClientModule,],
-  providers: [SharedService, Toast, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy,},StreamingMedia],
+  providers: [SharedService, Toast, AppUpdate, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy,},StreamingMedia],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
