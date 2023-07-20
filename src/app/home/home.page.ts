@@ -241,6 +241,7 @@ export class HomePage implements OnInit {
  
     let link = 'https://backup.tregional.mx/AbetCloud/models/queries/App/C_getDetections.php?id='+canales+'&s='+spots+'&p='+permisos+'&u='+Id+'&l='+library[0].Privilege;
     this.storage.set('link',link);
+    console.log(link)
     this.router.navigate(['/inicio']);
 
   }
