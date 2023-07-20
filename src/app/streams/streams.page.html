@@ -3,9 +3,9 @@
     <ion-buttons id="btn-menu" slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <!-- <ion-title>
-      Home
-    </ion-title> -->
+    <ion-title>
+      Streams
+    </ion-title>
     
   </ion-toolbar>
 </ion-header>
@@ -15,45 +15,15 @@
 
   <br>
 
-  <ion-button shape="round" fill="outline" expand="block" id="btnbuscarStream" (click)="botonbuscarStream()"  disabled="true">Buscar Stream</ion-button>
   
   <div id="filtroStream">
-    <ion-item  (click)="select5.open5()" (click)="loadLocationsStream()" > 
-      <ion-label>Selecciona Plaza</ion-label>
-      <app-stream-plaza  class="searchable" 
-        [data5]="streamplaza" 
-        itemTextField = "Name"  
-        [multiple] = "true"  
-        #select5
-        (selectChanged)="selectChanged($event)"
-       ></app-stream-plaza>
-  
-  
-    </ion-item>
 
-    <ion-item id="streamcanal" (click)="select6.open6()" (click)="loadCanalesStream()" disabled="true"  >
-      <ion-label>Selecciona Canal</ion-label>
-      <app-stream-canal  class="searchable" 
-        [data6]="streamcanal"  
-        itemTextField = "Name_channel" 
-        [multiple] = "false"
-        #select6
-        (selectChanged)="selectChanged($event)"
-      ></app-stream-canal>
-    </ion-item>
-    
-  
+     <ion-searchbar show-clear-button="focus" placeholder="Ejemplo: Cancún" [debounce]="1000" (ionChange)="handleInput($any($event))"></ion-searchbar>
 
-  
-  
-  
-  
-  
-  
-    
-  
-  
-  
+     <ion-item *ngFor="let item of streams">
+      <ion-button shape="round" expand="full" size="default" (click)="botonbuscarStream(item.stream)"> {{item.Name_plaza}}</ion-button>
+     </ion-item>
+
   </div>
   
     

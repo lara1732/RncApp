@@ -3,8 +3,12 @@
  
   }
   
+ion-toolbar{
+    background-color: transparent;
+    --opacity: 5%;  
+}
 
-  ion-button{        
+ ion-button{        
     margin-top: 20px;
     --background: #274662;
     --background-activated: #ffffff;

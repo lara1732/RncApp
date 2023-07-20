@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule, SearchbarCustomEvent } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
 import * as $ from "jquery";
+import { SharedService } from "../../shared.service"
 
 //import { EventEmitter } from 'stream';
 
@@ -29,7 +30,7 @@ export class SearchableCanalComponent implements OnChanges {
   selectAll: boolean = false;
 
  
-  constructor(private storage:Storage) { }
+  constructor(private storage:Storage, public sharedService: SharedService) { }
 
   ngOnChanges() {
     this.filtered2 = this.data2;
@@ -48,7 +49,7 @@ export class SearchableCanalComponent implements OnChanges {
   
   select2(){
     const selected = this.data2.filter((item) => item.selected);
-    this.selected2 = selected;
+    this.sharedService.selected3 = selected;
     this.selectedChanged.emit(selected);
     this.isOpen2 = false;
     this.storage.set("canal",selected);

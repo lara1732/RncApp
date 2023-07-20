@@ -27,9 +27,7 @@ export class InicioPage implements OnInit {
 
   link="";
   calendarVisible = true;
-  calendarOptions: CalendarOptions = {
-
-    
+  calendarOptions: CalendarOptions = {  
     
 
     locale:'es',
@@ -159,6 +157,7 @@ export class InicioPage implements OnInit {
 }
 
   async ngOnInit() {
+    
     await this.storage.create();
     this.link = await this.storage.get('link');  
     this.calendarOptions.events=this.link

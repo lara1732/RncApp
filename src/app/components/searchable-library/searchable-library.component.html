@@ -1,8 +1,7 @@
 <div *ngIf="selected4.length; else placeholderL">
   <span *ngFor="let item of selected4; let last = last">
-    {{ item.Privilege }}{{ last ? "" : ", "}}
+    {{ item.Privilege }}{{ last ? "" : ","}}
   </span>
-  
 </div>
 
 <ng-template id="placeholderL" #placeholderL >Select</ng-template>

@@ -1,7 +1,7 @@
-<div *ngIf="selected2.length; else placeholderC;">
-  <span *ngFor="let item of selected2; let last = last">
-    {{ item.Name }}{{ last ? "" : ", "}}
-  </span>  
+<div *ngIf="sharedService.selected3.length; else placeholderC">
+  <span *ngFor="let item of sharedService.selected3; let last = last">
+    {{ item.Name }}{{ last ? "" : "," }}
+  </span>
 </div>
 
 <ng-template #placeholderC>Select</ng-template>
