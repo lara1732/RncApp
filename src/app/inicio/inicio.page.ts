@@ -131,7 +131,7 @@ export class InicioPage implements OnInit {
         crossDomain: true,
         async: true,
         success:(dataId) =>{ 
-          console.log(adata)
+          console.log(dataId)
               
           this.storage.set('video',dataId);   
           this.router.navigate(['/video']);
