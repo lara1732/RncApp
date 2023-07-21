@@ -12,7 +12,7 @@ import listPlugin from '@fullcalendar/list';
 import { HttpClient } from '@angular/common/http';
 import { Toast } from '@awesome-cordova-plugins/toast/ngx';
 import { register } from 'swiper/element/bundle';
-import { AppUpdate } from '@ionic-native/app-update/ngx';
+
 
 register();
 
@@ -26,7 +26,7 @@ export class AppComponent {
 
   URL_Link ="https://backup.tregional.mx/AbetCloud/";
 
-  constructor(private toast: Toast, private platform: Platform, private storage: Storage, private router:Router, private http: HttpClient, private appUpdate: AppUpdate) {
+  constructor(private toast: Toast, private platform: Platform, private storage: Storage, private router:Router, private http: HttpClient) {
    this.initializeApp();
   }
 
@@ -53,44 +53,7 @@ export class AppComponent {
     this.platform.ready().then(async() => {
 
       await this.storage.create();
-
-      /*const updateUrl = 'https://backup.tregional.mx/app/APK/my_app_update.xml';
-        this.appUpdate.checkAppUpdate(updateUrl).then(update => {
-          alert("Update Status:  "+update.msg);
-        }).catch(error=>{
-          alert("Error: "+error.msg);
-        });*/
-        const updateUrl = 'https://backup.tregional.mx/app/APK/my_app_update.xml';
-
-        // Suponiendo que appUpdate.checkAppUpdate() devuelve una promesa que resuelve con el contenido del archivo XML.
-        this.appUpdate.checkAppUpdate(updateUrl)
-          .then(updateContent => {
-            // Parsear el contenido XML
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(updateContent, 'text/xml');
-
-            // Obtener los elementos del XML
-            const versionElement = xmlDoc.querySelector('version')?.textContent?.toString() || '';
-            const nameElement = xmlDoc.querySelector('name')?.textContent?.toString() || '';
-            const urlElement = xmlDoc.querySelector('url')?.textContent?.toString() || '';
-
-            if (versionElement && nameElement && urlElement) {
-              const currentVersion = '1.1.4'; // Aquí deberías tener la versión actual de la aplicación
-              if (parseInt(versionElement) > parseInt(currentVersion)) {
-                alert(`Hay una nueva versión disponible: ${nameElement}. Descárgala desde: ${urlElement}`);
-              } else {
-                alert('La aplicación está actualizada.');
-              }
-            }else{
-              alert('El archivo XML no tiene el formato esperado o falta información importante.');
-            }
-          })
-          .catch(error => {
-            alert('Error al obtener información de actualización.');
-            console.error(error);
-          });
-
- 
+       
       this.platform.resume.subscribe(async () => {
 
         await this.storage.create();
