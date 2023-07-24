@@ -45,6 +45,10 @@ const routes: Routes = [
     path: 'transmisiones',
     loadChildren: () => import('./transmisiones/transmisiones.module').then( m => m.TransmisionesPageModule)
   },
+  {
+    path: 'video-t',
+    loadChildren: () => import('./video-t/video-t.module').then( m => m.VideoTPageModule)
+  },
 
 
 

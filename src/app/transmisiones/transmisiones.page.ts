@@ -116,7 +116,7 @@ export class TransmisionesPage implements OnInit {
 
  
  
-    let link = 'https://backup.tregional.mx/AbetCloud/models/queries/App/C_getDetections.php?id='+canales+'&p='+permisos+'&u='+Id;
+    let link = 'https://backup.tregional.mx/AbetCloud/models/queries/app/C_getTransmisiones.php?id=40,41,42,43&p=0&u=10'+canales+'&p='+permisos+'&u='+Id;
     this.storage.set('link',link);
     this.router.navigate(['/inicio']);
 
