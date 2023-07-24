@@ -49,7 +49,12 @@ const routes: Routes = [
   {
     path: 'calendar',
     loadChildren: () => import('./calendar/calendar.module').then( m => m.CalendarPageModule)
+
   },
+  {
+    path: 'video-t',
+    loadChildren: () => import('./video-t/video-t.module').then( m => m.VideoTPageModule)
+  }
 
 
 ];
