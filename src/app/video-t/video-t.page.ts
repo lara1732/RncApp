@@ -13,6 +13,8 @@ import  ChartDataLabels  from 'chartjs-plugin-datalabels';
 import { ElementRef } from '@angular/core';
 import  {Chart} from 'chart.js/auto';
 import { DatePipe } from '@angular/common';
+import { Swiper } from 'swiper';
+
 @Component({
   selector: 'app-video-t',
   templateUrl: './video-t.page.html',
@@ -22,6 +24,22 @@ export class VideoTPage implements OnInit {
 
   constructor(private modalController: ModalController, private videolabService: VideolabService, private router: Router, private storage:Storage,
     private actionSheetCtrl: ActionSheetController, private http: HttpClient, private ElementRef: ElementRef) { }
+
+    swiperSlideChanged(e: any){
+      console.log('changed: ',e);
+    }
+
+    @ViewChild('swiper')
+    swiperRef: ElementRef | undefined;
+    swiper?: Swiper;
+
+    swiperReady(){
+      this.swiper = this.swiperRef?.nativeElement.swiper;
+    }
+  
+    goNext(){
+      this.swiper?.slideNext();
+    }
 
     video: any [""]; 
     flag=0;

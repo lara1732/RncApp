@@ -16,24 +16,24 @@
       <ion-fab-button>
         <ion-icon name="chevron-down-circle"></ion-icon>
       </ion-fab-button>
+      <ion-fab-list side="bottom">
    
-
-        
-        
         <ion-fab-button>
       
           <ion-icon name="expand-sharp" (click)="full()"></ion-icon>
         </ion-fab-button>
    
        
-    
+      </ion-fab-list>
     </ion-fab>
     <br>
     <ion-item (click)="touch(0)" (onseeking)="doubleClick()">
       <video id='video' width=490 height=295   src="" type="video/mp4" (onseeking)="doubleClick()" ></video>   
     </ion-item>
  
-     
+     <swiper-container></swiper-container>
+
+   
     
    
   

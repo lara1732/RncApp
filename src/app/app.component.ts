@@ -11,9 +11,9 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import { HttpClient } from '@angular/common/http';
 import { Toast } from '@awesome-cordova-plugins/toast/ngx';
-//import { register } from 'swiper/element/bundle';
+import { register } from 'swiper/element/bundle';
 
-//register();
+register();
 
 @Component({
   selector: 'app-root',
