@@ -13,6 +13,9 @@ import  ChartDataLabels  from 'chartjs-plugin-datalabels';
 import { ElementRef } from '@angular/core';
 import  {Chart} from 'chart.js/auto';
 import { DatePipe } from '@angular/common';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
+
 
 @Component({
   selector: 'app-video',

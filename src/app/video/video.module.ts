@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import {RouterModule} from '@angular/router';
 import { VideoPageRoutingModule } from './video-routing.module';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { VideoPage } from './video.page';
 
 
@@ -27,6 +27,7 @@ import { VideoPage } from './video.page';
     
   ],
   declarations: [VideoPage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
 })
 export class VideoPageModule {

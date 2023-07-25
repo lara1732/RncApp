@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { VideoTPageRoutingModule } from './video-t-routing.module';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { VideoTPage } from './video-t.page';
 
 @NgModule({
@@ -15,6 +15,7 @@ import { VideoTPage } from './video-t.page';
     IonicModule,
     VideoTPageRoutingModule
   ],
-  declarations: [VideoTPage]
+  declarations: [VideoTPage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class VideoTPageModule {}
