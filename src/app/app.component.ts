@@ -238,10 +238,15 @@ export class AppComponent {
 
     if(this.backVersion >= this.appVersion){
 
-      this.mostrarAlerta()
+      this.toast.show('Tu aplicación está actualizada', '10000', 'center').subscribe(
+        toast => {
+          console.log(toast);
+        }
+      );
 
     }else{
       
+      this.mostrarAlerta();
     }
 
   }
