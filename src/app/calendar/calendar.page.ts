@@ -124,9 +124,9 @@ export class CalendarPage implements OnInit {
         async: true,
         success:(dataId) =>{ 
               
-          this.storage.set('transmisiones',dataId);   
-          this.router.navigate(['/transmisiones']);
-          
+          this.storage.set('video-t',dataId);   
+          this.router.navigate(['/video-t']);
+          console.log(dataId);
         }
       })
 
