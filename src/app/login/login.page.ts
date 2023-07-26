@@ -181,9 +181,7 @@ export class LoginPage implements OnInit {
   }
 
   async ngOnInit() {
-    await this.storage.create();
-       
-
+    await this.storage.create();   
     
   }
 
