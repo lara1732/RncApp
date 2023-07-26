@@ -15,7 +15,8 @@ import { register } from 'swiper/element/bundle';
 import { SharedService } from './shared.service';
 import { AlertController } from '@ionic/angular';
 
-register();
+
+//register();
 
 @Component({
   selector: 'app-root',
@@ -125,8 +126,7 @@ export class AppComponent {
     this.platform.ready().then(async() => {
 
       await this.storage.create();
-
- 
+       
       this.platform.resume.subscribe(async () => {
 
         await this.storage.create();
