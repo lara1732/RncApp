@@ -124,7 +124,8 @@ export class AppComponent {
     this.platform.ready().then(async() => {
 
       await this.storage.create();
-       
+
+ 
       this.platform.resume.subscribe(async () => {
 
         await this.storage.create();

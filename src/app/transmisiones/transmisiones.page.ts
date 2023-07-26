@@ -33,7 +33,7 @@ export class TransmisionesPage implements OnInit {
   
 
     this.http
-      .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getPlazas.php?uss='+Id)
+      .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getPlazasTransmision.php?uss='+Id)
       .subscribe((res: any) => {
         this.locationsT = res;
         console.log(this.locationsT)
@@ -64,7 +64,7 @@ export class TransmisionesPage implements OnInit {
     plazas = plazas.slice(1);
     
     this.http
-      .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getPlazasstreams.php?uss='+Id+'&p='+plazas)
+      .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getChannels.php?plaza='+plaza[0].Plaza+'&id='+Id+'&source=Transmision')
       .subscribe((res: any) => {
         this.canalesT = res; 
        
@@ -116,7 +116,7 @@ export class TransmisionesPage implements OnInit {
 
  
  
-    let link = 'https://backup.tregional.mx/AbetCloud/models/queries/App/C_getDetections.php?id='+canales+'&p='+permisos+'&u='+Id;
+    let link = 'https://backup.tregional.mx/AbetCloud/models/queries/app/C_getTransmisiones.php?id=40,41,42,43&p=0&u=10'+canales+'&p='+permisos+'&u='+Id;
     this.storage.set('link',link);
     this.router.navigate(['/calendar']);
 
