@@ -191,6 +191,7 @@ async getinformation(){
   for(let i=0; i<plaza.length;i++){
     plazas = plazas + "," + plaza[i].PlazaID;
   }
+  
   plazas = plazas.slice(1);
 
   console.log(spot)

@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 })
 
 export class SharedService {
+  
+  version = "1.1.5"
 
   selected2: any[] = [];
   selected3: any[] = [];

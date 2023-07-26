@@ -12,7 +12,8 @@ import listPlugin from '@fullcalendar/list';
 import { HttpClient } from '@angular/common/http';
 import { Toast } from '@awesome-cordova-plugins/toast/ngx';
 import { register } from 'swiper/element/bundle';
-
+import { SharedService } from './shared.service';
+import { AlertController } from '@ionic/angular';
 
 register();
 
@@ -24,14 +25,84 @@ register();
 })
 export class AppComponent {
 
+  versionCheck: any
+  appVersion: any
+  backVersion = "1.1.4"
   URL_Link ="https://backup.tregional.mx/AbetCloud/";
 
-  constructor(private toast: Toast, private platform: Platform, private storage: Storage, private router:Router, private http: HttpClient) {
+  constructor(private toast: Toast, private platform: Platform, private storage: Storage, private router:Router, private http: HttpClient, private SharedService: SharedService, private alertCtrl: AlertController) {
    this.initializeApp();
+   this.puebaString();
+   this.checkVersion();
+  
+
+   console.log(this.backVersion, this.appVersion)
   }
 
   BaseLink(){
     return this.URL_Link;
+  }
+
+  puebaString(){
+
+    $.ajax({
+      url: ('https://backup.tregional.mx/abetcloud/models/queries/app/version.php'),
+      type:'GET',
+      dataType: "text",
+      crossDomain: true,
+      async: false,
+      success:(version) =>{
+        console.log(version)
+        this.versionCheck = version;    
+        
+      }
+    })
+
+    const searchTerm = "version";
+
+    const index = this.versionCheck.indexOf(searchTerm);
+    console.log(index)
+
+    const suma = index + searchTerm.length + 3; 
+
+      if (index !== -1) {
+        this.appVersion = this.versionCheck.substring(suma, suma+5);
+        console.log(`Texto después de "${searchTerm}": "${this.appVersion.trim()}"`);
+       
+        // this.backVersion = textAfterSearchTerm;
+        // console.log(this.backVersion)
+      } else {
+        console.log(`La palabra "${searchTerm}" no se encontró en el string.`);
+      }
+
+  }
+
+  async mostrarAlerta() {
+    const alert = await this.alertCtrl.create({
+      header: 'Alerta',
+      message: 'Tu aplicación está desactualizada. ¿Desea acttualizar?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            console.log('Acción cancelada');
+          }
+        },
+        {
+          text: 'Actualizar',
+          cssClass: 'link-button',
+          handler: () => {
+            console.log('Enlace presionado');
+            // Aquí puedes agregar la lógica para redirigir a otra página o sitio web
+            window.open("https:\/\/play.google.com\/store\/apps\/details?id=com.abet.movil"); // Abre el enlace en una nueva ventana
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
  /* async autologin(){
@@ -58,7 +129,7 @@ export class AppComponent {
 
         await this.storage.create();
 
-  
+     
 
       let user =  await this.storage.get('login');
       let pass =  await this.storage.get('pass');
@@ -159,6 +230,22 @@ export class AppComponent {
         
       });// Fin Pause
     });
+
+  }
+
+  async checkVersion(){
+
+    if(this.backVersion != this.appVersion){
+
+      this.mostrarAlerta()
+
+    }else{
+      this.toast.show('Tu aplicación está actuaizada', '10000', 'center').subscribe(
+        toast => {
+          console.log(toast);
+        }
+      );
+    }
 
   }
 
