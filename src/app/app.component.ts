@@ -12,7 +12,6 @@ import listPlugin from '@fullcalendar/list';
 import { HttpClient } from '@angular/common/http';
 import { Toast } from '@awesome-cordova-plugins/toast/ngx';
 import { register } from 'swiper/element/bundle';
-import { SharedService } from './shared.service';
 import { AlertController } from '@ionic/angular';
 
 
@@ -31,10 +30,10 @@ export class AppComponent {
   backVersion = "1.1.4"
   URL_Link ="https://backup.tregional.mx/AbetCloud/";
 
-  constructor(private toast: Toast, private platform: Platform, private storage: Storage, private router:Router, private http: HttpClient, private SharedService: SharedService, private alertCtrl: AlertController) {
-   this.initializeApp();
-   this.puebaString();
-   this.checkVersion();
+  constructor(private toast: Toast, private platform: Platform, private storage: Storage, private router:Router, private http: HttpClient, private alertCtrl: AlertController) {
+   
+  //  this.puebaString();
+  //  this.checkVersion();
   
 
    console.log(this.backVersion, this.appVersion)
@@ -237,16 +236,12 @@ export class AppComponent {
 
   async checkVersion(){
 
-    if(this.backVersion != this.appVersion){
+    if(this.backVersion >= this.appVersion){
 
       this.mostrarAlerta()
 
     }else{
-      this.toast.show('Tu aplicación está actuaizada', '10000', 'center').subscribe(
-        toast => {
-          console.log(toast);
-        }
-      );
+      
     }
 
   }
