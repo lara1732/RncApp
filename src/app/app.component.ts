@@ -80,17 +80,18 @@ export class AppComponent {
 
   async mostrarAlerta() {
     const alert = await this.alertCtrl.create({
-      header: 'Alerta',
-      message: 'Tu aplicación está desactualizada. ¿Desea acttualizar?',
+      header: '¡Alerta!',
+      message: 'Tu aplicación está desactualizada. Por favor actualiza tu aplicación',
+      backdropDismiss: false,
       buttons: [
-        {
-          text: 'Cancelar',
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: () => {
-            console.log('Acción cancelada');
-          }
-        },
+        // {
+        //   text: 'Cancelar',
+        //   role: 'cancel',
+        //   cssClass: 'secondary',
+        //   handler: () => {
+        //     console.log('Acción cancelada');
+        //   }
+        // },
         {
           text: 'Actualizar',
           cssClass: 'link-button',
