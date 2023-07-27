@@ -25,21 +25,7 @@ export class VideoTPage implements OnInit {
   constructor(private modalController: ModalController, private videolabService: VideolabService, private router: Router, private storage:Storage,
     private actionSheetCtrl: ActionSheetController, private http: HttpClient, private ElementRef: ElementRef) { }
 
-    swiperSlideChanged(e: any){
-      console.log('changed: ',e);
-    }
 
-    @ViewChild('swiper')
-    swiperRef: ElementRef | undefined;
-    swiper?: Swiper;
-
-    swiperReady(){
-      this.swiper = this.swiperRef?.nativeElement.swiper;
-    }
-  
-    goNext(){
-      this.swiper?.slideNext();
-    }
 
     video: any [""]; 
     flag=0;
@@ -58,7 +44,7 @@ export class VideoTPage implements OnInit {
     }
 
     sendURL(){
-      var sourceTag = document.createElement('video');
+      var sourceTag = document.createElement('video-t');
       sourceTag.setAttribute('src', this.video.source);
         sourceTag.setAttribute('type', 'video/mp4');
     }
@@ -91,8 +77,20 @@ export class VideoTPage implements OnInit {
   
   await this.storage.create();
   
-  this.video=await this.storage.get("video");
-  
+  this.video=await this.storage.get("video-t");
+
+  var sourceTag = <HTMLVideoElement>document.getElementById('video')!;
+  sourceTag.setAttribute('src', this.video.source);
+  sourceTag.setAttribute('type', 'video/mp4');
+  //sourceTag.currentTime= this.video.start+0.5
+  //document.getElementById("ref").
+
+  $("#ref").html('Referencia: <b>'+this.video.mediaRef+"</b>")
+  $("#date").html('Fecha: <b>'+this.video.date+"</b>")
+  $("#start").html('Inicio de detección: <b>'+this.video.dateStart+"</b>")
+  $("#end").html('Fin de detección: <b>'+this.video.dateEnd+"</b>")
+ 
+ // $("").html('Certeza: <b>'+Math.round((this.video.confidence)*100)+"%</b>")
   
  }
 
