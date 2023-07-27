@@ -114,19 +114,19 @@ export class CalendarPage implements OnInit {
     
     
     var  adata = {id:clickInfo.event.id}
-  
+    console.log(adata)
       $.ajax({
-        url: ('https://backup.tregional.mx/AbetCloud/models/queries/App/C_getDetections.php'),
+        url: ('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getVideoTransmisiones.php'),
         type:'POST',
         dataType: "Json",
         data: adata,
         crossDomain: true,
         async: true,
         success:(dataId) =>{ 
-              
+          console.log(dataId)
           this.storage.set('video-t',dataId);   
           this.router.navigate(['/video-t']);
-          console.log(dataId);
+          
         }
       })
 
