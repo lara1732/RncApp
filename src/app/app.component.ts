@@ -27,7 +27,7 @@ export class AppComponent {
 
   versionCheck: any
   appVersion: any
-  backVersion = "1.1.4"
+  backVersion = "1.1.5"
   URL_Link ="https://backup.tregional.mx/AbetCloud/";
 
   constructor(private toast: Toast, private platform: Platform, private storage: Storage, private router:Router, private http: HttpClient, private alertCtrl: AlertController) {
