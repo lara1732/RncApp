@@ -33,3 +33,9 @@ ion-toolbar{
     }
   
   }
+
+  .link-button {
+    color: blue; /* Color del texto del botón */
+    text-decoration: underline; /* Subrayado del texto */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+  }

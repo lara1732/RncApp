@@ -32,10 +32,9 @@ export class AppComponent {
 
   constructor(private toast: Toast, private platform: Platform, private storage: Storage, private router:Router, private http: HttpClient, private alertCtrl: AlertController) {
    
-  //  this.puebaString();
-  //  this.checkVersion();
+  this.puebaString();
+  this.checkVersion();
   
-
    console.log(this.backVersion, this.appVersion)
   }
 
