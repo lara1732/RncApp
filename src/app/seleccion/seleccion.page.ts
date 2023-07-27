@@ -4,6 +4,7 @@ import * as $ from "jquery";
 import Swal from 'sweetalert2';
 import {Storage} from '@ionic/storage-angular';
 import {Router} from '@angular/router';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-seleccion',
@@ -12,7 +13,9 @@ import {Router} from '@angular/router';
 })
 export class SeleccionPage implements OnInit {
 
-  constructor(private Link: AppComponent, private router:Router, private storage: Storage) { }
+  constructor(private Link: AppComponent, private router:Router, private storage: Storage, private platform: Platform) { 
+    this.backbutton();  
+  }
 
   ngOnInit() {
   }
@@ -31,6 +34,18 @@ R_transmisiones(){
 
 R_contratos(){
   Swal.fire({title:'Error', icon:'error', text:'No disponible', heightAuto:false});
+}
+
+backbutton(){
+
+  this.platform.backButton.subscribeWithPriority(9999, () => {
+    document.addEventListener('backbutton', function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      console.log('back button pressed');
+    }, false);
+  });
+
 }
 
 

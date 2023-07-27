@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.abet.movil.app-mergeDebugResources-24:/values-port/values-port.xml",
+            "outputFile": "com.abet.movil.app-mergeDebugResources-2:/values-port/values-port.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ivanr\\.gradle\\caches\\transforms-3\\8bb8b13c1438848676861a1388a97eb3\\transformed\\appcompat-1.6.1\\res\\values-port\\values-port.xml",
+                    "source": "C:\\Users\\dr605\\.gradle\\caches\\transforms-3\\8bb8b13c1438848676861a1388a97eb3\\transformed\\appcompat-1.6.1\\res\\values-port\\values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
