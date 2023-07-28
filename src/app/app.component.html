@@ -12,9 +12,7 @@
     <ion-content [fullscreen]="true">    
         
       <ion-list >
-        <ion-text>
-          <p align="center">Versión 1.1.5</p>
-        </ion-text>
+      
         <ion-menu-toggle auto-hide="true">
 
           <ion-item [routerLink]="'/seleccion'" [routerDirection]="'forward'" id="seleccion" lines="full" color="">
@@ -48,12 +46,21 @@
           </ion-item> 
 
           
+
+          
                       
           
        
         </ion-menu-toggle>
       </ion-list>
     </ion-content>
+
+    
+      <ion-toolbar>
+        <ion-text>
+          <p align="center">Versión 1.1.5</p>
+        </ion-text>
+      </ion-toolbar>
   </ion-menu>
   <ion-router-outlet id="content1"></ion-router-outlet>
 </ion-app>
