@@ -51,7 +51,7 @@ export class TransmisionesPage implements OnInit {
   async showLoading() {
     const loading = await this.loadingCtrl.create({
       message: 'Cargando...',
-      duration: 3000,
+      duration: 4000,
     });
 
     loading.present();
