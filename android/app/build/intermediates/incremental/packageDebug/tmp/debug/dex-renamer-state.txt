@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 #Thu Jul 27 12:46:46 CST 2023
 base.0=C\:\\RncApp\\android\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\RncApp\\android\\app\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\11\\classes.dex
@@ -10,6 +11,13 @@ base.6=C\:\\RncApp\\android\\app\\build\\intermediates\\dex\\debug\\mergeLibDexD
 base.7=C\:\\RncApp\\android\\app\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\7\\classes.dex
 base.8=C\:\\RncApp\\android\\app\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\8\\classes.dex
 base.9=C\:\\RncApp\\android\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+=======
+#Thu Jul 27 11:12:09 CST 2023
+base.0=C\:\\xampp\\htdocs\\RncApp\\android\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\xampp\\htdocs\\RncApp\\android\\app\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
+base.2=C\:\\xampp\\htdocs\\RncApp\\android\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.3=C\:\\xampp\\htdocs\\RncApp\\android\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
+>>>>>>> Stashed changes
 path.0=classes.dex
 path.1=11/classes.dex
 path.10=14/classes.dex
