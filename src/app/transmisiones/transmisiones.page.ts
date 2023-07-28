@@ -70,12 +70,13 @@ export class TransmisionesPage implements OnInit {
     }
 
     for(let i=0; i<plaza.length;i++){
-      plazas = plazas + ",'" + plaza[i].Name+"'";
+      plazas = plazas + ",'" + plaza[i].Plaza+"'";
     }
     plazas = plazas.slice(1);
+    console.log(plazas)
     
     this.http
-      .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getChannels.php?plaza='+plaza[0].Plaza+'&id='+Id+'&source=Transmision')
+      .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getChannels.php?plaza='+plazas+'&id='+Id+'&source=Transmision')
       .subscribe((res: any) => {
         this.canalesT = res; 
        
