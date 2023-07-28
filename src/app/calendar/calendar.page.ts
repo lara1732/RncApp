@@ -9,6 +9,7 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import { FullCalendarComponent } from '@fullcalendar/angular';
 import * as moment from 'moment';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-calendar',
@@ -92,13 +93,20 @@ export class CalendarPage implements OnInit {
   
   
 
-  constructor(private changeDetector: ChangeDetectorRef, private storage:Storage, private router:Router){
+  constructor(private changeDetector: ChangeDetectorRef, private storage:Storage, private router:Router, private loadingCtrl: LoadingController){
 
     
     
 
   }
-  
+  async showLoading() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Dismissing after 3 seconds...',
+      duration: 3000,
+    });
+
+    loading.present();
+  }
   handleCalendarToggle() {
     this.calendarVisible = !this.calendarVisible;
   }

@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions } from '@awesome-cordova-plugins/streaming-media/ngx';
 import { Platform } from '@ionic/angular';
+import { LoadingController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-transmisiones',
@@ -25,7 +27,9 @@ export class TransmisionesPage implements OnInit {
     private storage:Storage, private router:Router,
     private streamingMedia: StreamingMedia,
     public navCtrl: NavController,
-     private platform: Platform) { }
+    private platform: Platform,
+    private loadingCtrl: LoadingController
+     ) { }
 
   async loadLocationsT() {
 
@@ -44,7 +48,14 @@ export class TransmisionesPage implements OnInit {
       
   }
 
+  async showLoading() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Cargando...',
+      duration: 3000,
+    });
 
+    loading.present();
+  }
   async loadCanalesT() {
     
     let Id = await this.storage.get('id');  

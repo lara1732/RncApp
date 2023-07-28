@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions } from '@awesome-cordova-plugins/streaming-media/ngx';
 import { Platform } from '@ionic/angular';
+import { LoadingController } from '@ionic/angular';
 //import data from 'src/assets/data/canal.json';
 
 
@@ -27,11 +28,20 @@ export class HomePage implements OnInit {
   
 
  //public Scanal:any=data;
-  constructor(private http: HttpClient, private storage:Storage, private router:Router,private streamingMedia: StreamingMedia,public navCtrl: NavController, private platform: Platform){
+  constructor(private http: HttpClient, private storage:Storage, private router:Router,private streamingMedia: StreamingMedia,public navCtrl: NavController, private platform: Platform,    private loadingCtrl: LoadingController){
 
     this.backbutton();    
   }
   
+  async showLoading() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Cargando...',
+      duration: 1000,
+    });
+
+    loading.present();
+  }
+
   public getInputValue(inputValue:string){
     console.log(inputValue);
   }
