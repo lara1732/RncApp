@@ -35,7 +35,6 @@ export class AppComponent {
   this.puebaString();
   this.checkVersion();
   
-   console.log(this.backVersion, this.appVersion)
   }
 
   BaseLink(){
@@ -51,7 +50,7 @@ export class AppComponent {
       crossDomain: true,
       async: false,
       success:(version) =>{
-        console.log(version)
+       
         this.versionCheck = version;    
         
       }
@@ -60,13 +59,13 @@ export class AppComponent {
     const searchTerm = "version";
 
     const index = this.versionCheck.indexOf(searchTerm);
-    console.log(index)
+   
 
     const suma = index + searchTerm.length + 3; 
 
       if (index !== -1) {
         this.appVersion = this.versionCheck.substring(suma, suma+5);
-        console.log(`Texto después de "${searchTerm}": "${this.appVersion.trim()}"`);
+      
        
         // this.backVersion = textAfterSearchTerm;
         // console.log(this.backVersion)
