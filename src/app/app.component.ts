@@ -15,7 +15,7 @@ import { register } from 'swiper/element/bundle';
 import { AlertController } from '@ionic/angular';
 
 
-//register();
+register();
 
 @Component({
   selector: 'app-root',

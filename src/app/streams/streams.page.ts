@@ -37,6 +37,11 @@ export class StreamsPage implements OnInit {
 
   }
 
+  swiperSlideChanged(e:any){
+    console.log('changed: ',e);
+  }
+
+
 
   backbutton(){
 
@@ -57,7 +62,7 @@ export class StreamsPage implements OnInit {
     let options: StreamingVideoOptions = {
       successCallback: () => { console.log('Video played') },
       errorCallback: () => { console.log('Error Stream') },
-      orientation: 'landscape',
+      orientation: 'portrait',
       shouldAutoClose: true,
       controls: false
     };

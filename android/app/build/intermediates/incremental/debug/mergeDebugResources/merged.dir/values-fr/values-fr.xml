@@ -34,6 +34,20 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"Appel entrant"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"Appel en cours"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"Filtrage d\'un appel entrant"</string>
+    <string name="download_complete">Mise à jour terminée</string>
+    <string name="download_complete_neu_btn">Installer manuellement</string>
+    <string name="download_complete_pos_btn">Re-télécharger</string>
+    <string name="download_complete_title">Mise à jour terminée</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Rechercher"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="update_bg">Mettre à jour en arrière-plan...</string>
+    <string name="update_cancel">Annuler</string>
+    <string name="update_error_message">Connexion internet indisponible, merci de vérifier votre connexion.</string>
+    <string name="update_error_title">Erreur</string>
+    <string name="update_error_yes_btn">OK</string>
+    <string name="update_latest">Vous possédez la dernière version disponible!</string>
+    <string name="update_message">Vous devez mettre l\'application à jour！</string>
+    <string name="update_title">Nouvelle Mise à Jour</string>
+    <string name="update_update_btn">Mise à Jour</string>
+    <string name="updating">Mise à jour en cours</string>
 </resources>

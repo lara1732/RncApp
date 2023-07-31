@@ -4,7 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { StreamsPage } from './streams.page';
 import { StreamsPageRoutingModule } from './streams-routing.module';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { SearchableSelectComponent } from '../components/searchable-select/searchable-select.component';
 import { SearchableCanalComponent } from '../components/searchable-canal/searchable-canal.component';
 import { SearchableSpotComponent } from '../components/searchable-spot/searchable-spot.component';
@@ -27,6 +27,7 @@ import { StreamCanalComponent } from '../components/stream-canal/stream-canal.co
     StreamPlazaComponent,
     StreamCanalComponent
   ],
-  declarations: [StreamsPage]
+  declarations: [StreamsPage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class StreamsPageModule {}

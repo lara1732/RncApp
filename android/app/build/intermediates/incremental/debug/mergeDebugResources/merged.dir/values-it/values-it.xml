@@ -34,6 +34,20 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"Chiamata in arrivo"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"Chiamata in corso"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"Applicazione filtro a chiamata in arrivo"</string>
+    <string name="download_complete">Download completato con successo</string>
+    <string name="download_complete_neu_btn">Installa manualmente</string>
+    <string name="download_complete_pos_btn">Scarica di nuovo</string>
+    <string name="download_complete_title">Download completato</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Cerca"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="update_bg">Aggiorna in background</string>
+    <string name="update_cancel">Annulla</string>
+    <string name="update_error_message">Si è verificato un errore di rete, controlla la tua connessione</string>
+    <string name="update_error_title">Errore</string>
+    <string name="update_error_yes_btn">OK</string>
+    <string name="update_latest">Sei in possesso dell\' ultima versione</string>
+    <string name="update_message">E\' disponibile una nuova versione!</string>
+    <string name="update_title">Nuovo aggiornamento</string>
+    <string name="update_update_btn">Aggiorna</string>
+    <string name="updating">Aggiornamento</string>
 </resources>
