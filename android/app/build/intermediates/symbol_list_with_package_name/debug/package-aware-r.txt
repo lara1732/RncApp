@@ -853,6 +853,7 @@ id topPanel
 id unchecked
 id uniform
 id up
+id update_progress
 id useLogo
 id view_tree_lifecycle_owner
 id view_tree_on_back_pressed_dispatcher_owner
@@ -904,6 +905,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout appupdate_progress
 layout bridge_layout_main
 layout custom_dialog
 layout fragment_bridge
@@ -959,10 +961,24 @@ string call_notification_incoming_text
 string call_notification_ongoing_text
 string call_notification_screening_text
 string custom_url_scheme
+string download_complete
+string download_complete_neu_btn
+string download_complete_pos_btn
+string download_complete_title
 string package_name
 string search_menu_title
 string status_bar_notification_info_overflow
 string title_activity_main
+string update_bg
+string update_cancel
+string update_error_message
+string update_error_title
+string update_error_yes_btn
+string update_latest
+string update_message
+string update_title
+string update_update_btn
+string updating
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -1377,5 +1393,6 @@ styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
 styleable bridge_fragment start_dir
+xml appupdate_paths
 xml config
 xml file_paths
