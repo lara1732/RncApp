@@ -3,32 +3,25 @@
     <ion-buttons id="btn-menu" slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-   
-    <ion-toolbar>
-      <ion-text>
-        <p align="center">Versión 1.1.5</p>
-      </ion-text>
-    </ion-toolbar>
-    
   </ion-toolbar>
 </ion-header>
 
 
 <ion-content [fullscreen]="true" >
 
-  <br>
+  <br>  
 
-  
   <div id="filtroStream">
-
      <ion-item *ngFor="let item of streams">
       <ion-button shape="round" expand="full" size="default" (click)="botonbuscarStream(item.stream)"> {{item.Name_plaza}}</ion-button>
      </ion-item>
+  </div>  
 
-  </div>
-  
-    
-  
 </ion-content>
 
+<ion-toolbar class="footer-toolbar">
+  <ion-text>
+    <p align="center">Versión {{ versionFront}}</p>
+  </ion-text>
+</ion-toolbar>
 

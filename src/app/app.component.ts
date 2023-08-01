@@ -13,6 +13,7 @@ import { HttpClient } from '@angular/common/http';
 import { Toast } from '@awesome-cordova-plugins/toast/ngx';
 import { register } from 'swiper/element/bundle';
 import { AlertController } from '@ionic/angular';
+import { SharedService } from './shared.service';
 
 
 register();
@@ -27,14 +28,14 @@ export class AppComponent {
 
   versionCheck: any
   appVersion: any
-  backVersion = "1.1.5"
   URL_Link ="https://backup.tregional.mx/AbetCloud/";
+  versionfront: string
 
-  constructor(private toast: Toast, private platform: Platform, private storage: Storage, private router:Router, private http: HttpClient, private alertCtrl: AlertController) {
+  constructor(private sharedService: SharedService, private toast: Toast, private platform: Platform, private storage: Storage, private router:Router, private http: HttpClient, private alertCtrl: AlertController) {
    
   this.puebaString();
   this.checkVersion();
-  
+  this.versionfront = this.sharedService.getVersion();
   }
 
   BaseLink(){
@@ -234,7 +235,7 @@ export class AppComponent {
 
   async checkVersion(){
 
-    if(this.backVersion >= this.appVersion){
+    if(this.versionfront >= this.appVersion){
 
       this.toast.show('Tu aplicación está actualizada', '10000', 'center').subscribe(
         toast => {

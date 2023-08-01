@@ -44,3 +44,9 @@ ion-footer{
     text-decoration: underline; /* Subrayado del texto */
     cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
   }
+
+  .footer-toolbar {
+    font-size: 12px;
+    position: sticky;
+    bottom: 0;
+  }

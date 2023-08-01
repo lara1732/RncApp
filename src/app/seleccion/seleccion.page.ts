@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import {Storage} from '@ionic/storage-angular';
 import {Router} from '@angular/router';
 import { Platform } from '@ionic/angular';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-seleccion',
@@ -13,8 +14,11 @@ import { Platform } from '@ionic/angular';
 })
 export class SeleccionPage implements OnInit {
 
-  constructor(private Link: AppComponent, private router:Router, private storage: Storage, private platform: Platform) { 
+  versionFront:string
+
+  constructor(private sharedService: SharedService, private Link: AppComponent, private router:Router, private storage: Storage, private platform: Platform) { 
     this.backbutton();  
+    this.versionFront = this.sharedService.getVersion();
   }
 
   ngOnInit() {

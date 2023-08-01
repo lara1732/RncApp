@@ -4,15 +4,15 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     
-    <ion-toolbar>
+    <!-- <ion-toolbar>
       <ion-text>
         <p align="center">Versión 1.1.5</p>
       </ion-text>
-    </ion-toolbar>
+    </ion-toolbar> -->
     
   </ion-toolbar>
 </ion-header>
-
+  
 <ion-content [fullscreen]="true">
 
   
@@ -43,6 +43,15 @@
     </ion-slide>
   </ion-slides>
 
+  
 </ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar class="footer-toolbar">
+    <ion-text>
+      <p align="center">Versión {{ versionFront}}</p>
+    </ion-text>
+  </ion-toolbar>
+</ion-footer>
 
 

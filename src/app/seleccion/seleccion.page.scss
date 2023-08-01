@@ -16,8 +16,11 @@ ion-toolbar{
 
     margin-bottom: 30px;
 }
-ion-footer{
-  position: absolute;
+
+.footer-toolbar {
+  font-size: 12px;
+  position: sticky;
+  bottom: 0;
 }
 
 ion-slide{

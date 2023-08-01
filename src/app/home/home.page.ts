@@ -7,6 +7,7 @@ import { NavController } from '@ionic/angular';
 import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions } from '@awesome-cordova-plugins/streaming-media/ngx';
 import { Platform } from '@ionic/angular';
 import { LoadingController } from '@ionic/angular';
+import { SharedService } from '../shared.service';
 //import data from 'src/assets/data/canal.json';
 
 
@@ -25,12 +26,14 @@ export class HomePage implements OnInit {
   library: any = [];
   flag:any;
   canalesS:any=[];
+  versionFront:string
   
 
  //public Scanal:any=data;
-  constructor(private http: HttpClient, private storage:Storage, private router:Router,private streamingMedia: StreamingMedia,public navCtrl: NavController, private platform: Platform,    private loadingCtrl: LoadingController){
+  constructor(private sharedService: SharedService,private http: HttpClient, private storage:Storage, private router:Router,private streamingMedia: StreamingMedia,public navCtrl: NavController, private platform: Platform,    private loadingCtrl: LoadingController){
 
-    this.backbutton();    
+    this.backbutton();  
+    this.versionFront = this.sharedService.getVersion();  
   }
   
   async showLoading() {

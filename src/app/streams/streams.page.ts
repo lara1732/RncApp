@@ -8,6 +8,7 @@ import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions } from '@a
 import { IonicModule, SearchbarCustomEvent } from '@ionic/angular';
 import { Platform  } from '@ionic/angular';
 import { log } from 'console';
+import { SharedService } from '../shared.service';
 @Component({
   selector: 'app-streams',
   templateUrl: './streams.page.html',
@@ -24,8 +25,12 @@ export class StreamsPage implements OnInit {
   library: any = [];
   streams:any[]= [];
   results: any[] = [];
+  versionFront: string
 
-  constructor(private http: HttpClient, private storage:Storage, private router:Router,private streamingMedia: StreamingMedia,public navCtrl: NavController, private platform: Platform) { }
+  constructor(private sharedService: SharedService,private http: HttpClient, private storage:Storage, private router:Router,private streamingMedia: StreamingMedia,public navCtrl: NavController, private platform: Platform)
+   { 
+    this.versionFront = this.sharedService.getVersion();
+   }
 
   ngOnInit() {
     this.GetStreams();

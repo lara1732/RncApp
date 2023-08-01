@@ -7,6 +7,8 @@ import { NavController } from '@ionic/angular';
 import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions } from '@awesome-cordova-plugins/streaming-media/ngx';
 import { Platform } from '@ionic/angular';
 import { LoadingController } from '@ionic/angular';
+import { privateDecrypt } from 'crypto';
+import { SharedService } from '../shared.service';
 
 
 @Component({
@@ -22,14 +24,19 @@ export class TransmisionesPage implements OnInit {
   canalesT: any = [];
   flag:any;
   transmisionesplaza:any=[];
+  versionFront: string
 
   constructor(private http: HttpClient, 
     private storage:Storage, private router:Router,
     private streamingMedia: StreamingMedia,
     public navCtrl: NavController,
     private platform: Platform,
-    private loadingCtrl: LoadingController
-     ) { }
+    private loadingCtrl: LoadingController,
+    private sharedService: SharedService
+     ) {
+
+      this.versionFront = this.sharedService.getVersion()
+      }
 
   async loadLocationsT() {
 

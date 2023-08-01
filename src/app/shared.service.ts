@@ -16,4 +16,8 @@ export class SharedService {
     this.selected3 = value;
     this.selectedS = value;
   }
+
+  getVersion(): string {
+    return '1.1.6'; // Cambia este valor según la versión actual
+  }
 }
