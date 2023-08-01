@@ -32,10 +32,11 @@ export class AppComponent {
   versionfront: string
 
   constructor(private sharedService: SharedService, private toast: Toast, private platform: Platform, private storage: Storage, private router:Router, private http: HttpClient, private alertCtrl: AlertController) {
-   
+     
+  this.versionfront = this.sharedService.getVersion();
   this.puebaString();
   this.checkVersion();
-  this.versionfront = this.sharedService.getVersion();
+  
   }
 
   BaseLink(){
@@ -69,7 +70,7 @@ export class AppComponent {
       
        
         // this.backVersion = textAfterSearchTerm;
-        // console.log(this.backVersion)
+        console.log(this.appVersion)
       } else {
         console.log(`La palabra "${searchTerm}" no se encontró en el string.`);
       }
@@ -234,7 +235,7 @@ export class AppComponent {
   }
 
   async checkVersion(){
-
+      console.log(this.versionfront, this.appVersion)
     if(this.versionfront >= this.appVersion){
 
       this.toast.show('Tu aplicación está actualizada', '10000', 'center').subscribe(
