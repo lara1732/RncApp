@@ -21,8 +21,6 @@
   
   <div id="filtroStream">
 
-     <ion-searchbar show-clear-button="focus" placeholder="Ejemplo: Cancún" [debounce]="1000" (ionChange)="handleInput($any($event))"></ion-searchbar>
-
      <ion-item *ngFor="let item of streams">
       <ion-button shape="round" expand="full" size="default" (click)="botonbuscarStream(item.stream)"> {{item.Name_plaza}}</ion-button>
      </ion-item>

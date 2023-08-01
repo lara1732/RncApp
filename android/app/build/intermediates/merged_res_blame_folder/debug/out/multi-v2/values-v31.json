@@ -4,7 +4,7 @@
             "outputFile": "com.abet.movil.app-mergeDebugResources-2:/values-v31/values-v31.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\dr605\\.gradle\\caches\\transforms-3\\49d76494bab876e6a92e613846322b45\\transformed\\core-splashscreen-1.0.0\\res\\values-v31\\values-v31.xml",
+                    "source": "C:\\Users\\Abet\\.gradle\\caches\\transforms-3\\e5f33fccee23d53fd983ee477a655276\\transformed\\jetified-core-splashscreen-1.0.0\\res\\values-v31\\values-v31.xml",
                     "from": {
                         "startLines": "2,9",
                         "startColumns": "4,4",
