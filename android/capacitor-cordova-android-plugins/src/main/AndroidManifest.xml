@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:amazon="http://schemas.amazon.com/apk/res/android">
+<application  >
+<provider android:name="com.vaenow.appupdate.android.GenericFileProvider" android:authorities="${applicationId}.appupdate.provider" android:exported="false" android:grantUriPermissions="true">
+  <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/appupdate_paths"/>
+</provider>
+<meta-data android:name="android.max_aspect" android:value="2.16"/>
+<activity android:configChanges="orientation|screenSize" android:name="com.hutchind.cordova.plugins.streamingmedia.SimpleAudioStream" android:label="Simple Audio Stream"/>
+<activity android:configChanges="orientation|screenSize" android:name="com.hutchind.cordova.plugins.streamingmedia.SimpleVideoStream" android:label="Simple Video Stream"/>
+</application>
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+</manifest>

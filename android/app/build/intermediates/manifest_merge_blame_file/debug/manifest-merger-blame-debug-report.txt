@@ -1,0 +1,222 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.abet.movil"
+4    android:versionCode="10"
+5    android:versionName="1.1.5" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="22"
+8-->C:\RncApp\android\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->C:\RncApp\android\app\src\main\AndroidManifest.xml
+10
+11    <!-- Permissions -->
+12
+13    <uses-permission android:name="android.permission.INTERNET" />
+13-->C:\RncApp\android\app\src\main\AndroidManifest.xml:43:5-67
+13-->C:\RncApp\android\app\src\main\AndroidManifest.xml:43:22-64
+14    <uses-permission android:name="android.permission.BIND_DEVICE_ADMIN" />
+14-->C:\RncApp\android\app\src\main\AndroidManifest.xml:44:6-77
+14-->C:\RncApp\android\app\src\main\AndroidManifest.xml:44:23-74
+15    <uses-permission android:name="android.permission.VIBRATE" />
+15-->[:capacitor-haptics] C:\RncApp\node_modules\@capacitor\haptics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-66
+15-->[:capacitor-haptics] C:\RncApp\node_modules\@capacitor\haptics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:7:22-63
+16    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+16-->[:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-80
+16-->[:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-77
+17    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+17-->[:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-81
+17-->[:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-78
+18    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+18-->[:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-83
+18-->[:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:22-80
+19    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+19-->[:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-84
+19-->[:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:22-81
+20
+21    <permission
+21-->[androidx.core:core:1.10.0] C:\Users\dr605\.gradle\caches\transforms-3\4084e7bcb4a1738e1ff26326a1997c6e\transformed\core-1.10.0\AndroidManifest.xml:22:5-24:47
+22        android:name="com.abet.movil.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+22-->[androidx.core:core:1.10.0] C:\Users\dr605\.gradle\caches\transforms-3\4084e7bcb4a1738e1ff26326a1997c6e\transformed\core-1.10.0\AndroidManifest.xml:23:9-81
+23        android:protectionLevel="signature" />
+23-->[androidx.core:core:1.10.0] C:\Users\dr605\.gradle\caches\transforms-3\4084e7bcb4a1738e1ff26326a1997c6e\transformed\core-1.10.0\AndroidManifest.xml:24:9-44
+24
+25    <uses-permission android:name="com.abet.movil.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+25-->[androidx.core:core:1.10.0] C:\Users\dr605\.gradle\caches\transforms-3\4084e7bcb4a1738e1ff26326a1997c6e\transformed\core-1.10.0\AndroidManifest.xml:26:5-97
+25-->[androidx.core:core:1.10.0] C:\Users\dr605\.gradle\caches\transforms-3\4084e7bcb4a1738e1ff26326a1997c6e\transformed\core-1.10.0\AndroidManifest.xml:26:22-94
+26
+27    <application
+27-->C:\RncApp\android\app\src\main\AndroidManifest.xml:5:5-39:19
+28        android:allowBackup="true"
+28-->C:\RncApp\android\app\src\main\AndroidManifest.xml:7:9-35
+29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+29-->[androidx.core:core:1.10.0] C:\Users\dr605\.gradle\caches\transforms-3\4084e7bcb4a1738e1ff26326a1997c6e\transformed\core-1.10.0\AndroidManifest.xml:28:18-86
+30        android:debuggable="true"
+31        android:icon="@mipmap/ic_launcher"
+31-->C:\RncApp\android\app\src\main\AndroidManifest.xml:8:9-43
+32        android:label="@string/app_name"
+32-->C:\RncApp\android\app\src\main\AndroidManifest.xml:9:9-41
+33        android:roundIcon="@mipmap/ic_launcher_round"
+33-->C:\RncApp\android\app\src\main\AndroidManifest.xml:10:9-54
+34        android:supportsRtl="true"
+34-->C:\RncApp\android\app\src\main\AndroidManifest.xml:11:9-35
+35        android:testOnly="true"
+36        android:theme="@style/AppTheme"
+36-->C:\RncApp\android\app\src\main\AndroidManifest.xml:12:9-40
+37        android:usesCleartextTraffic="true" >
+37-->C:\RncApp\android\app\src\main\AndroidManifest.xml:6:9-44
+38        <activity
+38-->C:\RncApp\android\app\src\main\AndroidManifest.xml:14:9-28:20
+39            android:name="com.abet.movil.MainActivity"
+39-->C:\RncApp\android\app\src\main\AndroidManifest.xml:16:13-55
+40            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
+40-->C:\RncApp\android\app\src\main\AndroidManifest.xml:15:13-129
+41            android:exported="true"
+41-->C:\RncApp\android\app\src\main\AndroidManifest.xml:20:13-36
+42            android:label="@string/title_activity_main"
+42-->C:\RncApp\android\app\src\main\AndroidManifest.xml:17:13-56
+43            android:launchMode="singleTask"
+43-->C:\RncApp\android\app\src\main\AndroidManifest.xml:19:13-44
+44            android:theme="@style/AppTheme.NoActionBarLaunch" >
+44-->C:\RncApp\android\app\src\main\AndroidManifest.xml:18:13-62
+45            <intent-filter>
+45-->C:\RncApp\android\app\src\main\AndroidManifest.xml:22:13-26:29
+46                <action android:name="android.intent.action.MAIN" />
+46-->C:\RncApp\android\app\src\main\AndroidManifest.xml:23:17-69
+46-->C:\RncApp\android\app\src\main\AndroidManifest.xml:23:25-66
+47                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+47-->C:\RncApp\android\app\src\main\AndroidManifest.xml:24:17-82
+47-->C:\RncApp\android\app\src\main\AndroidManifest.xml:24:25-79
+48
+49                <category android:name="android.intent.category.LAUNCHER" />
+49-->C:\RncApp\android\app\src\main\AndroidManifest.xml:25:17-77
+49-->C:\RncApp\android\app\src\main\AndroidManifest.xml:25:27-74
+50            </intent-filter>
+51        </activity>
+52
+53        <provider
+54            android:name="androidx.core.content.FileProvider"
+54-->C:\RncApp\android\app\src\main\AndroidManifest.xml:31:13-62
+55            android:authorities="com.abet.movil.fileprovider"
+55-->C:\RncApp\android\app\src\main\AndroidManifest.xml:32:13-64
+56            android:exported="false"
+56-->C:\RncApp\android\app\src\main\AndroidManifest.xml:33:13-37
+57            android:grantUriPermissions="true" >
+57-->C:\RncApp\android\app\src\main\AndroidManifest.xml:34:13-47
+58            <meta-data
+58-->C:\RncApp\android\app\src\main\AndroidManifest.xml:35:13-37:64
+59                android:name="android.support.FILE_PROVIDER_PATHS"
+59-->C:\RncApp\android\app\src\main\AndroidManifest.xml:36:17-67
+60                android:resource="@xml/file_paths" />
+60-->C:\RncApp\android\app\src\main\AndroidManifest.xml:37:17-51
+61        </provider>
+62        <provider
+62-->[:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:9-23:20
+63            android:name="com.vaenow.appupdate.android.GenericFileProvider"
+63-->[:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-76
+64            android:authorities="com.abet.movil.appupdate.provider"
+64-->[:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-70
+65            android:exported="false"
+65-->[:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-37
+66            android:grantUriPermissions="true" >
+66-->[:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-47
+67            <meta-data
+67-->C:\RncApp\android\app\src\main\AndroidManifest.xml:35:13-37:64
+68                android:name="android.support.FILE_PROVIDER_PATHS"
+68-->C:\RncApp\android\app\src\main\AndroidManifest.xml:36:17-67
+69                android:resource="@xml/appupdate_paths" />
+69-->C:\RncApp\android\app\src\main\AndroidManifest.xml:37:17-51
+70        </provider>
+71
+72        <meta-data
+72-->[:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:25:9-27:36
+73            android:name="android.max_aspect"
+73-->[:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-46
+74            android:value="2.16" />
+74-->[:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:13-33
+75
+76        <activity
+76-->[:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:29:9-32:51
+77            android:name="com.hutchind.cordova.plugins.streamingmedia.SimpleAudioStream"
+77-->[:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:30:13-89
+78            android:configChanges="orientation|screenSize"
+78-->[:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:31:13-59
+79            android:label="Simple Audio Stream" />
+79-->[:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:32:13-48
+80        <activity
+80-->[:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:33:9-36:51
+81            android:name="com.hutchind.cordova.plugins.streamingmedia.SimpleVideoStream"
+81-->[:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:34:13-89
+82            android:configChanges="orientation|screenSize"
+82-->[:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:35:13-59
+83            android:label="Simple Video Stream" />
+83-->[:capacitor-cordova-android-plugins] C:\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:36:13-48
+84
+85        <provider
+85-->[androidx.emoji2:emoji2:1.2.0] C:\Users\dr605\.gradle\caches\transforms-3\bc4e404d2e4e27a8333e074e645fe6c4\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+86            android:name="androidx.startup.InitializationProvider"
+86-->[androidx.emoji2:emoji2:1.2.0] C:\Users\dr605\.gradle\caches\transforms-3\bc4e404d2e4e27a8333e074e645fe6c4\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+87            android:authorities="com.abet.movil.androidx-startup"
+87-->[androidx.emoji2:emoji2:1.2.0] C:\Users\dr605\.gradle\caches\transforms-3\bc4e404d2e4e27a8333e074e645fe6c4\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+88            android:exported="false" >
+88-->[androidx.emoji2:emoji2:1.2.0] C:\Users\dr605\.gradle\caches\transforms-3\bc4e404d2e4e27a8333e074e645fe6c4\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+89            <meta-data
+89-->[androidx.emoji2:emoji2:1.2.0] C:\Users\dr605\.gradle\caches\transforms-3\bc4e404d2e4e27a8333e074e645fe6c4\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+90                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+90-->[androidx.emoji2:emoji2:1.2.0] C:\Users\dr605\.gradle\caches\transforms-3\bc4e404d2e4e27a8333e074e645fe6c4\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+91                android:value="androidx.startup" />
+91-->[androidx.emoji2:emoji2:1.2.0] C:\Users\dr605\.gradle\caches\transforms-3\bc4e404d2e4e27a8333e074e645fe6c4\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+92            <meta-data
+92-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\dr605\.gradle\caches\transforms-3\6965ddfd7c9bb67e76de74f23369d3cb\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
+93                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+93-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\dr605\.gradle\caches\transforms-3\6965ddfd7c9bb67e76de74f23369d3cb\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
+94                android:value="androidx.startup" />
+94-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\dr605\.gradle\caches\transforms-3\6965ddfd7c9bb67e76de74f23369d3cb\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+95            <meta-data
+95-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\dr605\.gradle\caches\transforms-3\a916dcd0a76c646859857390ab72a1c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+96                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+96-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\dr605\.gradle\caches\transforms-3\a916dcd0a76c646859857390ab72a1c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+97                android:value="androidx.startup" />
+97-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\dr605\.gradle\caches\transforms-3\a916dcd0a76c646859857390ab72a1c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+98        </provider>
+99
+100        <receiver
+100-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\dr605\.gradle\caches\transforms-3\a916dcd0a76c646859857390ab72a1c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+101            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+101-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\dr605\.gradle\caches\transforms-3\a916dcd0a76c646859857390ab72a1c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+102            android:directBootAware="false"
+102-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\dr605\.gradle\caches\transforms-3\a916dcd0a76c646859857390ab72a1c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+103            android:enabled="true"
+103-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\dr605\.gradle\caches\transforms-3\a916dcd0a76c646859857390ab72a1c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+104            android:exported="true"
+104-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\dr605\.gradle\caches\transforms-3\a916dcd0a76c646859857390ab72a1c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+105            android:permission="android.permission.DUMP" >
+105-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\dr605\.gradle\caches\transforms-3\a916dcd0a76c646859857390ab72a1c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+106            <intent-filter>
+106-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\dr605\.gradle\caches\transforms-3\a916dcd0a76c646859857390ab72a1c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+107                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+107-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\dr605\.gradle\caches\transforms-3\a916dcd0a76c646859857390ab72a1c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+107-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\dr605\.gradle\caches\transforms-3\a916dcd0a76c646859857390ab72a1c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+108            </intent-filter>
+109            <intent-filter>
+109-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\dr605\.gradle\caches\transforms-3\a916dcd0a76c646859857390ab72a1c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+110                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+110-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\dr605\.gradle\caches\transforms-3\a916dcd0a76c646859857390ab72a1c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+110-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\dr605\.gradle\caches\transforms-3\a916dcd0a76c646859857390ab72a1c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+111            </intent-filter>
+112            <intent-filter>
+112-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\dr605\.gradle\caches\transforms-3\a916dcd0a76c646859857390ab72a1c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+113                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+113-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\dr605\.gradle\caches\transforms-3\a916dcd0a76c646859857390ab72a1c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+113-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\dr605\.gradle\caches\transforms-3\a916dcd0a76c646859857390ab72a1c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+114            </intent-filter>
+115            <intent-filter>
+115-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\dr605\.gradle\caches\transforms-3\a916dcd0a76c646859857390ab72a1c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+116                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+116-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\dr605\.gradle\caches\transforms-3\a916dcd0a76c646859857390ab72a1c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+116-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\dr605\.gradle\caches\transforms-3\a916dcd0a76c646859857390ab72a1c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+117            </intent-filter>
+118        </receiver>
+119    </application>
+120
+121</manifest>
