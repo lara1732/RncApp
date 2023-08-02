@@ -1,54 +1,45 @@
 <ion-header class="ion-no-border" >
   <ion-toolbar >
-    <ion-buttons id="btn-menu" slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-   
-    <!-- <ion-toolbar>
-      <ion-text>
-        <p align="center">Versión 1.1.5</p>
-      </ion-text>
-    </ion-toolbar> -->
-    
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>  
+    <ion-title>Transmisiones</ion-title>  
   </ion-toolbar>
 </ion-header>
+
 <ion-content  [fullscreen]="true">
 
   <br>
-  
-  <ion-button shape="round" fill="outline" expand="block" id="btnbuscar" (click)="botonbuscar()"  disabled="false" (click)="showLoading()">Buscar</ion-button>
 
+  <ion-button shape="round" fill="outline" expand="block" id="btnbuscarT" (click)="botonbuscar()"  disabled="true" (click)="showLoading()">Buscar</ion-button>
 
-  
-    <ion-item  (click)="select8.open8()" (click)="loadLocationsT()" > 
-      <ion-label>Selecciona Plaza</ion-label>
+  <ion-item  (click)="select8.open8()" (click)="loadLocationsT()" > 
+    <ion-label>Selecciona Plaza</ion-label>
       <app-transmisiones-plaza  class="searchable" 
         [data8]="locationsT" 
         itemTextField = "Name"  
         [multiple] = "true"  
         #select8
-        (selectChanged)="selectChanged($event)"
-       ></app-transmisiones-plaza>
-  
-  
-    </ion-item>
+        (selectChanged)="selectChanged($event)">
+      </app-transmisiones-plaza>
+  </ion-item>
 
-    <ion-item  (click)="select7.open7()" (click)="loadCanalesT()" disabled="false"  >
-      <ion-label>Selecciona Canal</ion-label>
+  <ion-item id="canalT" (click)="select7.open7()" (click)="loadCanalesT()" disabled="true"  >
+    <ion-label>Selecciona Canal</ion-label>
       <app-transmisiones-canal  class="searchable" 
         [data7]="canalesT"  
         itemTextField = "Name_channel" 
         [multiple] = "false"
         #select7
-        (selectChanged)="selectChanged($event)"
-      ></app-transmisiones-canal>
-    </ion-item>
+        (selectChanged)="selectChanged($event)">
+      </app-transmisiones-canal>
+  </ion-item>
   
 </ion-content>
 
 <ion-toolbar class="footer-toolbar">
   <ion-text>
-    <p align="center">Versión {{ versionFront}}</p>
+    <p align="center">Versión{{versionFront}}</p>
   </ion-text>
 </ion-toolbar>
 

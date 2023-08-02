@@ -1,18 +1,18 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, SearchbarCustomEvent } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
 import * as $ from "jquery"
 
-
 @Component({
-   standalone: true,
-   imports: [IonicModule, CommonModule, FormsModule],
+  standalone: true,
+  imports: [IonicModule, CommonModule, FormsModule],
   selector: 'app-transmisiones-plaza',
   templateUrl: './transmisiones-plaza.component.html',
   styleUrls: ['./transmisiones-plaza.component.scss'],
 })
+
 export class TransmisionesPlazaComponent implements OnInit {
 
   @Input() data8: any[] = [];
@@ -23,20 +23,16 @@ export class TransmisionesPlazaComponent implements OnInit {
   isOpen8 = false;
   selected8: any[] = [];
   filtered8: any[] = [];
-
   selectAll: boolean = false;
 
   constructor(private storage:Storage) { }
 
-
   ngOnChanges() {
-
     this.filtered8 = this.data8;
   }
 
   open8(){
-    this.isOpen8 = true;
-    
+    this.isOpen8 = true;    
   }
 
   cancel8(){
@@ -50,6 +46,14 @@ export class TransmisionesPlazaComponent implements OnInit {
     this.isOpen8 = false;
     this.storage.set("plaza",selected);
     console.log(selected);
+
+      if(selected.length == 0){
+        $("#canalT").attr('disabled','true');
+        $("#btnbuscarT").attr('disabled','true');
+        
+      }else{
+        $("#canalT").removeAttr('disabled');      
+      }   
   }
 
   toggleSelectAll() {
@@ -69,14 +73,10 @@ export class TransmisionesPlazaComponent implements OnInit {
     this.filtered8 = this.data8.filter(item => this.leaf(item).toLowerCase().indexOf(filter) >=0);
   }
 
-
   leaf = (obj: any) => 
-  this.itemTextField.split('.').reduce((value, el) => value[el], obj);
-
+    this.itemTextField.split('.').reduce((value, el) => value[el], obj);
 
   async ngOnInit() {
     await this.storage.create();  
   }
- 
-
 }

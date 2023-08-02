@@ -1,13 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
-import * as $ from "jquery";
 import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
-import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions } from '@awesome-cordova-plugins/streaming-media/ngx';
-import { Platform } from '@ionic/angular';
 import { LoadingController } from '@ionic/angular';
-import { privateDecrypt } from 'crypto';
 import { SharedService } from '../shared.service';
 
 
@@ -19,40 +15,89 @@ import { SharedService } from '../shared.service';
 
 export class TransmisionesPage implements OnInit {
   
-  selectTabs= 'Transmisiones';
   locationsT: any = [];  
   canalesT: any = [];
-  flag:any;
   transmisionesplaza:any=[];
   versionFront: string
 
   constructor(private http: HttpClient, 
     private storage:Storage, private router:Router,
-    private streamingMedia: StreamingMedia,
     public navCtrl: NavController,
-    private platform: Platform,
     private loadingCtrl: LoadingController,
-    private sharedService: SharedService
-     ) {
-
-      this.versionFront = this.sharedService.getVersion()
-      }
+    private sharedService: SharedService) 
+  {
+    this.versionFront = this.sharedService.getVersion()
+  }
 
   async loadLocationsT() {
 
-    let Id =   await this.storage.get('id');  
-  
+    let Id =   await this.storage.get('id');   
 
     this.http
       .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getPlazasTransmision.php?uss='+Id)
       .subscribe((res: any) => {
         this.locationsT = res;
         console.log(this.locationsT)
+      });      
+  }
 
+  async loadCanalesT() {
+    
+    let Id = await this.storage.get('id');  
+    let plaza  = await this.storage.get('plaza');
+    let plazas = "";
 
-      });
+      for(let i=0; i<plaza.length;i++){
+        plazas = plazas + ",'" + plaza[i].Plaza+"'";
+      }      
+      plazas = plazas.slice(1);
+      console.log(plazas)
+    
+    let canal = await this.storage.get('canal');    
 
+      if(canal == null){
+        canal = [];
+      }      
+    
+    this.http
+      .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getChannels.php?plaza='+plazas+'&id='+Id+'&source=Transmision')
+      .subscribe((res: any) => {
+        this.canalesT = res;        
+        console.log(res);
+        
+          let restS = res;            
       
+          for( var i=0; i < restS.length; i++){
+            for(var j=0; j < canal.length; j++){
+              if (canal[j].ChannelID == restS[i].ChannelID){
+
+                  restS[i].selected=true;
+              }
+            }
+          }  
+      });     
+    }
+
+  async botonbuscar(){
+  
+    
+    let Id = await this.storage.get('id');  
+    let permisos = await this.storage.get('p');
+    permisos = permisos[0].p;
+
+    let canal = await this.storage.get('canal')
+    let canales= "";
+
+      for(let i=0; i<canal.length;i++){
+        canales = canales + "," + canal[i].ChannelID;
+      }
+      canales = canales.slice(1);
+ 
+    let link = 'https://backup.tregional.mx/AbetCloud/models/queries/app/C_getTransmisiones.php?id='+canales+'&p='+permisos+'&u='+Id;
+    
+    this.storage.set('link',link);
+    this.router.navigate(['/calendar']);
+
   }
 
   async showLoading() {
@@ -63,82 +108,9 @@ export class TransmisionesPage implements OnInit {
 
     loading.present();
   }
-  async loadCanalesT() {
-    
-    let Id = await this.storage.get('id');  
-    let plaza  = await this.storage.get('plaza');
-    let plazas = "";
-    let canal = await this.storage.get('canal');
-    
-    
-
-    if(canal == null){
-      canal = [];
-    }
-
-    for(let i=0; i<plaza.length;i++){
-      plazas = plazas + ",'" + plaza[i].Plaza+"'";
-    }
-    plazas = plazas.slice(1);
-    console.log(plazas)
-    
-    this.http
-      .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getChannels.php?plaza='+plazas+'&id='+Id+'&source=Transmision')
-      .subscribe((res: any) => {
-        this.canalesT = res; 
-       
-        console.log(res);
-        
-          let restS = res;            
-      
-          for( var i=0; i < restS.length; i++){
-            for(var j=0; j < canal.length; j++){
-              if (canal[j].ChannelID == restS[i].ChannelID){
-                  //coincidencias.push(canal[j]);
-                  // rest.push("{selected: true}");
-                  restS[i].selected=true;
-              }
-            }
-          }  
-      });
-     
-  }
-
-
-
 
   selectChanged(event: any) { 
-
     console.log('CHANGED: ', event);
-
-
-  }
-
-  async botonbuscar(){
-
-    let plazas = await this.storage.get('plaza')    
-    let canal = await this.storage.get('canal')
-    let Id = await this.storage.get('id');  
-    let permisos = await this.storage.get('p');
-    permisos = permisos[0].p;
-
-
-
-    let canales= "";
-
-    for(let i=0; i<canal.length;i++){
-      canales = canales + "," + canal[i].ChannelID;
-    }
-    canales = canales.slice(1);
-
-    let spots= "'";
-
- 
- 
-    let link = 'https://backup.tregional.mx/AbetCloud/models/queries/app/C_getTransmisiones.php?id='+canales+'&p='+permisos+'&u='+Id;
-    this.storage.set('link',link);
-    this.router.navigate(['/calendar']);
-
   }
 
 

@@ -2,7 +2,7 @@ import { ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import { Router } from '@angular/router';
 import * as $ from "jquery";
-import { CalendarOptions, DateSelectArg, EventClickArg, EventApi, Calendar } from '@fullcalendar/core';
+import { CalendarOptions, EventClickArg, EventApi } from '@fullcalendar/core';
 import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -16,14 +16,20 @@ import { LoadingController } from '@ionic/angular';
   templateUrl: './calendar.page.html',
   styleUrls: ['./calendar.page.scss'],
 })
+
 export class CalendarPage implements OnInit {
 
-  @ViewChild('Calendar') calendarComponent: FullCalendarComponent;
+  constructor(private changeDetector: ChangeDetectorRef, 
+    private storage:Storage, 
+    private router:Router, 
+    private loadingCtrl: LoadingController)
+  {}
 
+  @ViewChild('Calendar') calendarComponent: FullCalendarComponent;
   link="";
   calendarVisible = true;
+  currentEvents: EventApi[] = [];
   calendarOptions: CalendarOptions = {  
-    
 
     locale:'es',
     plugins: [
@@ -32,25 +38,19 @@ export class CalendarPage implements OnInit {
       timeGridPlugin,
       listPlugin,
     ],
-    
     views: {
       dayGridMonth: { buttonText: 'Mes' },
       timeGridWeek: { buttonText: 'Semana' },
       listWeek: { buttonText: 'Lista' },
-      
     },
-
     buttonText: {
       today: 'Hoy'
     },
-    
-    
     headerToolbar: {
       left: 'prev,next today',
       center: '',
       right: 'dayGridMonth,timeGridWeek,listWeek'
     },
-    
     eventTimeFormat: { // like '14:30:00'
       hour: '2-digit',
       minute: '2-digit',
@@ -60,13 +60,12 @@ export class CalendarPage implements OnInit {
       omitZeroMinute : false
     },
     slotLabelFormat: {
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: false
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
     },
-    
-    
+
     initialView: 'dayGridMonth',
     //initialEvents: INITIAL_EVENTS, // alternatively, use the `events` setting to fetch from a feed
     weekends: true,
@@ -74,13 +73,8 @@ export class CalendarPage implements OnInit {
     selectable: true,
     selectMirror: true,
     dayMaxEvents: true,
-    
-    
-    
-    
-    
+
     datesSet: this.handleDateChanged.bind(this),
-    
     eventClick: this.handleEventClick.bind(this),
     eventsSet: this.handleEvents.bind(this)
     /* you can update a remote database when these fire:
@@ -89,24 +83,15 @@ export class CalendarPage implements OnInit {
     eventRemove:
     */
   };
-  currentEvents: EventApi[] = [];
   
-  
-
-  constructor(private changeDetector: ChangeDetectorRef, private storage:Storage, private router:Router, private loadingCtrl: LoadingController){
-
-    
-    
-
-  }
   async showLoading() {
     const loading = await this.loadingCtrl.create({
       message: 'Dismissing after 3 seconds...',
       duration: 3000,
     });
-
     loading.present();
   }
+
   handleCalendarToggle() {
     this.calendarVisible = !this.calendarVisible;
   }
@@ -116,10 +101,7 @@ export class CalendarPage implements OnInit {
     calendarOptions.weekends = !calendarOptions.weekends;
   }
 
-
-  handleEventClick(clickInfo: EventClickArg) {
-
-    
+  handleEventClick(clickInfo: EventClickArg) {  
     
     var  adata = {id:clickInfo.event.id}
     console.log(adata)
@@ -137,7 +119,6 @@ export class CalendarPage implements OnInit {
           
         }
       })
-
   }
 
   handleEvents(events: EventApi[]) {
@@ -145,34 +126,30 @@ export class CalendarPage implements OnInit {
     this.changeDetector.detectChanges();
   }
 
-
   handleDateChanged() {
     let calendarApi = this.calendarComponent.getApi();
     var date = calendarApi.getDate();
     moment.locale('es');
-    //console.log(moment(date).format('YYYY-MM-DD'));
+    
     let mes = (moment(date).format('MMMM')). charAt(0).toUpperCase() + (moment(date).format('MMMM')).slice(1) ;
     let title = mes + ' del ' + moment(date).format('YYYY');
     $("#title").html(title);
-}
+  }
 
   async ngOnInit() {
     
     await this.storage.create();
+
     this.link = await this.storage.get('link');  
     this.calendarOptions.events=this.link
     let calendarApi = this.calendarComponent.getApi();
     var date = calendarApi.getDate();
     moment.locale('es');
-    //console.log(moment(date).format('YYYY-MM-DD'));
+    
     let mes = (moment(date).format('MMMM')). charAt(0).toUpperCase() + (moment(date).format('MMMM')).slice(1) ;
     let title = mes + ' del ' + moment(date).format('YYYY');
     $("#title").html(title);
-
-
-  }
-
-  
+  }  
 }
 
 

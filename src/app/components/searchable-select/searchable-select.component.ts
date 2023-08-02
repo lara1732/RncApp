@@ -55,7 +55,7 @@ export class SearchableSelectComponent implements OnChanges {
     if(selected.length == 0){
       $("#canal").attr('disabled','true');
       $("#spot").attr('disabled','true');
-      
+      $("#btnbuscar").attr('disabled','true');
     }else{
       $("#canal").removeAttr('disabled');
       

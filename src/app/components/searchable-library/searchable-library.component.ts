@@ -70,7 +70,7 @@ export class SearchableLibraryComponent implements OnInit {
       $("#canal").attr('disabled','true');
       $("#spot").attr('disabled','true');
       $("#plaza").attr('disabled','true');
-      
+      $("#btnbuscar").attr('disabled','true');
       
     }else{
       $("#plaza").removeAttr('disabled');

@@ -2,18 +2,13 @@ import { ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import { Router } from '@angular/router';
 import * as $ from "jquery";
-import Swal from 'sweetalert2';
-import { CalendarOptions, DateSelectArg, EventClickArg, EventApi, Calendar } from '@fullcalendar/core';
+import { CalendarOptions, EventClickArg, EventApi } from '@fullcalendar/core';
 import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import { FullCalendarComponent } from '@fullcalendar/angular';
-import esLocale from '@fullcalendar/core/locales/es';
-import { async } from '@angular/core/testing';
 import * as moment from 'moment';
-import { Platform } from '@ionic/angular';
-import { platform } from 'os';
 
 @Component({
   selector: 'app-inicio',
@@ -23,55 +18,57 @@ import { platform } from 'os';
 
 export class InicioPage implements OnInit {
 
+  constructor(private changeDetector: ChangeDetectorRef, 
+    private storage:Storage, 
+    private router:Router)
+  {}
+
   @ViewChild('Calendar') calendarComponent: FullCalendarComponent;
 
   link="";
   calendarVisible = true;
-  calendarOptions: CalendarOptions = {  
-    
+  calendarOptions: CalendarOptions = {      
 
     locale:'es',
     plugins: [
-      interactionPlugin,
-      dayGridPlugin,
-      timeGridPlugin,
-      listPlugin,
+    interactionPlugin,
+    dayGridPlugin,
+    timeGridPlugin,
+    listPlugin,
     ],
-    
+
     views: {
-      dayGridMonth: { buttonText: 'Mes' },
-      timeGridWeek: { buttonText: 'Semana' },
-      listWeek: { buttonText: 'Lista' },
-      
+    dayGridMonth: { buttonText: 'Mes' },
+    timeGridWeek: { buttonText: 'Semana' },
+    listWeek: { buttonText: 'Lista' },
     },
 
     buttonText: {
-      today: 'Hoy'
+    today: 'Hoy'
     },
-    
-    
+
     headerToolbar: {
-      left: 'prev,next today',
-      center: '',
-      right: 'dayGridMonth,timeGridWeek,listWeek'
+    left: 'prev,next today',
+    center: '',
+    right: 'dayGridMonth,timeGridWeek,listWeek'
     },
-    
+
     eventTimeFormat: { // like '14:30:00'
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      //meridiem: true,
-      hour12: false,
-      omitZeroMinute : false
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    //meridiem: true,
+    hour12: false,
+    omitZeroMinute : false
     },
+
     slotLabelFormat: {
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: false
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false
     },
-    
-    
+
     initialView: 'dayGridMonth',
     //initialEvents: INITIAL_EVENTS, // alternatively, use the `events` setting to fetch from a feed
     weekends: true,
@@ -79,13 +76,8 @@ export class InicioPage implements OnInit {
     selectable: true,
     selectMirror: true,
     dayMaxEvents: true,
-    
-    
-    
-    
-    
+
     datesSet: this.handleDateChanged.bind(this),
-    
     eventClick: this.handleEventClick.bind(this),
     eventsSet: this.handleEvents.bind(this)
     /* you can update a remote database when these fire:
@@ -94,16 +86,8 @@ export class InicioPage implements OnInit {
     eventRemove:
     */
   };
+
   currentEvents: EventApi[] = [];
-  
-  
-
-  constructor(private changeDetector: ChangeDetectorRef, private storage:Storage, private router:Router){
-
-    
-    
-
-  }
   
   handleCalendarToggle() {
     this.calendarVisible = !this.calendarVisible;
@@ -114,31 +98,23 @@ export class InicioPage implements OnInit {
     calendarOptions.weekends = !calendarOptions.weekends;
   }
 
-  
-
-
-  handleEventClick(clickInfo: EventClickArg) {
-
-    
+  handleEventClick(clickInfo: EventClickArg) {  
     
     var  adata = {id:clickInfo.event.id}
-  console.log (adata)
+    console.log (adata)
       $.ajax({
-        url: ('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getVideo.php'),
-        type:'POST',
-        dataType: "Json",
-        data: adata,
-        crossDomain: true,
-        async: true,
-        success:(dataId) =>{ 
-          console.log(dataId)
-              
-          this.storage.set('video',dataId);   
-          this.router.navigate(['/video']);
-          
-        }
+      url: ('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getVideo.php'),
+      type:'POST',
+      dataType: "Json",
+      data: adata,
+      crossDomain: true,
+      async: true,
+      success:(dataId) =>{ 
+        console.log(dataId)
+        this.storage.set('video',dataId);   
+        this.router.navigate(['/video']);
+      }
       })
-
   }
 
   handleEvents(events: EventApi[]) {
@@ -146,34 +122,30 @@ export class InicioPage implements OnInit {
     this.changeDetector.detectChanges();
   }
 
-
   handleDateChanged() {
     let calendarApi = this.calendarComponent.getApi();
     var date = calendarApi.getDate();
     moment.locale('es');
-    //console.log(moment(date).format('YYYY-MM-DD'));
+  
     let mes = (moment(date).format('MMMM')). charAt(0).toUpperCase() + (moment(date).format('MMMM')).slice(1) ;
     let title = mes + ' del ' + moment(date).format('YYYY');
     $("#title").html(title);
-}
+  }
 
   async ngOnInit() {
     
     await this.storage.create();
     this.link = await this.storage.get('link');  
-    this.calendarOptions.events=this.link
+    this.calendarOptions.events = this.link
+
     let calendarApi = this.calendarComponent.getApi();
     var date = calendarApi.getDate();
     moment.locale('es');
-    //console.log(moment(date).format('YYYY-MM-DD'));
+    
     let mes = (moment(date).format('MMMM')). charAt(0).toUpperCase() + (moment(date).format('MMMM')).slice(1) ;
     let title = mes + ' del ' + moment(date).format('YYYY');
     $("#title").html(title);
-
-
-  }
-
-  
+  }  
 }
 
 

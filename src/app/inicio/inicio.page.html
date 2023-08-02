@@ -1,22 +1,19 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title id="title">
-      
-    </ion-title>
+    <ion-title id="title"></ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content   [fullscreen]="true">
-      <br>
-      <full-calendar class="demo-app"  *ngIf='calendarVisible' [options]='calendarOptions' #Calendar>
-        <ng-template #eventContent let-arg>
-          <i>{{ arg.event.title }}</i>
-        </ng-template>
-      </full-calendar>
 
-      
-  
+<ion-content   [fullscreen]="true">
+  <br>
+
+  <full-calendar class="demo-app"  *ngIf='calendarVisible' [options]='calendarOptions' #Calendar>
+    <ng-template #eventContent let-arg>
+      <i>{{ arg.event.title }}</i>
+    </ng-template>
+  </full-calendar>  
 </ion-content>
 

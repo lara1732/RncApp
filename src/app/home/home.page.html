@@ -1,83 +1,71 @@
-<ion-header class="ion-no-border" >
+<ion-header class="ion-no-border">
   <ion-toolbar >
-    <ion-buttons id="btn-menu" slot="start">
-      <ion-menu-button></ion-menu-button>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
     </ion-buttons>
-  
-        <!-- <ion-toolbar>
-          <ion-text>
-            <p align="center">Versión 1.1.5</p>
-          </ion-text>
-        </ion-toolbar> -->
- 
-  
-
-    
+   <ion-title>Detecciones</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
-
   <br>
-  
+
   <ion-button shape="round" fill="outline" expand="block" id="btnbuscar" (click)="botonbuscar()"  disabled="true" (click)="showLoading()">Buscar</ion-button>
 
   <div id="filtroSpot">
+    
     <ion-item  (click)="select4.open4()"  (click)="loadLibrary()" > 
       <ion-label>Selecciona Source </ion-label>
       <app-searchable-library   class="searchable" 
-        [data4]="library"
-        itemTextField="Privilage"
-        [multiple4] = "false"
-        #select4
-        (selectChanged)="selectChanged($event)"
+      [data4]="library"
+      itemTextField="Privilage"
+      [multiple4] = "false"
+      #select4
+      (selectChanged)="selectChanged($event)"
       ></app-searchable-library>
-      
     </ion-item>
 
     <ion-item id="plaza" (click)="select.open()" (click)="loadLocations()" disabled="true" > 
       <ion-label>Selecciona Plaza</ion-label>
       <app-searchable-select  class="searchable" 
-        [data]="locations" 
-        itemTextField ="Name"  
-        [multiple] = "true"  
-        #select
-        (selectChanged)="selectChanged($event)"
+      [data]="locations" 
+      itemTextField ="Name"  
+      [multiple] = "true"  
+      #select
+      (selectChanged)="selectChanged($event)"
       ></app-searchable-select>
     </ion-item>
 
     <ion-item id="canal" (click)="select2.open2()" (click)="loadCanales()" disabled="true" >
       <ion-label>Selecciona Canal</ion-label>
       <app-searchable-canal   class="searchable" 
-        [data2]="canales"
-        itemTextField="Name"
-        [multiple] = "true"
-        #select2
-        (selectChanged)="selectChanged($event)"
+      [data2]="canales"
+      itemTextField="Name"
+      [multiple] = "true"
+      #select2
+      (selectChanged)="selectChanged($event)"
       ></app-searchable-canal>
     </ion-item>
 
     <ion-item id="spot" (click)="select3.open3()" (click)="loadSpots()" disabled="true" >
       <ion-label>Selecciona Libreria</ion-label>
       <app-searchable-spot  class="searchable"  
-        [data3]="spots"
-        itemTextField="MediaRef"
-        [multiple] = "true"
-        #select3
-        (selectChanged)="selectChanged($event)"
+      [data3]="spots"
+      itemTextField="MediaRef"
+      [multiple] = "true"
+      #select3
+      (selectChanged)="selectChanged($event)"
       ></app-searchable-spot>
     </ion-item>
+    
   </div>
-
 </ion-content>
 
-
-  <ion-toolbar class="footer-toolbar">
-    <ion-text>
-      <p align="center">Versión {{ versionFront}}</p>
-    </ion-text>
-  </ion-toolbar>
+<ion-toolbar class="footer-toolbar">
+  <ion-text>
+    <p align="center">Versión{{versionFront}}</p>
+  </ion-text>
+</ion-toolbar>
 
 
  

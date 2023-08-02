@@ -2,29 +2,21 @@
   <ion-toolbar >
     <ion-buttons id="btn-menu" slot="start">
       <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    
-    <!-- <ion-toolbar>
-      <ion-text>
-        <p align="center">Versión 1.1.5</p>
-      </ion-text>
-    </ion-toolbar> -->
-    
+    </ion-buttons>    
   </ion-toolbar>
 </ion-header>
   
 <ion-content [fullscreen]="true">
 
-  
   <div align="center">
     <br><br><br>
     <img src="../assets/icon/logo.png" width="250px" height="100px">
   </div>
- 
+
   <ion-slides pager="true"> 
     <ion-slide>
       <img src="../assets/icon/spots.png">
-      <ion-button (click)="R_spots()" expand="block">Detecciones</ion-button>
+      <ion-button expand="block" (click)="R_spots()">Detecciones</ion-button>
     </ion-slide>
 
     <ion-slide>
@@ -34,7 +26,7 @@
 
     <ion-slide>
       <img src="../assets/icon/streams.png">
-      <ion-button (click)="R_streams()" expand="block">Streams</ion-button>
+      <ion-button expand="block" (click)="R_streams()">Streams</ion-button>
     </ion-slide>
 
     <ion-slide>
@@ -43,13 +35,12 @@
     </ion-slide>
   </ion-slides>
 
-  
 </ion-content>
 
 <ion-footer class="ion-no-border">
   <ion-toolbar class="footer-toolbar">
     <ion-text>
-      <p align="center">Versión {{ versionFront}}</p>
+      <p align="center">Versión{{versionFront}}</p>
     </ion-text>
   </ion-toolbar>
 </ion-footer>

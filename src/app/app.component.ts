@@ -1,42 +1,40 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import { Router } from '@angular/router';
 import * as $ from "jquery";
-import Swal from 'sweetalert2';
 import { Platform } from '@ionic/angular';
-import { CalendarOptions, DateSelectArg, EventClickArg, EventApi } from '@fullcalendar/core';
-import interactionPlugin from '@fullcalendar/interaction';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlugin from '@fullcalendar/timegrid';
-import listPlugin from '@fullcalendar/list';
 import { HttpClient } from '@angular/common/http';
 import { Toast } from '@awesome-cordova-plugins/toast/ngx';
-import { register } from 'swiper/element/bundle';
 import { AlertController } from '@ionic/angular';
 import { SharedService } from './shared.service';
-
-
-register();
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss'],
-  
+  styleUrls: ['app.component.scss'],  
 })
+
 export class AppComponent {
 
+  URL_Link ="https://backup.tregional.mx/AbetCloud/";
   versionCheck: any
   appVersion: any
-  URL_Link ="https://backup.tregional.mx/AbetCloud/";
   versionfront: string
 
-  constructor(private sharedService: SharedService, private toast: Toast, private platform: Platform, private storage: Storage, private router:Router, private http: HttpClient, private alertCtrl: AlertController) {
-     
-  this.versionfront = this.sharedService.getVersion();
-  this.puebaString();
-  this.checkVersion();
-  
+  constructor(private sharedService: SharedService, 
+    private toast: Toast, 
+    private platform: Platform, 
+    private storage: Storage, 
+    private router:Router, 
+    private http: HttpClient, 
+    private alertCtrl: AlertController,
+    private location: Location)
+  {      
+      this.initializeApp();
+      this.versionfront = this.sharedService.getVersion();
+      this.puebaString();
+      this.checkVersion();  
   }
 
   BaseLink(){
@@ -44,37 +42,29 @@ export class AppComponent {
   }
 
   puebaString(){
-
     $.ajax({
       url: ('https://backup.tregional.mx/abetcloud/models/queries/app/version.php'),
       type:'GET',
       dataType: "text",
       crossDomain: true,
       async: false,
-      success:(version) =>{
-       
-        this.versionCheck = version;    
-        
+      success:(version) =>{       
+        this.versionCheck = version;          
       }
     })
 
     const searchTerm = "version";
-
     const index = this.versionCheck.indexOf(searchTerm);
-   
-
     const suma = index + searchTerm.length + 3; 
 
       if (index !== -1) {
-        this.appVersion = this.versionCheck.substring(suma, suma+5);
-      
+        this.appVersion = this.versionCheck.substring(suma, suma+5);      
        
         // this.backVersion = textAfterSearchTerm;
         console.log(this.appVersion)
-      } else {
+      }else {
         console.log(`La palabra "${searchTerm}" no se encontró en el string.`);
       }
-
   }
 
   async mostrarAlerta() {
@@ -82,15 +72,7 @@ export class AppComponent {
       header: '¡Alerta!',
       message: 'Tu aplicación está desactualizada. Por favor actualiza tu aplicación',
       backdropDismiss: false,
-      buttons: [
-        // {
-        //   text: 'Cancelar',
-        //   role: 'cancel',
-        //   cssClass: 'secondary',
-        //   handler: () => {
-        //     console.log('Acción cancelada');
-        //   }
-        // },
+      buttons: [       
         {
           text: 'Actualizar',
           cssClass: 'link-button',
@@ -106,178 +88,41 @@ export class AppComponent {
     await alert.present();
   }
 
- /* async autologin(){
-    
-    await this.storage.create();
-    
-    let user =  await this.storage.get('login');
-    let pass =  await this.storage.get('pass');
-
-    if(user != null && pass != null){
-      this.router.navigate(['/home']);
-    }else{
-      this.router.navigate(['/login']);
-    }
-  } 
-*/
-
   initializeApp() {
-    this.platform.ready().then(async() => {
-
-      await this.storage.create();
-       
-      this.platform.resume.subscribe(async () => {
-
-        await this.storage.create();
-
-     
-
-      let user =  await this.storage.get('login');
-      let pass =  await this.storage.get('pass');
-
-      if(user != null && pass != null){
-
-        $("#Preloader").show();
-        $("#ButtonLogin").attr('disabled','disabled');
-        $("#ButtonResetLogin").attr('disabled','disabled');
-
-        $.ajax({
-          url: this.URL_Link+'login/singin',
-          type:'POST',
-          dataType: "text",
-          data:{login:user, pass:pass, type:"m"},
-          crossDomain: true,
-          async: true,
-          success:(data) =>{
-
-            var obj = JSON.parse(data);
-
-            if (obj != "") {
-
-              var msg = obj;
-
-              if (msg == 'OK-') {
-
-                $.ajax({
-                  url: ('https://backup.tregional.mx/AbetCloud/models/queries/app/identify.php'),
-                  type:'POST',
-                  dataType: "text",
-                  data:{login:user, pass:pass},
-                  crossDomain: true,
-                  async: false,
-                  success:(dataId) =>{
-                  
-                    this.storage.set("id",dataId);
-                    this.permisos(dataId);    
-                                 
-                    
-                  }
-                })
-
-                $("#Preloader").hide();
-                $("#ButtonLogin").removeAttr('disabled');
-                $("#ButtonResetLogin").removeAttr('disabled');
-
-         
-              }else if(obj == "IUOP"){
-                $("#Preloader").hide();
-                $("#ButtonLogin").removeAttr('disabled');
-                $("#ButtonResetLogin").removeAttr('disabled');
-                Swal.fire({title:'Error', icon:'error', text: 'User or incorrect password',heightAuto:false});
-              }else if (obj == "UWOA") {
-                $("#Preloader").hide();
-                $("#ButtonLogin").removeAttr('disabled');
-                $("#ButtonResetLogin").removeAttr('disabled');
-                Swal.fire({title:'Error', icon:'error', text: 'User without access to this app',heightAuto:false});
-              }else if (obj == "UWAS") {
-    
-              }
-            }
-          },error:function(status, textStatus, jqXHR){
-
-            if (status.statusText=="timeout") {
-
-              Swal.fire({   
-                title: 'Error',
-                text: 'Your device is not connected to internet or your connection is very slow.\n Please try again' ,   
-                icon: 'error',   
-                heightAuto:false,
-                allowOutsideClick: false,
-                showCancelButton: false,   
-                confirmButtonColor: "#DD6B55",   
-                confirmButtonText: "OK",   
-                cancelButtonText: "No, Cancelar",   
-              }).then((result) => {
-            if (result.value) {
-                $("#Preloader").hide();
-                $("#ButtonLogin").removeAttr('disabled');
-                $("#ButtonResetLogin").removeAttr('disabled');
-
-                  } 
-              });
-            }else{
-              $("#Preloader").hide();
-              $("#ButtonLogin").removeAttr('disabled');
-              $("#ButtonResetLogin").removeAttr('disabled');
-              Swal.fire({title:'Error', icon:'error', text: 'An internal server error has occurred please contact the site admin',heightAuto:false});
-            }
-    
-          }
-        });  
-
-      }
-
-
-        
-      });// Fin Pause
+    this.platform.ready().then(() => {
+      this.platform.backButton.subscribeWithPriority(10, () => {
+        // Verificar la ruta actual
+        if (this.location.isCurrentPathEqualTo('/seleccion')) {
+          // Si la ruta actual es "/home", no hacer nada (evitar navegación)
+          return;
+        }        
+        // En otras rutas, realizar la navegación hacia atrás normalmente
+        this.location.back();
+      });
     });
-
   }
 
   async checkVersion(){
-      console.log(this.versionfront, this.appVersion)
+    console.log(this.versionfront, this.appVersion);
+
     if(this.versionfront >= this.appVersion){
-
       this.toast.show('Tu aplicación está actualizada', '10000', 'center').subscribe(
-        toast => {
-          console.log(toast);
-        }
+      toast => {
+      console.log(toast);
+      }
       );
-
     }else{
-      
       this.mostrarAlerta();
     }
-
   }
 
-  permisos(Id: any){
-
-    this.http
-      .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getPrivilege.php?id='+Id)
-      .subscribe((res) => {
-        console.log(res)
-        
-        this.storage.set('p',res);
-        
-      });
-  }
-
- async LogOut(){
-    
+ async LogOut(){    
     $('#menuId').attr('disabled', 'disabled');
     await this.storage.clear();
-    console.log("hola")
-    
-
+    console.log("Adíos")  
   }
 
   async ngOnInit() {
-    await this.storage.create();
-       
-
-    
-  }
-
- 
+    await this.storage.create();     
+  } 
 }

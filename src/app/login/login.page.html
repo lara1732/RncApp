@@ -1,13 +1,13 @@
 <br><br><br>
-<ion-content [fullscreen]="true" class="ion-padding ion-text-center" color="Tertiary">
 
-<br><br><br>
+<ion-content [fullscreen]="true" class="ion-padding ion-text-center" color="Tertiary">
+  <br><br><br>
 
   <div align="center">
     <img src="../assets/icon/logo.png" width="250px" height="100px">
   </div>
 
-<br><br><br>
+  <br><br><br>
 
   <ion-item>
     <ion-icon name="person-outline"></ion-icon>
@@ -20,19 +20,21 @@
     <ion-icon name="eye" (click)="viewpass()" ></ion-icon>
   </ion-item>
 
-  <div shape="round" id="Preloader" align="center" style="display: none;">
+  <div shape="round" id="Preloader" align="center" style="display: none">
     <img src="../assets/icon/rncpre2.0.gif" alt="validando...">
   </div>
-<br>
+
+  <br>
+
   <div> 
     <ion-button  shape="round" fill="outline" expand="block" id="ButtonLogin" (click)="Login()" >Login</ion-button>
-  </div>
-  
+  </div>  
 </ion-content>
+
 <ion-footer class="ion-no-border">
   <ion-toolbar>
     <ion-text>
-      <p>Versión 1.1.5</p>
+      <p>Versión{{versionFront}}</p>
     </ion-text>
   </ion-toolbar>
 </ion-footer>

@@ -11,10 +11,10 @@ INJECTED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:30:9-
 	android:name
 		ADDED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:31:13-62
 manifest
-ADDED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:2:1-45:12
+ADDED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:2:1-44:12
 MERGED from [:capacitor-app] C:\AbetMovil\RncApp\node_modules\@capacitor\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:capacitor-haptics] C:\AbetMovil\RncApp\node_modules\@capacitor\haptics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:capacitor-keyboard] C:\AbetMovil\RncApp\node_modules\@capacitor\keyboard\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
@@ -65,20 +65,20 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\Abet\.gradle\caches\transforms
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Abet\.gradle\caches\transforms-3\1d02f4c8f5da1ec59343bd1c9ae1dff8\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\36ab49d27e2bb5d2f3c2a9465afd83fe\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
 MERGED from [org.apache.cordova:framework:10.1.1] C:\Users\Abet\.gradle\caches\transforms-3\5283050de5a0422f29a91698b8385016\transformed\jetified-framework-10.1.1\AndroidManifest.xml:20:1-27:12
-INJECTED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:2:1-44:12
 	package
 		INJECTED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:2:1-45:12
+		ADDED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:2:1-44:12
 		INJECTED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:2:1-45:12
+		ADDED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:2:1-44:12
 		INJECTED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:2:1-45:12
+		ADDED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:2:1-44:12
 		INJECTED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:2:11-69
@@ -148,10 +148,6 @@ MERGED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\cap
 MERGED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-67
 	android:name
 		ADDED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:43:22-64
-uses-permission#android.permission.BIND_DEVICE_ADMIN
-ADDED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:44:6-77
-	android:name
-		ADDED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:44:23-74
 uses-sdk
 INJECTED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml

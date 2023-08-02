@@ -6,25 +6,32 @@ import * as $ from "jquery";
 import Swal from 'sweetalert2';
 import { HttpClient } from '@angular/common/http';
 import { Keyboard } from '@ionic-native/keyboard/ngx';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
+
 export class LoginPage implements OnInit {
 
   BaseUrl = this.Link.BaseLink();
   visible:boolean = true;
   changetype:boolean = true;
-  constructor(private Link:AppComponent, private router:Router, private storage:Storage,private http: HttpClient, private keyboard: Keyboard) { 
+  versionFront:string;
+
+  constructor(private Link:AppComponent, 
+    private router:Router, 
+    private storage:Storage,
+    private http: HttpClient, 
+    private sharedService: SharedService) 
+  { 
     $('#menuId').attr('disabled', 'disabled');
+    this.versionFront = this.sharedService.getVersion();
   }
 
-
-
-  onEnterKey(event: any) {
-    
+  onEnterKey(event: any){    
     this.Login();
   }
 
@@ -33,93 +40,92 @@ export class LoginPage implements OnInit {
     this.changetype= !this.changetype;
   }
 
- Login(){    
+  Login(){    
 
     $('#Preloader').show();
     $('#SaveButtonHome').attr('disabled', 'disabled');
     $('#menuId').removeAttr('disabled');
 
-   var UserName = $("#UserName").val();
-   var Password = $("#Password").val();
+    var UserName = $("#UserName").val();
+    var Password = $("#Password").val();
 
-      if(UserName!="" && Password!=""){
+    if(UserName!="" && Password!=""){
 
-     $.ajax({
-        url: this.BaseUrl+'login/singin',
-        type:'POST',
-        dataType: "text",
-        data:{login:UserName, pass:Password, type:"m"},
-        crossDomain: true,
-        async: true,
+      $.ajax({
+      url: this.BaseUrl+'login/singin',
+      type:'POST',
+      dataType: "text",
+      data:{login:UserName, pass:Password, type:"m"},
+      crossDomain: true,
+      async: true,
         success:(data) =>{
 
-          $('#Preloader').hide();
+          $('#Preloader').hide(); 
           $('#ButtonLogin').removeAttr('disabled');
 
-
           var Object = JSON.parse(data);
-          
+
           switch(Object){
 
             case "OK-":
 
               $.ajax({
-                url: ('https://backup.tregional.mx/AbetCloud/models/queries/app/identify.php'),
-                type:'POST',
-                dataType: "text",
-                data:{login:UserName, pass:Password},
-                crossDomain: true,
-                async: false,
+              url: ('https://backup.tregional.mx/AbetCloud/models/queries/app/identify.php'),
+              type:'POST',
+              dataType: "text",
+              data:{login:UserName, pass:Password},
+              crossDomain: true,
+              async: false,
                 success:(dataId) =>{
                   console.log(dataId)
                   this.storage.set("id",dataId);
                   this.permisos(dataId); 
-                  this.acceso(dataId);    
-                     
-                  
+                  this.acceso(dataId);
                 }
               })
-                
 
-                $('#Preloader').hide();
-                $('#ButtonLogin').removeAttr('disabled');         
-              
-                this.storage.set('login', UserName);
-                this.storage.set('pass', Password); 
-        
-                this.storage.get('login');       
-                this.router.navigate(['/seleccion']);
+              $('#Preloader').hide();
+              $('#ButtonLogin').removeAttr('disabled');         
 
-                $("#UserName").val("");
-                $("#Password").val("");
+              this.storage.set('login', UserName);
+              this.storage.set('pass', Password); 
+
+              this.storage.get('login');       
+              this.router.navigate(['/seleccion']);
+
+              $("#UserName").val("");
+              $("#Password").val("");
+
               break;
 
             case "IUOP":
-                  $('#Preloader').hide();
-                  $('#ButtonLogin').removeAttr('disabled');
-                  Swal.fire({title:'Error', icon:'error', text:'Incorrect user or password', heightAuto:false});
+
+              $('#Preloader').hide();
+              $('#ButtonLogin').removeAttr('disabled');
+              Swal.fire({title:'Error', icon:'error', text:'Incorrect user or password', heightAuto:false});
+
               break;
 
             case "UWOA":
-                  $('#Preloader').hide();
-                  $('#ButtonLogin').removeAttr('disabled');
-                  Swal.fire({title:'Error', icon:'error', text:'User without acess', heightAuto:false});
+
+              $('#Preloader').hide();
+              $('#ButtonLogin').removeAttr('disabled');
+              Swal.fire({title:'Error', icon:'error', text:'User without acess', heightAuto:false});
+              
               break;
 
             case "UWAS":
-                  $('#Preloader').hide();
-                  $('#ButtonLogin').removeAttr('disabled');
-                  Swal.fire({title:'Error', icon:'error', text:'User with active session', heightAuto:false});
-              break;
 
+              $('#Preloader').hide();
+              $('#ButtonLogin').removeAttr('disabled');
+              Swal.fire({title:'Error', icon:'error', text:'User with active session', heightAuto:false});
               
+              break;
           }
-
         },error:function(status, textStatus, jqXHR){
 
-         if (status.statusText=="timeout") {
-
-            Swal.fire({   
+            if (status.statusText=="timeout") {
+              Swal.fire({   
               title: 'Error',
               text: 'Your device is not connected to internet or your connection is very slow.\n Please try again' ,   
               icon: 'error',   
@@ -129,60 +135,49 @@ export class LoginPage implements OnInit {
               confirmButtonColor: "#DD6B55",   
               confirmButtonText: "OK",   
               cancelButtonText: "No, Cancelar",   
-            }).then((result) => {
-          if (result.value) {
-                  
-
+              }).then((result) => {
+                if (result.value) {
                 } 
-            });
-          }else{
-        
-            Swal.fire({title:'Error', icon:'error', text: 'An internal server error has occurred please contact the site admin',heightAuto:false});
-          }
-            $('#Preloader').hide();
-          $('#ButtonLogin').removeAttr('disabled');
+              });
+            }else{
+              Swal.fire({title:'Error', icon:'error', text: 'An internal server error has occurred please contact the site admin',heightAuto:false});
+            }
 
-        }
+            $('#Preloader').hide();
+            $('#ButtonLogin').removeAttr('disabled');
+          }
       });
     }else{
-
-        $('#Preloader').hide();
-        $('#ButtonLogin').removeAttr('disabled');
+      $('#Preloader').hide();
+      $('#ButtonLogin').removeAttr('disabled');
 
       Swal.fire({title:'Warning',icon:'error',text:'Information incomplete',heightAuto: false});
     }
   }
 
-   permisos(Id: any){
-
+  permisos(Id: any){
     console.log(Id);
+
     this.http
       .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getPrivilege.php?id='+Id)
       .subscribe((res) => {
-        console.log(res)
-        
-        this.storage.set('p',res);
-        
+        console.log(res)        
+        this.storage.set('p',res);        
       });
   }
 
   acceso(Id: any){
-
     console.log(Id);
+
     this.http
       .get('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getAccess.php?id='+Id)
       .subscribe((res) => {
-        console.log(res)
-        
-        this.storage.set('a',res);
-        
+        console.log(res)        
+        this.storage.set('a',res);        
       });
-
   }
 
   async ngOnInit() {
-    await this.storage.create();   
-    
+    await this.storage.create();       
   }
-
 }
