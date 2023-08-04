@@ -34,20 +34,6 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"Входящий вызов"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"Текущий вызов"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"Фильтрация входящего вызова"</string>
-    <string name="download_complete">Скачивание завершено</string>
-    <string name="download_complete_neu_btn">Установить вручную</string>
-    <string name="download_complete_pos_btn">Скачать заново</string>
-    <string name="download_complete_title">Скачивание завершено</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Поиск"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">">999"</string>
-    <string name="update_bg">Обновить в фоне</string>
-    <string name="update_cancel">Отмена</string>
-    <string name="update_error_message">Ошибка сети, проверьте настройки сети.</string>
-    <string name="update_error_title">Ошибка</string>
-    <string name="update_error_yes_btn">Ок</string>
-    <string name="update_latest">Установлена последняя версия</string>
-    <string name="update_message">Требуется установить обновление!</string>
-    <string name="update_title">Новое обновление</string>
-    <string name="update_update_btn">Обновить</string>
-    <string name="updating">Обновляется</string>
 </resources>

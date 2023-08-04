@@ -10,14 +10,6 @@
         ]
         },
       {
-          "id": "cordova-plugin-app-update.AppUpdate",
-          "file": "plugins/cordova-plugin-app-update/www/AppUpdate.js",
-          "pluginId": "cordova-plugin-app-update",
-        "clobbers": [
-          "AppUpdate"
-        ]
-        },
-      {
           "id": "cordova-plugin-streaming-media.StreamingMedia",
           "file": "plugins/cordova-plugin-streaming-media/www/StreamingMedia.js",
           "pluginId": "cordova-plugin-streaming-media",
@@ -37,7 +29,6 @@
     module.exports.metadata =
     // TOP OF METADATA
     {
-      "cordova-plugin-app-update": "2.0.2",
       "cordova-plugin-fullscreen": "1.3.0",
       "cordova-plugin-streaming-media": "2.3.0",
       "cordova-plugin-x-toast": "2.7.3"

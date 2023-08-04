@@ -18,6 +18,6 @@ export class SharedService {
   }
 
   getVersion(): string {
-    return '1.1.5'; // Cambia este valor según la versión actual
+    return '1.1.7'; // Cambia este valor según la versión actual
   }
 }

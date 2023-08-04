@@ -408,7 +408,6 @@ color material_grey_850
 color material_grey_900
 color notification_action_color_filter
 color notification_icon_bg_color
-color notification_material_background_media_default_color
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -550,10 +549,6 @@ dimen splashscreen_icon_mask_stroke_with_background
 dimen splashscreen_icon_size
 dimen splashscreen_icon_size_no_background
 dimen splashscreen_icon_size_with_background
-dimen subtitle_corner_radius
-dimen subtitle_outline_width
-dimen subtitle_shadow_offset
-dimen subtitle_shadow_radius
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -715,7 +710,6 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
-id action0
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -744,7 +738,6 @@ id beginning
 id blocking
 id bottom
 id buttonPanel
-id cancel_action
 id center
 id center_horizontal
 id center_vertical
@@ -764,7 +757,6 @@ id dialog_button
 id disableHome
 id edit_query
 id end
-id end_padder
 id expand_activities_button
 id expanded_menu
 id fill
@@ -786,7 +778,6 @@ id line1
 id line3
 id listMode
 id list_item
-id media_actions
 id message
 id middle
 id multiply
@@ -833,7 +824,6 @@ id src_atop
 id src_in
 id src_over
 id start
-id status_bar_latest_event_content
 id submenuarrow
 id submit_area
 id tabMode
@@ -863,7 +853,6 @@ id topPanel
 id unchecked
 id uniform
 id up
-id update_progress
 id useLogo
 id view_tree_lifecycle_owner
 id view_tree_on_back_pressed_dispatcher_owner
@@ -915,23 +904,13 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
-layout appupdate_progress
 layout bridge_layout_main
 layout custom_dialog
 layout fragment_bridge
 layout notification_action
 layout notification_action_tombstone
-layout notification_media_action
-layout notification_media_cancel_action
-layout notification_template_big_media
-layout notification_template_big_media_custom
-layout notification_template_big_media_narrow
-layout notification_template_big_media_narrow_custom
 layout notification_template_custom_big
 layout notification_template_icon_group
-layout notification_template_lines_media
-layout notification_template_media
-layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout select_dialog_item_material
@@ -980,24 +959,10 @@ string call_notification_incoming_text
 string call_notification_ongoing_text
 string call_notification_screening_text
 string custom_url_scheme
-string download_complete
-string download_complete_neu_btn
-string download_complete_pos_btn
-string download_complete_title
 string package_name
 string search_menu_title
 string status_bar_notification_info_overflow
 string title_activity_main
-string update_bg
-string update_cancel
-string update_error_message
-string update_error_title
-string update_error_yes_btn
-string update_latest
-string update_message
-string update_title
-string update_update_btn
-string updating
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -1246,14 +1211,9 @@ style TextAppearance_AppCompat_Widget_Switch
 style TextAppearance_AppCompat_Widget_TextView_SpinnerItem
 style TextAppearance_Compat_Notification
 style TextAppearance_Compat_Notification_Info
-style TextAppearance_Compat_Notification_Info_Media
 style TextAppearance_Compat_Notification_Line2
-style TextAppearance_Compat_Notification_Line2_Media
-style TextAppearance_Compat_Notification_Media
 style TextAppearance_Compat_Notification_Time
-style TextAppearance_Compat_Notification_Time_Media
 style TextAppearance_Compat_Notification_Title
-style TextAppearance_Compat_Notification_Title_Media
 style TextAppearance_Widget_AppCompat_ExpandedMenu_Item
 style TextAppearance_Widget_AppCompat_Toolbar_Subtitle
 style TextAppearance_Widget_AppCompat_Toolbar_Title
@@ -1417,6 +1377,5 @@ styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
 styleable bridge_fragment start_dir
-xml appupdate_paths
 xml config
 xml file_paths

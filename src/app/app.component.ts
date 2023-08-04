@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import { Router } from '@angular/router';
 import * as $ from "jquery";
-import { Platform } from '@ionic/angular';
+import { IonApp, Platform } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { Toast } from '@awesome-cordova-plugins/toast/ngx';
 import { AlertController } from '@ionic/angular';
 import { SharedService } from './shared.service';
 import { Location } from '@angular/common';
+import { exit } from 'process';
 
 @Component({
   selector: 'app-root',
@@ -26,8 +27,6 @@ export class AppComponent {
     private toast: Toast, 
     private platform: Platform, 
     private storage: Storage, 
-    private router:Router, 
-    private http: HttpClient, 
     private alertCtrl: AlertController,
     private location: Location)
   {      
@@ -92,12 +91,12 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.platform.backButton.subscribeWithPriority(10, () => {
         // Verificar la ruta actual
-        if (this.location.isCurrentPathEqualTo('/seleccion')) {
+        if (this.location.isCurrentPathEqualTo('/login')) {
           // Si la ruta actual es "/home", no hacer nada (evitar navegación)
-          return;
+          (navigator as any).app.exitApp();
         }        
         // En otras rutas, realizar la navegación hacia atrás normalmente
-        this.location.back();
+       return;
       });
     });
   }

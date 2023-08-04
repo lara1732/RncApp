@@ -1,8 +1,8 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.abet.movil"
-4    android:versionCode="14"
-5    android:versionName="1.1.6" >
+4    android:versionCode="18"
+5    android:versionName="1.1.7" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="22"
@@ -11,208 +11,178 @@
 9-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml
 10
 11    <!-- Permissions -->
-12
-13    <uses-permission android:name="android.permission.INTERNET" />
-13-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:43:5-67
-13-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:43:22-64
-14    <uses-permission android:name="android.permission.VIBRATE" />
-14-->[:capacitor-haptics] C:\AbetMovil\RncApp\node_modules\@capacitor\haptics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-66
-14-->[:capacitor-haptics] C:\AbetMovil\RncApp\node_modules\@capacitor\haptics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:7:22-63
-15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-15-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-80
-15-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-77
-16    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-16-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-81
-16-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-78
-17    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
-17-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-83
-17-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:22-80
-18    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-18-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-84
-18-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:22-81
-19
-20    <permission
-20-->[androidx.core:core:1.10.0] C:\Users\Abet\.gradle\caches\transforms-3\4084e7bcb4a1738e1ff26326a1997c6e\transformed\core-1.10.0\AndroidManifest.xml:22:5-24:47
-21        android:name="com.abet.movil.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-21-->[androidx.core:core:1.10.0] C:\Users\Abet\.gradle\caches\transforms-3\4084e7bcb4a1738e1ff26326a1997c6e\transformed\core-1.10.0\AndroidManifest.xml:23:9-81
-22        android:protectionLevel="signature" />
-22-->[androidx.core:core:1.10.0] C:\Users\Abet\.gradle\caches\transforms-3\4084e7bcb4a1738e1ff26326a1997c6e\transformed\core-1.10.0\AndroidManifest.xml:24:9-44
-23
-24    <uses-permission android:name="com.abet.movil.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-24-->[androidx.core:core:1.10.0] C:\Users\Abet\.gradle\caches\transforms-3\4084e7bcb4a1738e1ff26326a1997c6e\transformed\core-1.10.0\AndroidManifest.xml:26:5-97
-24-->[androidx.core:core:1.10.0] C:\Users\Abet\.gradle\caches\transforms-3\4084e7bcb4a1738e1ff26326a1997c6e\transformed\core-1.10.0\AndroidManifest.xml:26:22-94
-25
-26    <application
-26-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:5:5-39:19
-27        android:allowBackup="true"
-27-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:7:9-35
-28        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-28-->[androidx.core:core:1.10.0] C:\Users\Abet\.gradle\caches\transforms-3\4084e7bcb4a1738e1ff26326a1997c6e\transformed\core-1.10.0\AndroidManifest.xml:28:18-86
-29        android:debuggable="true"
-30        android:icon="@mipmap/ic_launcher"
-30-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:8:9-43
-31        android:label="@string/app_name"
-31-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:9:9-41
-32        android:roundIcon="@mipmap/ic_launcher_round"
-32-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:10:9-54
-33        android:supportsRtl="true"
-33-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:11:9-35
-34        android:theme="@style/AppTheme"
-34-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:12:9-40
-35        android:usesCleartextTraffic="true" >
-35-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:6:9-44
-36        <activity
-36-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:14:9-28:20
-37            android:name="com.abet.movil.MainActivity"
-37-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:16:13-55
-38            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
-38-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:15:13-129
-39            android:exported="true"
-39-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:20:13-36
-40            android:label="@string/title_activity_main"
-40-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:17:13-56
-41            android:launchMode="singleTask"
-41-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:19:13-44
-42            android:theme="@style/AppTheme.NoActionBarLaunch" >
-42-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:18:13-62
-43            <intent-filter>
-43-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:22:13-26:29
-44                <action android:name="android.intent.action.MAIN" />
-44-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:23:17-69
-44-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:23:25-66
-45                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
-45-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:24:17-82
-45-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:24:25-79
-46
-47                <category android:name="android.intent.category.LAUNCHER" />
-47-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:25:17-77
-47-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:25:27-74
-48            </intent-filter>
-49        </activity>
-50
-51        <provider
-52            android:name="androidx.core.content.FileProvider"
-52-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:31:13-62
-53            android:authorities="com.abet.movil.fileprovider"
-53-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:32:13-64
-54            android:exported="false"
-54-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:33:13-37
-55            android:grantUriPermissions="true" >
-55-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:34:13-47
-56            <meta-data
-56-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:35:13-37:64
-57                android:name="android.support.FILE_PROVIDER_PATHS"
-57-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:36:17-67
-58                android:resource="@xml/file_paths" />
-58-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:37:17-51
-59        </provider>
-60        <provider
-60-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:9-23:20
-61            android:name="com.vaenow.appupdate.android.GenericFileProvider"
-61-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-76
-62            android:authorities="com.abet.movil.appupdate.provider"
-62-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-70
-63            android:exported="false"
-63-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-37
-64            android:grantUriPermissions="true" >
-64-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-47
-65            <meta-data
-65-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:35:13-37:64
-66                android:name="android.support.FILE_PROVIDER_PATHS"
-66-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:36:17-67
-67                android:resource="@xml/appupdate_paths" />
-67-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:37:17-51
-68        </provider>
-69
-70        <meta-data
-70-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:25:9-27:36
-71            android:name="android.max_aspect"
-71-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-46
-72            android:value="2.16" />
-72-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:13-33
-73
-74        <activity
-74-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:29:9-32:51
-75            android:name="com.hutchind.cordova.plugins.streamingmedia.SimpleAudioStream"
-75-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:30:13-89
-76            android:configChanges="orientation|screenSize"
-76-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:31:13-59
-77            android:label="Simple Audio Stream" />
-77-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:32:13-48
-78        <activity
-78-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:33:9-36:51
-79            android:name="com.hutchind.cordova.plugins.streamingmedia.SimpleVideoStream"
-79-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:34:13-89
-80            android:configChanges="orientation|screenSize"
-80-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:35:13-59
-81            android:label="Simple Video Stream" />
-81-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:36:13-48
-82
-83        <provider
-83-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Abet\.gradle\caches\transforms-3\619891cfbc50e3592a71b3f51e3a55eb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-84            android:name="androidx.startup.InitializationProvider"
-84-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Abet\.gradle\caches\transforms-3\619891cfbc50e3592a71b3f51e3a55eb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
-85            android:authorities="com.abet.movil.androidx-startup"
-85-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Abet\.gradle\caches\transforms-3\619891cfbc50e3592a71b3f51e3a55eb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
-86            android:exported="false" >
-86-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Abet\.gradle\caches\transforms-3\619891cfbc50e3592a71b3f51e3a55eb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
-87            <meta-data
-87-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Abet\.gradle\caches\transforms-3\619891cfbc50e3592a71b3f51e3a55eb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-88                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-88-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Abet\.gradle\caches\transforms-3\619891cfbc50e3592a71b3f51e3a55eb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
-89                android:value="androidx.startup" />
-89-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Abet\.gradle\caches\transforms-3\619891cfbc50e3592a71b3f51e3a55eb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
-90            <meta-data
-90-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Abet\.gradle\caches\transforms-3\ef948e005e878ec97cfc6124dca2c9ea\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
-91                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-91-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Abet\.gradle\caches\transforms-3\ef948e005e878ec97cfc6124dca2c9ea\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
-92                android:value="androidx.startup" />
-92-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Abet\.gradle\caches\transforms-3\ef948e005e878ec97cfc6124dca2c9ea\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
-93            <meta-data
-93-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
-94                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-94-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
-95                android:value="androidx.startup" />
-95-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
-96        </provider>
-97
-98        <receiver
-98-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
-99            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-99-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
-100            android:directBootAware="false"
-100-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
-101            android:enabled="true"
-101-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
-102            android:exported="true"
-102-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
-103            android:permission="android.permission.DUMP" >
-103-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
-104            <intent-filter>
-104-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
-105                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-105-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
-105-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
-106            </intent-filter>
-107            <intent-filter>
-107-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
-108                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-108-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
-108-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
-109            </intent-filter>
-110            <intent-filter>
-110-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
-111                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-111-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
-111-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
-112            </intent-filter>
-113            <intent-filter>
-113-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
-114                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-114-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
-114-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
-115            </intent-filter>
-116        </receiver>
-117    </application>
-118
-119</manifest>
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:42:3-64
+12-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:42:20-62
+13    <uses-permission android:name="android.permission.VIBRATE" />
+13-->[:capacitor-haptics] C:\AbetMovil\RncApp\node_modules\@capacitor\haptics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-66
+13-->[:capacitor-haptics] C:\AbetMovil\RncApp\node_modules\@capacitor\haptics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:7:22-63
+14
+15    <permission
+15-->[androidx.core:core:1.10.0] C:\Users\Abet\.gradle\caches\transforms-3\4084e7bcb4a1738e1ff26326a1997c6e\transformed\core-1.10.0\AndroidManifest.xml:22:5-24:47
+16        android:name="com.abet.movil.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+16-->[androidx.core:core:1.10.0] C:\Users\Abet\.gradle\caches\transforms-3\4084e7bcb4a1738e1ff26326a1997c6e\transformed\core-1.10.0\AndroidManifest.xml:23:9-81
+17        android:protectionLevel="signature" />
+17-->[androidx.core:core:1.10.0] C:\Users\Abet\.gradle\caches\transforms-3\4084e7bcb4a1738e1ff26326a1997c6e\transformed\core-1.10.0\AndroidManifest.xml:24:9-44
+18
+19    <uses-permission android:name="com.abet.movil.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+19-->[androidx.core:core:1.10.0] C:\Users\Abet\.gradle\caches\transforms-3\4084e7bcb4a1738e1ff26326a1997c6e\transformed\core-1.10.0\AndroidManifest.xml:26:5-97
+19-->[androidx.core:core:1.10.0] C:\Users\Abet\.gradle\caches\transforms-3\4084e7bcb4a1738e1ff26326a1997c6e\transformed\core-1.10.0\AndroidManifest.xml:26:22-94
+20
+21    <application
+21-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:5:5-39:19
+22        android:allowBackup="true"
+22-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:7:9-35
+23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+23-->[androidx.core:core:1.10.0] C:\Users\Abet\.gradle\caches\transforms-3\4084e7bcb4a1738e1ff26326a1997c6e\transformed\core-1.10.0\AndroidManifest.xml:28:18-86
+24        android:debuggable="true"
+25        android:icon="@mipmap/ic_launcher"
+25-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:8:9-43
+26        android:label="@string/app_name"
+26-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:9:9-41
+27        android:roundIcon="@mipmap/ic_launcher_round"
+27-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:10:9-54
+28        android:supportsRtl="true"
+28-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:11:9-35
+29        android:theme="@style/AppTheme"
+29-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:12:9-40
+30        android:usesCleartextTraffic="true" >
+30-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:6:9-44
+31        <activity
+31-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:14:9-28:20
+32            android:name="com.abet.movil.MainActivity"
+32-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:16:13-55
+33            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
+33-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:15:13-129
+34            android:exported="true"
+34-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:20:13-36
+35            android:label="@string/title_activity_main"
+35-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:17:13-56
+36            android:launchMode="singleTask"
+36-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:19:13-44
+37            android:theme="@style/AppTheme.NoActionBarLaunch" >
+37-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:18:13-62
+38            <intent-filter>
+38-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:22:13-26:29
+39                <action android:name="android.intent.action.MAIN" />
+39-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:23:17-69
+39-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:23:25-66
+40                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+40-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:24:17-82
+40-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:24:25-79
+41
+42                <category android:name="android.intent.category.LAUNCHER" />
+42-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:25:17-77
+42-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:25:27-74
+43            </intent-filter>
+44        </activity>
+45
+46        <provider
+47            android:name="androidx.core.content.FileProvider"
+47-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:31:13-62
+48            android:authorities="com.abet.movil.fileprovider"
+48-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:32:13-64
+49            android:exported="false"
+49-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:33:13-37
+50            android:grantUriPermissions="true" >
+50-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:34:13-47
+51            <meta-data
+51-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:35:13-37:64
+52                android:name="android.support.FILE_PROVIDER_PATHS"
+52-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:36:17-67
+53                android:resource="@xml/file_paths" />
+53-->C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:37:17-51
+54        </provider>
+55
+56        <meta-data
+56-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:9-13:36
+57            android:name="android.max_aspect"
+57-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-46
+58            android:value="2.16" />
+58-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-33
+59
+60        <activity
+60-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:9-18:51
+61            android:name="com.hutchind.cordova.plugins.streamingmedia.SimpleAudioStream"
+61-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-89
+62            android:configChanges="orientation|screenSize"
+62-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-59
+63            android:label="Simple Audio Stream" />
+63-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-48
+64        <activity
+64-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:9-22:51
+65            android:name="com.hutchind.cordova.plugins.streamingmedia.SimpleVideoStream"
+65-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-89
+66            android:configChanges="orientation|screenSize"
+66-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:21:13-59
+67            android:label="Simple Video Stream" />
+67-->[:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:22:13-48
+68
+69        <provider
+69-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Abet\.gradle\caches\transforms-3\619891cfbc50e3592a71b3f51e3a55eb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+70            android:name="androidx.startup.InitializationProvider"
+70-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Abet\.gradle\caches\transforms-3\619891cfbc50e3592a71b3f51e3a55eb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+71            android:authorities="com.abet.movil.androidx-startup"
+71-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Abet\.gradle\caches\transforms-3\619891cfbc50e3592a71b3f51e3a55eb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+72            android:exported="false" >
+72-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Abet\.gradle\caches\transforms-3\619891cfbc50e3592a71b3f51e3a55eb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+73            <meta-data
+73-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Abet\.gradle\caches\transforms-3\619891cfbc50e3592a71b3f51e3a55eb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+74                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+74-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Abet\.gradle\caches\transforms-3\619891cfbc50e3592a71b3f51e3a55eb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+75                android:value="androidx.startup" />
+75-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Abet\.gradle\caches\transforms-3\619891cfbc50e3592a71b3f51e3a55eb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+76            <meta-data
+76-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Abet\.gradle\caches\transforms-3\ef948e005e878ec97cfc6124dca2c9ea\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
+77                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+77-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Abet\.gradle\caches\transforms-3\ef948e005e878ec97cfc6124dca2c9ea\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
+78                android:value="androidx.startup" />
+78-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Abet\.gradle\caches\transforms-3\ef948e005e878ec97cfc6124dca2c9ea\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+79            <meta-data
+79-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+80                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+80-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+81                android:value="androidx.startup" />
+81-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+82        </provider>
+83
+84        <receiver
+84-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+85            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+85-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+86            android:directBootAware="false"
+86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+87            android:enabled="true"
+87-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+88            android:exported="true"
+88-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+89            android:permission="android.permission.DUMP" >
+89-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+90            <intent-filter>
+90-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+91                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+91-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+91-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+92            </intent-filter>
+93            <intent-filter>
+93-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+94                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+94-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+94-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+95            </intent-filter>
+96            <intent-filter>
+96-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+97                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+97-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+97-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+98            </intent-filter>
+99            <intent-filter>
+99-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+100                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+100-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+100-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+101            </intent-filter>
+102        </receiver>
+103    </application>
+104
+105</manifest>

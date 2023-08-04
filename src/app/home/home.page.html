@@ -47,7 +47,7 @@
       ></app-searchable-canal>
     </ion-item>
 
-    <ion-item id="spot" (click)="select3.open3()" (click)="loadSpots()" disabled="true" >
+    <ion-item id="spot" (click)="select3.open3()" (click)="loadSpots()" disabled="false" >
       <ion-label>Selecciona Libreria</ion-label>
       <app-searchable-spot  class="searchable"  
       [data3]="spots"
@@ -63,7 +63,7 @@
 
 <ion-toolbar class="footer-toolbar">
   <ion-text>
-    <p align="center">Versión{{versionFront}}</p>
+    <p align="center">Versión {{versionFront}}</p>
   </ion-text>
 </ion-toolbar>
 

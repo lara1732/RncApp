@@ -21,11 +21,9 @@ MERGED from [:capacitor-keyboard] C:\AbetMovil\RncApp\node_modules\@capacitor\ke
 MERGED from [:capacitor-share] C:\AbetMovil\RncApp\node_modules\@capacitor\share\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:capacitor-status-bar] C:\AbetMovil\RncApp\node_modules\@capacitor\status-bar\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:capacitor-android] C:\AbetMovil\RncApp\node_modules\@capacitor\android\capacitor\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
-MERGED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-39:12
+MERGED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-25:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\Abet\.gradle\caches\transforms-3\e652082f8cc43c7f90416b02c3fb8013\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\Abet\.gradle\caches\transforms-3\8bb8b13c1438848676861a1388a97eb3\transformed\appcompat-1.6.1\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\d3dee2fdc97ab93240b5a9f19ba4b701\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\3733f99442b8e770ce29dc813ff04d41\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] C:\Users\Abet\.gradle\caches\transforms-3\32d85a34682b2d04b9faab0e5b16ad91\transformed\coordinatorlayout-1.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core-splashscreen:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\e5f33fccee23d53fd983ee477a655276\transformed\jetified-core-splashscreen-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.5.6] C:\Users\Abet\.gradle\caches\transforms-3\caa37cc8ebbb231a68aa8267c9929f0b\transformed\fragment-1.5.6\AndroidManifest.xml:17:1-24:12
@@ -35,11 +33,8 @@ MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Abet\.gradle\cac
 MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\Abet\.gradle\caches\transforms-3\db69beab773638c3b95343710e51fc5f\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Abet\.gradle\caches\transforms-3\619891cfbc50e3592a71b3f51e3a55eb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\0952f16cd81082cd20b3887068d66b00\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\a4bf9ea1cd270d5fc88586fe493e7b2e\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\7d6b7a62ad86b94467b9e28a8c2b2a38\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.webkit:webkit:1.6.1] C:\Users\Abet\.gradle\caches\transforms-3\6ded39dca6b98a352315fec226a4acb8\transformed\webkit-1.6.1\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.media:media:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\444855e01f11411237113fa6d7473039\transformed\media-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\00705b0c6030446e47f6ffcbb655dc5a\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Abet\.gradle\caches\transforms-3\8236dcaf68b842289859eba9c60c4b20\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Abet\.gradle\caches\transforms-3\0cce26548d3aa928a1b0c95313e731fe\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\5232b37b27dd736dd5d8dbd0c9371a78\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -51,17 +46,12 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] C:\Users\Abet\.gradle
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] C:\Users\Abet\.gradle\caches\transforms-3\0e8f1faf2b7408bf7cbef9376d618b4b\transformed\lifecycle-runtime-2.6.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] C:\Users\Abet\.gradle\caches\transforms-3\fda61e707e57e8524a2bccb38bf67814\transformed\jetified-lifecycle-viewmodel-savedstate-2.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core-ktx:1.10.0] C:\Users\Abet\.gradle\caches\transforms-3\6bf6cecd8e467da9ebd603ad6991f35a\transformed\jetified-core-ktx-1.10.0\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\17ab30d62fd80f923f93932e4226c92d\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\315fef43d84bfc418fccb43256d39837\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core:1.10.0] C:\Users\Abet\.gradle\caches\transforms-3\4084e7bcb4a1738e1ff26326a1997c6e\transformed\core-1.10.0\AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Abet\.gradle\caches\transforms-3\6e0f101d74b5ee8b03221e990839c894\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\3de33e372d99688f5bc4248e885729d3\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\ac5000c8b89016a36931314b0914dadb\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:17:1-55:12
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Abet\.gradle\caches\transforms-3\0ee926bc19f5f7a898272ecfec47b8cb\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\c9163c2d582433530474a7b819bf7180\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\21451bee10b8b4cd50d8bf642b617c71\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\c34ab138d9cd6d3095fee573726eef2e\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.print:print:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\48f44416a1aa2afb113010b955b67f94\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Abet\.gradle\caches\transforms-3\1d02f4c8f5da1ec59343bd1c9ae1dff8\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\36ab49d27e2bb5d2f3c2a9465afd83fe\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
 MERGED from [org.apache.cordova:framework:10.1.1] C:\Users\Abet\.gradle\caches\transforms-3\5283050de5a0422f29a91698b8385016\transformed\jetified-framework-10.1.1\AndroidManifest.xml:20:1-27:12
@@ -84,8 +74,8 @@ INJECTED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:2:1-4
 		ADDED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:2:11-69
 application
 ADDED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:5:5-39:19
-MERGED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:5-37:19
-MERGED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:5-37:19
+MERGED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-23:19
+MERGED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-23:19
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Abet\.gradle\caches\transforms-3\619891cfbc50e3592a71b3f51e3a55eb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Abet\.gradle\caches\transforms-3\619891cfbc50e3592a71b3f51e3a55eb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Abet\.gradle\caches\transforms-3\ef948e005e878ec97cfc6124dca2c9ea\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:23:5-33:19
@@ -143,11 +133,11 @@ ADDED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:25:17-77
 	android:name
 		ADDED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:25:27-74
 uses-permission#android.permission.INTERNET
-ADDED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:43:5-67
+ADDED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:42:3-64
 MERGED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-67
 MERGED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-67
 	android:name
-		ADDED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:43:22-64
+		ADDED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml:42:20-62
 uses-sdk
 INJECTED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\AbetMovil\RncApp\android\app\src\main\AndroidManifest.xml
@@ -170,10 +160,6 @@ MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\Abet\.gradle
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\Abet\.gradle\caches\transforms-3\e652082f8cc43c7f90416b02c3fb8013\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\Abet\.gradle\caches\transforms-3\8bb8b13c1438848676861a1388a97eb3\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\Abet\.gradle\caches\transforms-3\8bb8b13c1438848676861a1388a97eb3\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\d3dee2fdc97ab93240b5a9f19ba4b701\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\d3dee2fdc97ab93240b5a9f19ba4b701\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\3733f99442b8e770ce29dc813ff04d41\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\3733f99442b8e770ce29dc813ff04d41\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] C:\Users\Abet\.gradle\caches\transforms-3\32d85a34682b2d04b9faab0e5b16ad91\transformed\coordinatorlayout-1.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] C:\Users\Abet\.gradle\caches\transforms-3\32d85a34682b2d04b9faab0e5b16ad91\transformed\coordinatorlayout-1.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core-splashscreen:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\e5f33fccee23d53fd983ee477a655276\transformed\jetified-core-splashscreen-1.0.0\AndroidManifest.xml:20:5-22:41
@@ -192,16 +178,10 @@ MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Abet\.gradle\caches\transfor
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Abet\.gradle\caches\transforms-3\619891cfbc50e3592a71b3f51e3a55eb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:21:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\0952f16cd81082cd20b3887068d66b00\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\0952f16cd81082cd20b3887068d66b00\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\a4bf9ea1cd270d5fc88586fe493e7b2e\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\a4bf9ea1cd270d5fc88586fe493e7b2e\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\7d6b7a62ad86b94467b9e28a8c2b2a38\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\7d6b7a62ad86b94467b9e28a8c2b2a38\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.webkit:webkit:1.6.1] C:\Users\Abet\.gradle\caches\transforms-3\6ded39dca6b98a352315fec226a4acb8\transformed\webkit-1.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.webkit:webkit:1.6.1] C:\Users\Abet\.gradle\caches\transforms-3\6ded39dca6b98a352315fec226a4acb8\transformed\webkit-1.6.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.media:media:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\444855e01f11411237113fa6d7473039\transformed\media-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.media:media:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\444855e01f11411237113fa6d7473039\transformed\media-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\00705b0c6030446e47f6ffcbb655dc5a\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\00705b0c6030446e47f6ffcbb655dc5a\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Abet\.gradle\caches\transforms-3\8236dcaf68b842289859eba9c60c4b20\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Abet\.gradle\caches\transforms-3\8236dcaf68b842289859eba9c60c4b20\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Abet\.gradle\caches\transforms-3\0cce26548d3aa928a1b0c95313e731fe\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -224,10 +204,6 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] C:\Users\A
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] C:\Users\Abet\.gradle\caches\transforms-3\fda61e707e57e8524a2bccb38bf67814\transformed\jetified-lifecycle-viewmodel-savedstate-2.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core-ktx:1.10.0] C:\Users\Abet\.gradle\caches\transforms-3\6bf6cecd8e467da9ebd603ad6991f35a\transformed\jetified-core-ktx-1.10.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.core:core-ktx:1.10.0] C:\Users\Abet\.gradle\caches\transforms-3\6bf6cecd8e467da9ebd603ad6991f35a\transformed\jetified-core-ktx-1.10.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\17ab30d62fd80f923f93932e4226c92d\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\17ab30d62fd80f923f93932e4226c92d\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\315fef43d84bfc418fccb43256d39837\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\315fef43d84bfc418fccb43256d39837\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.10.0] C:\Users\Abet\.gradle\caches\transforms-3\4084e7bcb4a1738e1ff26326a1997c6e\transformed\core-1.10.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.10.0] C:\Users\Abet\.gradle\caches\transforms-3\4084e7bcb4a1738e1ff26326a1997c6e\transformed\core-1.10.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Abet\.gradle\caches\transforms-3\6e0f101d74b5ee8b03221e990839c894\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
@@ -240,12 +216,6 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Abet\.gradle\cache
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Abet\.gradle\caches\transforms-3\0ee926bc19f5f7a898272ecfec47b8cb\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\c9163c2d582433530474a7b819bf7180\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\c9163c2d582433530474a7b819bf7180\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\21451bee10b8b4cd50d8bf642b617c71\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\21451bee10b8b4cd50d8bf642b617c71\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\c34ab138d9cd6d3095fee573726eef2e\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\c34ab138d9cd6d3095fee573726eef2e\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\48f44416a1aa2afb113010b955b67f94\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0] C:\Users\Abet\.gradle\caches\transforms-3\48f44416a1aa2afb113010b955b67f94\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Abet\.gradle\caches\transforms-3\1d02f4c8f5da1ec59343bd1c9ae1dff8\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Abet\.gradle\caches\transforms-3\1d02f4c8f5da1ec59343bd1c9ae1dff8\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\Abet\.gradle\caches\transforms-3\36ab49d27e2bb5d2f3c2a9465afd83fe\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
@@ -272,54 +242,28 @@ uses-permission#android.permission.VIBRATE
 ADDED from [:capacitor-haptics] C:\AbetMovil\RncApp\node_modules\@capacitor\haptics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-66
 	android:name
 		ADDED from [:capacitor-haptics] C:\AbetMovil\RncApp\node_modules\@capacitor\haptics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:7:22-63
-uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-80
-	android:name
-		ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-77
-uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-81
-	android:name
-		ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-78
-uses-permission#android.permission.REQUEST_INSTALL_PACKAGES
-ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-83
-	android:name
-		ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:22-80
-uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
-ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-84
-	android:name
-		ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:22-81
-provider#com.vaenow.appupdate.android.GenericFileProvider
-ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:9-23:20
-	android:grantUriPermissions
-		ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-47
-	android:authorities
-		ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-70
-	android:exported
-		ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-37
-	android:name
-		ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-76
 meta-data#android.max_aspect
-ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:25:9-27:36
+ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:9-13:36
 	android:value
-		ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:13-33
+		ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-33
 	android:name
-		ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-46
+		ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-46
 activity#com.hutchind.cordova.plugins.streamingmedia.SimpleAudioStream
-ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:29:9-32:51
+ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:9-18:51
 	android:label
-		ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:32:13-48
+		ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-48
 	android:configChanges
-		ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:31:13-59
+		ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-59
 	android:name
-		ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:30:13-89
+		ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-89
 activity#com.hutchind.cordova.plugins.streamingmedia.SimpleVideoStream
-ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:33:9-36:51
+ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:9-22:51
 	android:label
-		ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:36:13-48
+		ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:22:13-48
 	android:configChanges
-		ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:35:13-59
+		ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:21:13-59
 	android:name
-		ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:34:13-89
+		ADDED from [:capacitor-cordova-android-plugins] C:\AbetMovil\RncApp\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-89
 provider#androidx.startup.InitializationProvider
 ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Abet\.gradle\caches\transforms-3\619891cfbc50e3592a71b3f51e3a55eb\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Abet\.gradle\caches\transforms-3\ef948e005e878ec97cfc6124dca2c9ea\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:24:9-32:20

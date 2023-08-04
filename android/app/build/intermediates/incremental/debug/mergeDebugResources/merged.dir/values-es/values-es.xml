@@ -34,19 +34,6 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"Llamada entrante"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"Llamada en curso"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"Filtrando una llamada entrante"</string>
-    <string name="download_complete_neu_btn">Instalar manualmente</string>
-    <string name="download_complete_pos_btn">Descargar nuevamente</string>
-    <string name="download_complete_title">Descarga completa</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Buscar"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
-    <string name="update_bg">Esconder progreso</string>
-    <string name="update_cancel">Cancelar</string>
-    <string name="update_error_message">La red actual no está disponible, por favor chequee su configuración de red.</string>
-    <string name="update_error_title">Error</string>
-    <string name="update_error_yes_btn">OK</string>
-    <string name="update_latest">Ahora tienes la última versión</string>
-    <string name="update_message">El software necesita ser actualizado</string>
-    <string name="update_title">Nueva actualización</string>
-    <string name="update_update_btn">Actualizar</string>
-    <string name="updating">Actualizando</string>
 </resources>

@@ -31,42 +31,42 @@ export class InicioPage implements OnInit {
 
     locale:'es',
     plugins: [
-    interactionPlugin,
-    dayGridPlugin,
-    timeGridPlugin,
-    listPlugin,
+      interactionPlugin,
+      dayGridPlugin,
+      timeGridPlugin,
+      listPlugin,
     ],
 
     views: {
-    dayGridMonth: { buttonText: 'Mes' },
-    timeGridWeek: { buttonText: 'Semana' },
-    listWeek: { buttonText: 'Lista' },
+      dayGridMonth: { buttonText: 'Mes' },
+      timeGridWeek: { buttonText: 'Semana' },
+      listWeek: { buttonText: 'Lista' },
     },
 
     buttonText: {
-    today: 'Hoy'
+      today: 'Hoy'
     },
 
     headerToolbar: {
-    left: 'prev,next today',
-    center: '',
-    right: 'dayGridMonth,timeGridWeek,listWeek'
+      left: 'prev,next today',
+      center: '',
+      right: 'dayGridMonth,timeGridWeek,listWeek'
     },
 
     eventTimeFormat: { // like '14:30:00'
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    //meridiem: true,
-    hour12: false,
-    omitZeroMinute : false
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      //meridiem: true,
+      hour12: false,
+      omitZeroMinute : false
     },
 
     slotLabelFormat: {
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: false
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
     },
 
     initialView: 'dayGridMonth',
