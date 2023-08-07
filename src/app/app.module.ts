@@ -10,13 +10,13 @@ import { IonicStorageModule } from '@ionic/storage-angular';
 import {  HttpClientModule } from '@angular/common/http';
 import { StreamingMedia } from '@awesome-cordova-plugins/streaming-media/ngx';
 import { Toast } from '@awesome-cordova-plugins/toast/ngx';
-import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import { SearchableSpotComponent } from './components/searchable-spot/searchable-spot.component';
 
 
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(),IonicStorageModule.forRoot(), AppRoutingModule, FullCalendarModule, HttpClientModule,],
+  imports: [BrowserModule, IonicModule.forRoot(),IonicStorageModule.forRoot(), AppRoutingModule, FullCalendarModule, HttpClientModule, SearchableSpotComponent],
   providers: [ Toast, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy,},StreamingMedia],
   bootstrap: [AppComponent],
 })

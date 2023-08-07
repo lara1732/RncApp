@@ -7,48 +7,34 @@
 <ng-template #placeholderS>Select</ng-template>
 
 <ion-modal [isOpen]="isOpen3" > 
-  <ng-template>
-    <ion-header>
-      <ion-toolbar color="primary" >
-        <ion-buttons slot="start">
-          <ion-button (click)="cancel3()">Cancel</ion-button>
-        </ion-buttons>
-        <ion-title>Spots</ion-title>
-        <ion-buttons slot="end" *ngIf="multiple">
-          <ion-button (click)="select3()" >Select</ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-      <ion-toolbar>
-        <ion-grid>
-          <ion-row>
-            <ion-col>
-              <ion-searchbar (ionChange)="filter3($any($event))"></ion-searchbar>
-            </ion-col>
-            <ion-col>
-              <ion-list>
-                <ion-item>
-                  <ion-select aria-label="Favorite Fruit" value="apple">
-                    <ion-select-option value="apple">Apple</ion-select-option>
-                    <ion-select-option value="banana">Banana</ion-select-option>
-                    <ion-select-option value="orange">Orange</ion-select-option>
-                  </ion-select>
-                </ion-item>
-              </ion-list>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-       
-      </ion-toolbar>
-    </ion-header>
-    <ion-content> 
-      <ion-item>
-        <ion-checkbox slot="start" [(ngModel)]="selectAll" (ionChange)="toggleSelectAll()"></ion-checkbox>
-        <ion-label>Seleccionar todos</ion-label>
-      </ion-item>
-      <ion-item *ngFor="let item of filtered3">
-        <ion-checkbox slot="start" [(ngModel)]="item.selected" (ionChange)="itemSelected3()"></ion-checkbox>
-        <ion-label> {{item.MediaRef}}</ion-label>
-      </ion-item>
-    </ion-content>
-  </ng-template>  
+<ng-template>
+  <ion-header class="ion-no-border">
+    <ion-toolbar color="primary" class="ion-no-border" >
+      <ion-buttons slot="start">
+        <ion-button (click)="cancel3()">Cancel</ion-button>
+      </ion-buttons>
+      <ion-title>Spots</ion-title>
+      <ion-buttons slot="end" *ngIf="multiple">
+      <ion-button (click)="select3()" >Select</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+
+    <ion-toolbar class="ion-no-border">
+      <ion-searchbar (ionChange)="filter3($any($event))"></ion-searchbar>          
+      <ion-button slot="end"  fill="clear" class="filtro" (click)="presentActionSheet()">Filtro</ion-button>    
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content> 
+    <ion-item>
+      <ion-checkbox slot="start" [(ngModel)]="selectAll" (ionChange)="toggleSelectAll()"></ion-checkbox>
+      <ion-label>Seleccionar todos</ion-label>
+    </ion-item>
+
+    <ion-item *ngFor="let item of filtered3">
+      <ion-checkbox slot="start" [(ngModel)]="item.selected" (ionChange)="itemSelected3()"></ion-checkbox>
+      <ion-label> {{item.MediaRef}}</ion-label>
+    </ion-item>
+  </ion-content>
+</ng-template>  
 </ion-modal> 

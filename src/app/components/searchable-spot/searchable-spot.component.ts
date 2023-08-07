@@ -7,6 +7,7 @@ import { LoadingController } from '@ionic/angular';
 //import { EventEmitter } from 'stream';
 import * as $ from "jquery";
 import { SharedService } from "../../shared.service"
+import { ActionSheetController } from '@ionic/angular';
 
 @Component({
   standalone: true,
@@ -28,7 +29,10 @@ export class SearchableSpotComponent implements OnChanges {
 
   selectAll: boolean = false;
 
-  constructor(private storage:Storage, private loadingCtrl: LoadingController,  public sharedService: SharedService) { }
+  constructor(private storage: Storage, 
+    private loadingCtrl: LoadingController,  
+    public sharedService: SharedService,
+    private actionSheetController: ActionSheetController) { }
  
   ngOnChanges() {
 
@@ -50,7 +54,7 @@ export class SearchableSpotComponent implements OnChanges {
   }
 
   select3(){
-    const selected = this.data3.filter((item) => item.selected);
+    const selected = this.filtered3.filter((item) => item.selected);
     this.sharedService.selectedS = selected;
     this.selectedChanged.emit(selected);
     this.isOpen3 = false;
@@ -87,12 +91,203 @@ export class SearchableSpotComponent implements OnChanges {
     
     this.itemTextField.split('.').reduce((value, el) => value[el], obj);
 
-
-
-    async ngOnInit() {
-      await this.storage.create();  
+    async presentActionSheet() {
+      const actionSheet = await this.actionSheetController.create({
+        header: 'Ordenar por:',
+        buttons: [{
+          text: 'Mas Apariciones',
+          icon: 'layers-outline',
+          handler: () => {
+            console.log('Opción 1 seleccionada');
+            this.masRepe();
+            
+          }
+        },
+        // {
+        //   text: 'Mas reciente',
+        //   icon: 'chevron-up-circle-outline',
+        //   handler: () => {
+        //     console.log('Opción 1 seleccionada');
+        //   }
+        // }, {
+        //   text: 'Mas antiguo',
+        //   icon: 'chevron-down-circle-outline',
+        //   handler: () => {
+        //     alert('Opción 2 seleccionada');
+        //   }
+        // },
+        {
+          text: 'Confidence mas alto',
+          icon: 'thumbs-up-outline',
+          handler: () => {
+            console.log('Opción 3 seleccionada');
+            this.mayMen();
+          }
+        },
+        // {
+        //   text: 'Confidence mas bajo',
+        //   icon: 'thumbs-down-outline',
+        //   handler: () => {
+        //     alert('Opción 4 seleccionada');
+        //   }
+        // },      
+        {
+          text: 'Cancelar',
+          icon: 'close',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancelar seleccionado');
+          }
+        }]
+      });
+    
+      await actionSheet.present();
     }
 
-  
+
+    //filtros
+
+   async masRepe(){
+
+    let plazas = await this.storage.get('plaza')
+    let canal = await this.storage.get('canal')
+    let Id = await this.storage.get('id');  
+    let permisos = await this.storage.get('p');
+    permisos = permisos[0].p;
+    let plaza = [];
+    let ids = [];
+    let spot = await this.storage.get('spot');
+    let library = await this.storage.get('library');
+    library = library[0].Privilege
+    console.log(permisos)
+    let acceso = await this.storage.get('a');
+    console.log(acceso[0].Spots)
+    let privilegio;
+
+      if(library == 'Spots'){
+        privilegio = acceso[0].Spots;
+      }else if(library == 'INE'){
+        privilegio = acceso[0].INE;
+      } else if(library == 'Transmisiones'){
+        privilegio = acceso[0].Transmisiones;
+      }
+
+      if(spot == null){
+        spot = [];
+      }
+
+      for(var i=0; i<canal.length; i++){
+        ids.push(canal[i].ChannelID)      
+      }
+
+      for(var i=0; i<plazas.length; i++){
+        plaza.push("'"+plazas[i].Name+"'")
+
+        if(library == 'INE'){
+          plaza.push("'National|'")
+        }
+      }  
+    
+    var  adata = {id:ids, p:privilegio, uss:Id, library:library,plaza:plaza}    
+    console.log(adata);
+
+      $.ajax({
+        url: ('https://backup.tregional.mx/AbetCloud/models/queries/app/C_getFilterRepetition.php'),
+        type:'POST',
+        dataType: "Json",
+        data: adata,
+        crossDomain: true,
+        async: true,
+        success:(dataId) =>{        
+          console.log(dataId)
+          this.filtered3 = dataId 
+          let rest = dataId            
+    
+          for( var i=0; i < rest.length; i++){
+            for(var j=0; j < spot.length; j++){
+              if (spot[j].MediaRef == rest[i].MediaRef){
+                  //coincidencias.push(canal[j]);
+                  // rest.push("{selected: true}");
+                  rest[i].selected=true;
+              }
+            }
+          }          
+        }
+      });
+    }
+
+   async mayMen(){     
+
+    let plazas = await this.storage.get('plaza')
+    let canal = await this.storage.get('canal')
+    let Id = await this.storage.get('id');  
+    let permisos = await this.storage.get('p');
+    permisos = permisos[0].p;
+    let plaza = [];
+    let ids = [];
+    let spot = await this.storage.get('spot');
+    let library = await this.storage.get('library');
+    library = library[0].Privilege
+    console.log(permisos)
+    let acceso = await this.storage.get('a');
+    console.log(acceso[0].Spots)
+    let privilegio;
+
+      if(library == 'Spots'){
+        privilegio = acceso[0].Spots;
+      }else if(library == 'INE'){
+        privilegio = acceso[0].INE;
+      } else if(library == 'Transmisiones'){
+        privilegio = acceso[0].Transmisiones;
+      }
+
+      if(spot == null){
+        spot = [];
+      }
+
+      for(var i=0; i<canal.length; i++){
+        ids.push(canal[i].ChannelID)      
+      }
+
+      for(var i=0; i<plazas.length; i++){
+        plaza.push("'"+plazas[i].Name+"'")
+
+        if(library == 'INE'){
+          plaza.push("'National|'")
+        }
+      }  
+    
+    var  adata = {id:ids, p:privilegio, uss:Id, library:library,plaza:plaza}    
+    console.log(adata);
+
+      $.ajax({
+        url: ('http://backup.tregional.mx/AbetCloud/models/queries/app/C_getFilterConfidence.php'),
+        type:'POST',
+        dataType: "Json",
+        data: adata,
+        crossDomain: true,
+        async: true,
+        success:(dataId) =>{        
+          console.log(dataId)
+          this.filtered3 = dataId 
+          let rest = dataId            
+    
+          for( var i=0; i < rest.length; i++){
+            for(var j=0; j < spot.length; j++){
+              if (spot[j].MediaRef == rest[i].MediaRef){
+                  //coincidencias.push(canal[j]);
+                  // rest.push("{selected: true}");
+                  rest[i].selected=true;
+              }
+            }
+          }          
+        }
+      });        
+    }
+
+  async ngOnInit() {
+    await this.storage.create();  
+  }  
+
   
 }

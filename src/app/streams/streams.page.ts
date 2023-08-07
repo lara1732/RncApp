@@ -1,10 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
-import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { StreamingMedia, StreamingVideoOptions } from '@awesome-cordova-plugins/streaming-media/ngx';
-import { SearchbarCustomEvent } from '@ionic/angular';
 import { Platform  } from '@ionic/angular';
 import { SharedService } from '../shared.service';
 
@@ -45,7 +43,7 @@ export class StreamsPage implements OnInit {
     let options: StreamingVideoOptions = {
       successCallback: () => { console.log('Video played') },
       errorCallback: () => { console.log('Error Stream') },
-      orientation: 'portrait',
+      orientation: 'default',
       shouldAutoClose: true,
       controls: false
     };    
