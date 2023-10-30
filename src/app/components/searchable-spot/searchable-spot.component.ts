@@ -103,34 +103,39 @@ export class SearchableSpotComponent implements OnChanges {
             
           }
         },
-        // {
-        //   text: 'Mas reciente',
-        //   icon: 'chevron-up-circle-outline',
-        //   handler: () => {
-        //     console.log('Opción 1 seleccionada');
-        //   }
-        // }, {
-        //   text: 'Mas antiguo',
-        //   icon: 'chevron-down-circle-outline',
-        //   handler: () => {
-        //     alert('Opción 2 seleccionada');
-        //   }
-        // },
+        {
+          text: 'Mas reciente',
+          icon: 'chevron-up-circle-outline',
+          handler: () => {
+            console.log('Opción 1 seleccionada');
+            this.masReciente();
+
+          }
+        },
+        {
+          text: 'Mas antiguo',
+          icon: 'chevron-down-circle-outline',
+          handler: () => {
+            console.log('Opción 2 seleccionada');
+            this.masAntiguo()
+          }
+        },
         {
           text: 'Confidence mas alto',
           icon: 'thumbs-up-outline',
           handler: () => {
             console.log('Opción 3 seleccionada');
-            this.mayMen();
+            this.confiMay();
           }
         },
-        // {
-        //   text: 'Confidence mas bajo',
-        //   icon: 'thumbs-down-outline',
-        //   handler: () => {
-        //     alert('Opción 4 seleccionada');
-        //   }
-        // },      
+        {
+          text: 'Confidence mas bajo',
+          icon: 'thumbs-down-outline',
+          handler: () => {
+            console.log('Opción 4 seleccionada');
+            this.confiMen()
+          }
+        },      
         {
           text: 'Cancelar',
           icon: 'close',
@@ -145,7 +150,7 @@ export class SearchableSpotComponent implements OnChanges {
     }
 
 
-    //filtros
+    //////////////////////////filtros////////////////////////////////
 
    async masRepe(){
 
@@ -184,7 +189,7 @@ export class SearchableSpotComponent implements OnChanges {
         plaza.push("'"+plazas[i].Name+"'")
 
         if(library == 'INE'){
-          plaza.push("'National|'")
+          plaza.push("'National'")
         }
       }  
     
@@ -216,7 +221,7 @@ export class SearchableSpotComponent implements OnChanges {
       });
     }
 
-   async mayMen(){     
+   async confiMay(){     
 
     let plazas = await this.storage.get('plaza')
     let canal = await this.storage.get('canal')
@@ -253,7 +258,7 @@ export class SearchableSpotComponent implements OnChanges {
         plaza.push("'"+plazas[i].Name+"'")
 
         if(library == 'INE'){
-          plaza.push("'National|'")
+          plaza.push("'National'")
         }
       }  
     
@@ -284,6 +289,187 @@ export class SearchableSpotComponent implements OnChanges {
         }
       });        
     }
+
+    async confiMen(){     
+
+      let plazas = await this.storage.get('plaza')
+      let canal = await this.storage.get('canal')
+      let Id = await this.storage.get('id');  
+      let permisos = await this.storage.get('p');
+      permisos = permisos[0].p;
+      let plaza = [];
+      let ids = [];
+      let spot = await this.storage.get('spot');
+      let library = await this.storage.get('library');
+      library = library[0].Privilege
+      console.log(permisos)
+      let acceso = await this.storage.get('a');
+      console.log(acceso[0].Spots)
+      let privilegio;
+  
+        if(library == 'Spots'){
+          privilegio = acceso[0].Spots;
+        }else if(library == 'INE'){
+          privilegio = acceso[0].INE;
+        } else if(library == 'Transmisiones'){
+          privilegio = acceso[0].Transmisiones;
+        }
+  
+        if(spot == null){
+          spot = [];
+        }
+  
+        for(var i=0; i<canal.length; i++){
+          ids.push(canal[i].ChannelID)      
+        }
+  
+        for(var i=0; i<plazas.length; i++){
+          plaza.push("'"+plazas[i].Name+"'")
+  
+          if(library == 'INE'){
+            plaza.push("'National'")
+          }
+        }  
+      
+      var  adata = {id:ids, p:privilegio, uss:Id, library:library,plaza:plaza}    
+      console.log(adata);
+  
+        $.ajax({
+          url: ('http://backup.tregional.mx/AbetCloud/models/queries/app/C_getFilterConfidence.php'),
+          type:'POST',
+          dataType: "Json",
+          data: adata,
+          crossDomain: true,
+          async: true,
+          success:(dataId) =>{        
+            console.log(dataId)
+            const sortedResponse: any[] = dataId.sort((a: any, b: any) => parseFloat(a.Confidence) - parseFloat(b.Confidence));
+            console.log(sortedResponse);
+            this.filtered3 = sortedResponse 
+          
+          }
+        });        
+      }
+
+  async  masReciente(){
+
+    let plazas = await this.storage.get('plaza')
+    let canal = await this.storage.get('canal')
+    let Id = await this.storage.get('id');  
+    let permisos = await this.storage.get('p');
+    permisos = permisos[0].p;
+    let plaza = [];
+    let ids = [];
+    let spot = await this.storage.get('spot');
+    let library = await this.storage.get('library');
+    library = library[0].Privilege
+    console.log(permisos)
+    let acceso = await this.storage.get('a');
+    console.log(acceso[0].Spots)
+    let privilegio;
+
+      if(library == 'Spots'){
+        privilegio = acceso[0].Spots;
+      }else if(library == 'INE'){
+        privilegio = acceso[0].INE;
+      } else if(library == 'Transmisiones'){
+        privilegio = acceso[0].Transmisiones;
+      }
+
+      if(spot == null){
+        spot = [];
+      }
+
+      for(var i=0; i<canal.length; i++){
+        ids.push(canal[i].ChannelID)      
+      }
+
+      for(var i=0; i<plazas.length; i++){
+        plaza.push("'"+plazas[i].Name+"'")
+
+        if(library == 'INE'){
+          plaza.push("'National'")
+        }
+      }  
+    
+    var  adata = {id:ids, p:privilegio, uss:Id, library:library,plaza:plaza}    
+    console.log(adata);
+
+      $.ajax({
+        url: ('http://backup.tregional.mx/AbetCloud/models/queries/app/C_getFilterDate.php'),
+        type:'POST',
+        dataType: "Json",
+        data: adata,
+        crossDomain: true,
+        async: true,
+        success:(dataId) =>{        
+          console.log(dataId)
+          this.filtered3 = dataId 
+                  
+        }
+      });
+    }
+
+    async  masAntiguo(){
+
+      let plazas = await this.storage.get('plaza')
+      let canal = await this.storage.get('canal')
+      let Id = await this.storage.get('id');  
+      let permisos = await this.storage.get('p');
+      permisos = permisos[0].p;
+      let plaza = [];
+      let ids = [];
+      let spot = await this.storage.get('spot');
+      let library = await this.storage.get('library');
+      library = library[0].Privilege
+      console.log(permisos)
+      let acceso = await this.storage.get('a');
+      console.log(acceso[0].Spots)
+      let privilegio;
+  
+        if(library == 'Spots'){
+          privilegio = acceso[0].Spots;
+        }else if(library == 'INE'){
+          privilegio = acceso[0].INE;
+        } else if(library == 'Transmisiones'){
+          privilegio = acceso[0].Transmisiones;
+        }
+  
+        if(spot == null){
+          spot = [];
+        }
+  
+        for(var i=0; i<canal.length; i++){
+          ids.push(canal[i].ChannelID)      
+        }
+  
+        for(var i=0; i<plazas.length; i++){
+          plaza.push("'"+plazas[i].Name+"'")
+  
+          if(library == 'INE'){
+            plaza.push("'National'")
+          }
+        }  
+      
+      var  adata = {id:ids, p:privilegio, uss:Id, library:library,plaza:plaza}    
+      console.log(adata);
+  
+        $.ajax({
+          url: ('http://backup.tregional.mx/AbetCloud/models/queries/app/C_getFilterDate.php'),
+          type:'POST',
+          dataType: "Json",
+          data: adata,
+          crossDomain: true,
+          async: true,
+          success:(dataId) =>{        
+
+            const sortedResponse: any[] = dataId.sort((a:any, b:any) => new Date(a.date).getTime() - new Date(b.date).getTime());
+            console.log(sortedResponse);
+            this.filtered3 = sortedResponse; 
+                    
+          }
+        });
+      }
 
   async ngOnInit() {
     await this.storage.create();  

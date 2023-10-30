@@ -9,8 +9,10 @@ ion-menu::part(backdrop) {
   }
 
 ion-toolbar{
-    background-color: transparent;
+    background-color: #d75928;
     --opacity: 5%;  
+    padding-right: 20%;
+    color: white
 }
 
 ion-footer{
@@ -46,7 +48,11 @@ ion-footer{
   }
 
   .footer-toolbar {
+    background-color: transparent;
+    color: #274662;
     font-size: 12px;
     position: sticky;
+    padding-left: 20%;
     bottom: 0;
+    
   }

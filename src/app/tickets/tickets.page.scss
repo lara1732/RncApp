@@ -1,0 +1,116 @@
+ion-fab-button {
+  --background: #274662;
+  --background-activated: #27466295;
+  --background-hover: #29578095;
+  --border-radius: 15px;
+  --box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --color: white;
+}
+
+ion-fab {
+  margin-top: var(--ion-safe-area-top, 0);
+}
+
+ion-title {
+  text-align: center;
+  padding-right: 20%;
+  color: white;
+}
+
+ion-toolbar {
+  background-color: #d75928;
+  text-align: center;
+  --opacity: 5%;
+}
+
+.bkbtn {
+  color: white;
+}
+
+ion-item {
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 5%;
+  color: #0098d8;
+  --border-color: #274662;
+  --border-style: solid;
+  --border-width: 3px;
+  --border-radius: 20px;
+  font-size: 18px;
+
+  ion-label {
+    color: #000000;
+  }
+}
+
+/* En tu archivo .scss */
+.pendiente {
+  --border-color: red;
+  /* O el color que desees */
+}
+
+.en-desarrollo {
+  --border-color: yellow;
+  /* O el color que desees */
+}
+
+.finalizado {
+  --border-color: green;
+  /* O el color que desees */
+}
+
+
+#titulo {
+  white-space: pre-wrap;
+  /* Permitir saltos de línea */
+  max-width: 100%;
+  /* Ajustar el ancho máximo */
+  /* Otros estilos si es necesario */
+}
+
+#desc {
+  white-space: pre-wrap;
+  /* Permitir saltos de línea */
+  max-width: 100%;
+  /* Ajustar el ancho máximo */
+  /* Otros estilos si es necesario */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.zoombtns {
+
+  --background: #ffffff;
+  /* Cambia el color de fondo de los botones según tus necesidades */
+  --color: #274662;
+  /* Cambia el color del ícono */
+  width: auto;
+  height: auto;
+  /* Ajusta el tamaño del botón según tus necesidades */
+  --border-radius: auto;
+}
+
+.dwlbtns {
+  --background: #ffffff;
+  /* Cambia el color de fondo de los botones según tus necesidades */
+  --color: #274662;
+  /* Cambia el color del ícono */
+  width: auto;
+  height: auto;
+  /* Ajusta el tamaño del botón según tus necesidades */
+  --border-radius: auto;
+  margin-left: auto;
+}
+
+.formPdf {
+  margin: 20px;
+  /* Puedes ajustar el valor según tus necesidades */
+  border: 2.5px solid black;
+  padding: 5px;
+  /* Opcional: Agregar espacio interno al div */
+  background-color: #f0f0f0;
+  /* Opcional: Agregar color de fondo para visualizar mejor el margen */
+}

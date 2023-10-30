@@ -42,6 +42,7 @@ export class LoginPage implements OnInit {
 
   Login(){    
 
+    $('#btn-support').hide();
     $('#Preloader').show();
     $('#SaveButtonHome').attr('disabled', 'disabled');
     $('#menuId').removeAttr('disabled');
@@ -60,6 +61,7 @@ export class LoginPage implements OnInit {
       async: true,
         success:(data) =>{
 
+          $('#btn-support').hide();
           $('#Preloader').hide(); 
           $('#ButtonLogin').removeAttr('disabled');
 
@@ -92,7 +94,8 @@ export class LoginPage implements OnInit {
 
               this.storage.get('login');       
               this.router.navigate(['/seleccion']);
-
+              
+              $('#btn-support').show();
               $("#UserName").val("");
               $("#Password").val("");
 
@@ -102,6 +105,7 @@ export class LoginPage implements OnInit {
 
               $('#Preloader').hide();
               $('#ButtonLogin').removeAttr('disabled');
+              $('#btn-support').show();
               Swal.fire({title:'Error', icon:'error', text:'Incorrect user or password', heightAuto:false});
 
               break;
@@ -110,6 +114,7 @@ export class LoginPage implements OnInit {
 
               $('#Preloader').hide();
               $('#ButtonLogin').removeAttr('disabled');
+              $('#btn-support').show();
               Swal.fire({title:'Error', icon:'error', text:'User without acess', heightAuto:false});
               
               break;
@@ -118,6 +123,7 @@ export class LoginPage implements OnInit {
 
               $('#Preloader').hide();
               $('#ButtonLogin').removeAttr('disabled');
+              $('#btn-support').show();
               Swal.fire({title:'Error', icon:'error', text:'User with active session', heightAuto:false});
               
               break;
@@ -143,6 +149,7 @@ export class LoginPage implements OnInit {
               Swal.fire({title:'Error', icon:'error', text: 'An internal server error has occurred please contact the site admin',heightAuto:false});
             }
 
+            $('#btn-support').show();
             $('#Preloader').hide();
             $('#ButtonLogin').removeAttr('disabled');
           }
@@ -150,6 +157,7 @@ export class LoginPage implements OnInit {
     }else{
       $('#Preloader').hide();
       $('#ButtonLogin').removeAttr('disabled');
+      $('#btn-support').show();
 
       Swal.fire({title:'Warning',icon:'error',text:'Information incomplete',heightAuto: false});
     }
@@ -175,6 +183,10 @@ export class LoginPage implements OnInit {
         console.log(res)        
         this.storage.set('a',res);        
       });
+  }
+
+  Suport(){
+    this.router.navigate(['/addticket']);
   }
 
   async ngOnInit() {

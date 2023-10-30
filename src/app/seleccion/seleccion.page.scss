@@ -1,29 +1,33 @@
-.custom-heading {
+
+  .custom-heading {
     font-family: 'Caprasimo', cursive;
- 
   }
-  
-ion-toolbar{
+
+  ion-toolbar{
     background-color: transparent;
     --opacity: 5%;  
-}
+  }
 
- ion-button{        
+  .bkbtn{
+    color: #274662;
+  }
+
+  ion-button{        
     margin-top: 20px;
     --background: #274662;
     --background-activated: #ffffff;
     color:#ffffff ;
-
     margin-bottom: 30px;
-}
+  }
 
-.footer-toolbar {
-  font-size: 12px;
-  position: sticky;
-  bottom: 0;
-}
+  .footer-toolbar {
+    background-color: transparent;
+    color: #274662;
+    font-size: 12px;
+    position: sticky;
+    bottom: 0;
+  }
 
-ion-slide{
-  display:block;
-
-}
+  ion-slide{
+    display:block;
+  }

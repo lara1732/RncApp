@@ -54,7 +54,7 @@ export class SeleccionPage implements OnInit {
   }
 
   R_contratos(){
-    Swal.fire({title:'Error', icon:'error', text:'No disponible', heightAuto:false});
+    this.router.navigate(['/calendar-tickets'])
   }
 
   backbutton(){

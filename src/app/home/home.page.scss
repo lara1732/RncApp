@@ -1,13 +1,20 @@
 
 ion-title{
   text-align: center;
-
+  padding-right: 20%;
+  color: white;
+  
 }
 
 ion-toolbar{
-background-color: transparent;
---opacity: 5%;  
+  background-color: #d75928;
+  text-align: center;
+  --opacity: 5%;  
 }
+
+.bkbtn{
+  color:white;
+ }
 
 ion-content{
   --ion-background-color: white;
@@ -54,14 +61,12 @@ ion-button{
   color:#ffffff ;
 }
 
-.bnt-menu{
-
-  background-color: #a9cd19;
-}
-
 .footer-toolbar {
+  background-color: transparent;
+  color: #274662;
   font-size: 12px;
   position: sticky;
   bottom: 0;
+  
 }
 

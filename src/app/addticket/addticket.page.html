@@ -1,0 +1,84 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button class="bkbtn"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Levantar ticket</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding ion-text-center" color="Tertiary">
+
+  <!-- <ion-title class="titulo">Ticket de Soporte</ion-title> -->
+
+  <ion-item>
+    <ion-input placeholder="Titulo" id="titulo" color="primary" (keyup.enter)="onEnterKey($event)"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-textarea id="descripcion" rows="4" placeholder="Descripción"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-select placeholder="Selecciona un contrato" id="contrato">
+      <ion-select-option value="0">Reparación</ion-select-option>
+      <ion-select-option value="33">Con Contrato</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-input placeholder="Correo" id="correo" color="primary" (keyup.enter)="onEnterKey($event)"></ion-input>
+  </ion-item>
+  <ion-grid>
+    <ion-row >
+      <ion-col size="4"> 
+        <ion-button id="btn-email" (click)="sendEmail()">Código</ion-button>
+        
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="4">
+        <ion-button id="btn-verifyEmail" (click)="verifyEmail()" style="display: none;">Verificar</ion-button>
+      </ion-col>
+      <ion-col size="8">
+        <ion-item id="inputEmail" style="display: none;">
+          <ion-input placeholder="Código" id="codeEmail" color="primary" (keyup.enter)="onEnterKey($event)"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid> 
+
+  <ion-item>
+    <ion-input placeholder="Teléfono" id="telefono" color="primary" (keyup.enter)="onEnterKey($event)"></ion-input>
+  </ion-item>  
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4"> 
+        <ion-button id="btn-phone" (click)="sendPhone()">Código</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="4">
+        <ion-button id="btn-verifyPhone" (click)="verifyPhone()" style="display: none;">Verificar</ion-button>
+      </ion-col>
+      <ion-col  size="8" >
+        <ion-item id="inputPhone" style="display: none;">
+          <ion-input placeholder="Código" id="codePhone" color="primary" (keyup.enter)="onEnterKey($event)"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <br>
+
+  <div> 
+    <ion-button  shape="round" fill="outline" expand="block" id="btn-ticket" (click)="addticket()" >Crear ticket</ion-button>
+  </div>  
+
+</ion-content>
+
+<ion-toolbar class="footer-toolbar">
+  <ion-text>
+    <p align="center">Versión {{ versionFront}}</p>
+  </ion-text>
+</ion-toolbar>

@@ -1,4 +1,4 @@
-.demo-app {
+  .demo-app {
     display: flex;
     min-height: 100%;
     font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
@@ -7,11 +7,24 @@
   }
 
   ion-toolbar{
-    background-color: transparent;
-    --opacity: 5%;  
+    background-color: #d75928;
+    text-align: center;
+    --opacity: 5%;    
     }
+
+    ion-title{
+      text-align: center;
+      padding-right: 20%;
+      color: white;
+    }
+
+    .bkbtn{
+      color:  white;
+     }
+  
     
     ion-content{
       --ion-background-color: white;
     }  
-  
+
+    

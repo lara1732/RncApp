@@ -179,7 +179,7 @@ export class HomePage implements OnInit {
         plaza.push("'"+plazas[i].Name+"'")
 
         if(library == 'INE'){
-          plaza.push("'National|'")
+          plaza.push("'National'")
         }
       }  
     

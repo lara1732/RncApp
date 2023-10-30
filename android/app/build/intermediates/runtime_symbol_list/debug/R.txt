@@ -1829,4 +1829,5 @@ int styleable ViewStubCompat_android_inflatedId 2
 int[] styleable bridge_fragment { 0x7f0300ea }
 int styleable bridge_fragment_start_dir 0
 int xml config 0x7f100000
-int xml file_paths 0x7f100001
+int xml emailcomposer_provider_paths 0x7f100001
+int xml file_paths 0x7f100002

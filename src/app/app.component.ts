@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
-import { Router } from '@angular/router';
 import * as $ from "jquery";
-import { IonApp, Platform } from '@ionic/angular';
-import { HttpClient } from '@angular/common/http';
+import { Platform } from '@ionic/angular';
 import { Toast } from '@awesome-cordova-plugins/toast/ngx';
 import { AlertController } from '@ionic/angular';
 import { SharedService } from './shared.service';
 import { Location } from '@angular/common';
-import { exit } from 'process';
+
 
 @Component({
   selector: 'app-root',
@@ -32,8 +30,8 @@ export class AppComponent {
   {      
       this.initializeApp();
       this.versionfront = this.sharedService.getVersion();
-      this.puebaString();
-      this.checkVersion();  
+      // this.puebaString();
+      // this.checkVersion();  
   }
 
   BaseLink(){
@@ -94,9 +92,9 @@ export class AppComponent {
         if (this.location.isCurrentPathEqualTo('/login')) {
           // Si la ruta actual es "/home", no hacer nada (evitar navegación)
           (navigator as any).app.exitApp();
-        }        
-        // En otras rutas, realizar la navegación hacia atrás normalmente
-       return;
+        }
+           
+             
       });
     });
   }

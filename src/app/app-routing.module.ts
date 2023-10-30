@@ -54,7 +54,21 @@ const routes: Routes = [
   {
     path: 'video-t',
     loadChildren: () => import('./video-t/video-t.module').then( m => m.VideoTPageModule)
-  }
+  },
+  {
+    path: 'calendar-tickets',
+    loadChildren: () => import('./calendar-tickets/calendar-tickets.module').then( m => m.CalendarTicketsPageModule)
+  },
+  {
+    path: 'tickets',
+    loadChildren: () => import('./tickets/tickets.module').then( m => m.TicketsPageModule)
+  },
+  {
+    path: 'addticket',
+    loadChildren: () => import('./addticket/addticket.module').then( m => m.AddticketPageModule)
+  },
+ 
+ 
 
 
 ];
